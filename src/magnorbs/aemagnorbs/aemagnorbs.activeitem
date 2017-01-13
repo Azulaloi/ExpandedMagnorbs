@@ -29,7 +29,7 @@
 
   "projectileType" : "aemagnorb",
   "projectileParameters" : {
-    "power" : 3.55,
+    "power" : 4.0,
     "knockback" : 5,
 
     "returnOnHit" : true,

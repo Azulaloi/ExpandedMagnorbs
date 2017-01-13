@@ -29,7 +29,7 @@
 
   "projectileType" : "vismagnorb",
   "projectileParameters" : {
-    "power" : 4.00,
+    "power" : 3.5,
     "knockback" : 5,
 
     "returnOnHit" : true,

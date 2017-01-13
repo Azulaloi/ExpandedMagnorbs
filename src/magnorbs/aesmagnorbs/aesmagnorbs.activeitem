@@ -29,7 +29,7 @@
 
   "projectileType" : "aesmagnorb",
   "projectileParameters" : {
-    "power" : 4.60,
+    "power" : 5.2,
     "knockback" : 5,
 
     "returnOnHit" : true,

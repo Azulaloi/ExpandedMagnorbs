@@ -78,23 +78,50 @@
   },
   
   "particleEmitters" : {
-    "shieldtips" : {
+    "shieldtips1" : {
       "active" : false,
       "transformationGroups" : ["orb1"],
-      "offsetRegion" : [-0.5, 1.5, 0.5, 4.0],
-      "emissionRate" : 10,
+      "offsetRegion" : [-0.3, 1.7, -0.3, 1.7],
+      "emissionRate" : 30,
       "particles" : [
         {
           "particle" : {
             "type" : "ember",
             "size" : 1.5,
-            "color" : [140, 70, 140, 255],
+            "color" : [255, 255, 150, 255],
             "position" : [0, 0],
-            "initialVelocity" : [0, 6.0],
+            "initialVelocity" : [-2.0, 5.0],
             "light" : [140, 70, 140],
             "timeToLive" : 0.8,
             "destructionAction" : "fade",
-            "destructionTime" : 0.2,
+            "destructionTime" : 0.1,
+            "layer" : "front",
+            "fullbright" : true,
+            "variance" : {
+              "initialVelocity" : [0, 2.0],
+              "size" : 1.0
+            }
+          }
+        }
+      ]
+    },
+	"shieldtips2" : {
+      "active" : false,
+      "transformationGroups" : ["orb1"],
+      "offsetRegion" : [ -0.3, -1.7, -0.3, -1.7],
+      "emissionRate" : 30,
+      "particles" : [
+        {
+          "particle" : {
+            "type" : "ember",
+            "size" : 1.5,
+            "color" : [255, 255, 150, 255],
+            "position" : [0, 0],
+            "initialVelocity" : [-2.0, -5.0],
+            "light" : [140, 70, 140],
+            "timeToLive" : 0.8,
+            "destructionAction" : "fade",
+            "destructionTime" : 0.1,
             "layer" : "front",
             "fullbright" : true,
             "variance" : {

@@ -27,7 +27,7 @@
 
   "projectileType" : "somagnorb",
   "projectileParameters" : {
-    "power" : 8.00,
+    "power" : 20.00,
     "knockback" : 5,
 
     "returnOnHit" : true,
@@ -38,7 +38,7 @@
   },
 
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 80,
+  "shieldEnergyCost" : 100,
 
   "stances" : {
     "idle" : {

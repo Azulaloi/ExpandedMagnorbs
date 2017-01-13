@@ -29,7 +29,7 @@
 
   "projectileType" : "vimagnorb",
   "projectileParameters" : {
-    "power" : 3.50,
+    "power" : 3.0,
     "knockback" : 5,
 
     "returnOnHit" : true,
