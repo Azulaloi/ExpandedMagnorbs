@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "aemagnorbs", "count" : 1 },
+	{ "item" : "solariumstar", "count" : 6 },
+    { "item" : "battery", "count" : 4 }
+  ],
+  "output" : { "item" : "aesmagnorbs", "count" : 1 },
+  "groups" : [ "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+}

@@ -1,0 +1,57 @@
+{
+  "itemName" : "somagnorbs",
+  "level" : 7,
+  "price" : 12000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A bracer powerful enough to manipulate a Solarium orb.",
+  "shortdescription" : "Solarium Bracer",
+  "tooltipKind" : "base",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+  "learnBlueprintsOnPickup" : [],
+  
+  
+  "inventoryIcon" : "icon.png",
+  "animation" : "somagnorbs.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "orb1" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["somagnorbs.lua"],
+
+  "orbitRate" : 1.0,
+
+  "projectileType" : "somagnorb",
+  "projectileParameters" : {
+    "power" : 8.00,
+    "knockback" : 5,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : false,
+    "controlForce" : 140,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 4.0
+  },
+
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 80,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 6,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}

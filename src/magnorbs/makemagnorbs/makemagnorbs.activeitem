@@ -1,0 +1,58 @@
+{
+  "itemName" : "makemagnorbs",
+  "level" : 4,
+  "price" : 4000,
+  "maxStack" : 1,
+  "rarity" : "Rare",
+  "description" : "An makeshift set of magnetic bracers for throwing and catching magnetic orbs.",
+  "shortdescription" : "Makeshift Magnorbs",
+  "tooltipKind" : "base",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+  "learnBlueprintsOnPickup" : [ "ampmagnorbs" ],
+
+  "inventoryIcon" : "icon.png",
+  "animation" : "makemagnorbs.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "orb1" : "orb.png",
+    "orb2" : "orb.png",
+    "orb3" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["makemagnorbs.lua"],
+
+  "orbitRate" : 1.0,
+
+  "projectileType" : "makemagnorb",
+  "projectileParameters" : {
+    "power" : 1.95,
+    "knockback" : 4,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : false,
+    "controlForce" : 100,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 4.0
+  },
+
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 120,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}

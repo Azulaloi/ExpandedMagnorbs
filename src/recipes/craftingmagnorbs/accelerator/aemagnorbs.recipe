@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "blankmagnorbs", "count" : 1 },
+	{ "item" : "refinedaegisalt", "count" : 12 },
+    { "item" : "battery", "count" : 2 }
+  ],
+  "output" : { "item" : "aemagnorbs", "count" : 1 },
+  "groups" : [ "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+}

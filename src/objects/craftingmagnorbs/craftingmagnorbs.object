@@ -1,0 +1,145 @@
+{
+  "objectName" : "craftingmagnorbs",
+  "colonyTags" : ["crafting"],
+  "rarity" : "Uncommon",
+  "race" : "generic",
+  "category" : "crafting",
+
+  "breakDropOptions" : [],
+
+  "price" : 350,
+  "printable" : false,
+
+  "scripts" : [ "/scripts/objectaddons.lua", "/objects/crafting/upgradeablecraftingobjects/upgradeablecraftingobject.lua" ],
+
+  "animation" : "craftingmagnorbs.animation",
+  "animationParts" : {
+    "craftingmagnorbs" : "craftingmagnorbs.png"
+  },
+  "animationPosition" : [-6, 0],
+
+  "inventoryIcon" : "craftingmagnorbsicon.png",
+  "placementImage" : "craftingmagnorbs.png:default.default",
+  "placementImagePosition" : [-6, 0],
+
+  "description" : "This magnetic station can be used to craft different magnetic based weaponry.",
+  "shortdescription" : "^orange;Magnorb Station^white;",
+
+  "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
+  "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
+  "floranDescription" : "Magnetssss, could be used to catch a Glitch.",
+  "glitchDescription" : "Cautious. The Glitch need to be careful around these kinds of magnets.",
+  "humanDescription" : "A magnetic crafting station. Could be used to make some interesting weapons.",
+  "hylotlDescription" : "I could make magnetic weapons here.",
+  "novakidDescription" : "I have no use for these kinds of magnetic fields...",
+
+  "learnBlueprintsOnPickup" : [ "aemagnorbaddon", "femagnorbaddon", "vimagnorbaddon" ],
+
+  "interactAction" : "OpenCraftingInterface",
+  "interactData" : {
+      "config" : "/interface/windowconfig/craftingmagnorbs.config",
+      "paneLayoutOverride" : {
+        "windowtitle" : {
+          "title" : "Magnorb Station",
+          "subtitle" : "Magnetic Induction",
+          "icon" : {
+            "file" : "/interface/crafting/cmicon.png"
+          }
+        }
+      },
+      "filter" : [ "craftingmagnorbs" ],
+      "initialRecipeUnlocks" : [ "acceleratoraddon", "separatoraddon", "manipulatoraddon", "ampmagnorbs" ],
+      "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+    },
+
+    "materialSpaces" : [
+      [[-1, 2], "metamaterial:anviladdonbase"],
+      [[0, 2], "metamaterial:anviladdonbase"]
+    ],
+
+      "addonConfig" : {
+        "usesAddons" : [
+          {
+            "name" : "acceleratorAddon",
+            "position" : [0, 3],
+            "addonData" : {
+              "animationState" : "accelerator",
+              "interactData" : {
+                "paneLayoutOverride" : {
+                  "windowtitle" : {
+                    "title" : " Accelerator's Table",
+                    "icon" : {
+                      "file" : "/interface/crafting/acceleratortable.png"
+                    }
+                  }
+                },
+                "filter" : [ "craftinganvil", "craftinganvil2", "craftinganvil3", "craftingaccelerator" ]
+              }
+            }
+          },
+          {
+            "name" : "separatorAddon",
+            "position" : [0, 3],
+            "addonData" : {
+              "animationState" : "separator",
+              "interactData" : {
+                "paneLayoutOverride" : {
+                  "windowtitle" : {
+                    "title" : " Separator's Table",
+                    "icon" : {
+                      "file" : "/interface/crafting/separatortable.png"
+                    }
+                  }
+                },
+                "filter" : [ "craftinganvil", "craftinganvil2", "craftinganvil3", "craftingseparator" ]
+              }
+            }
+          },
+          {
+            "name" : "manipulatorAddon",
+            "position" : [0, 3],
+            "addonData" : {
+              "animationState" : "manipulator",
+              "interactData" : {
+                "paneLayoutOverride" : {
+                  "windowtitle" : {
+                    "title" : " Manipulator's Table",
+                    "icon" : {
+                      "file" : "/interface/crafting/manipulatortable.png"
+                    }
+                  }
+                },
+                "filter" : [ "craftinganvil", "craftinganvil2", "craftinganvil3", "craftingmanipulator" ]
+              }
+            }
+          }
+        ]
+      },
+  "orientations" : [
+    {
+      "imageLayers" : [ { "image" : "craftingmagnorbs.png:on.<frame>" } ],
+      "imagePosition" : [-6, 0],
+
+      "direction" : "left",
+      "flipImages" : true,
+
+      "frames" : 12,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+	  "animationCycle" : 1.0
+    },
+    {
+      "imageLayers" : [ { "image" : "craftingmagnorbs.png:on.<frame>" } ],
+      "imagePosition" : [-6, 0],
+
+      "direction" : "right",
+      
+      "frames" : 12,
+
+      "spaceScan" : 0.1,
+      "anchors" : [ "bottom" ],
+	  "animationCycle" : 1.0
+    }
+  ]
+}

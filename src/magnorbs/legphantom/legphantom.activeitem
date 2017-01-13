@@ -1,0 +1,59 @@
+{
+  "itemName" : "phantommagnorbs",
+  "level" : 6,
+  "price" : 7000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A strange bracer. What kind of orbs could this control?",
+  "shortdescription" : "Phasic Magnorbs",
+  "tooltipKind" : "base",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+  "learnBlueprintsOnPickup" : [ ],
+  
+  
+  "inventoryIcon" : "icon.png",
+  "animation" : "legphantom.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "orb1" : "orb.png",
+    "orb2" : "orb.png",
+    "orb3" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["legphantom.lua"],
+
+  "orbitRate" : 0.5,
+
+  "projectileType" : "phantommagnorb",
+  "projectileParameters" : {
+    "power" : 3.65,
+    "knockback" : 0,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : true,
+    "controlForce" : 140,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 4.0
+  },
+
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 80,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}

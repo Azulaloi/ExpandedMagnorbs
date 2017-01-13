@@ -1,0 +1,61 @@
+{
+  "itemName" : "rainbowmagnorbs",
+  "level" : 10,
+  "price" : 20000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A set of colorful orbs that seem to bend space itself.",
+  "shortdescription" : "Asutoro Obu",
+  "tooltipKind" : "base",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+
+  "inventoryIcon" : "icon.png",
+  "animation" : "legrainbow.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "orb1" : "orb1.png",
+    "orb2" : "orb2.png",
+    "orb3" : "orb3.png",
+	"orb4" : "orb4.png",
+	"orb5" : "orb5.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["legrainbow.lua"],
+
+  "orbitRate" : 1.3,
+
+  "projectileType" : "legrainbow",
+  "projectileParameters" : {
+    "power" : 4.85,
+    "knockback" : 20,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : false,
+    "controlForce" : 140,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 4.0
+  },
+
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 60,
+  
+  "altAbilityType" : "astraltear",
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}

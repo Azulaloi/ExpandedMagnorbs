@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "magnorbs", "count" : 1 },
+    { "item" : "battery", "count" : 2 },
+	{ "item" : "wire", "count" : 6 },
+	{ "item" : "siliconboard", "count" : 3 }
+  ],
+  "output" : { "item" : "ampmagnorbs", "count" : 1 },
+  "groups" : [ "craftingmagnorbs", "weapons", "all" ]
+}

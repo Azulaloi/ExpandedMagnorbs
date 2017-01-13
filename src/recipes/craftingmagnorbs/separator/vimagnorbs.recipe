@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "blankmagnorbs", "count" : 1 },
+	{ "item" : "refinedviolium", "count" : 12 },
+    { "item" : "battery", "count" : 2 }
+  ],
+  "output" : { "item" : "vimagnorbs", "count" : 1 },
+  "groups" : [ "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+}

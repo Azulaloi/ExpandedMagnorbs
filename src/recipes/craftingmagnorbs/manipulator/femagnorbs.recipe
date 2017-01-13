@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "blankmagnorbs", "count" : 1 },
+    { "item" : "refinedferozium", "count" : 12 },
+	{ "item" : "battery", "count" : 2 }
+  ],
+  "output" : { "item" : "femagnorbs", "count" : 1 },
+  "groups" : [ "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+}

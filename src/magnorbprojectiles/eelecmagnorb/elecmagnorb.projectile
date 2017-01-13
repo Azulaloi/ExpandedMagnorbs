@@ -1,0 +1,38 @@
+{
+  "projectileName" : "elecmagnorb",
+  "image" : "elecmagnorb.png",
+  "pointLight" : false,
+  "lightColor" : [0, 66, 104],
+  "flippable" : true,
+  "orientationLocked" : true,
+  "actionOnReap" : [ ],
+  "statusEffects" : ["electrified"],
+  "damagePoly" : [[-3, 0], [0, 3], [3, 0], [0, -3]],
+  "power" : 5.0,
+  "speed" : 94,
+  "damageKind" : "hammer",
+  "physics" : "laser",
+  "bounces" : -1,
+  "piercing" : true,
+  "timeToLive" : 3,
+
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/az/elecimpact1.ogg",
+        "/sfx/az/elecimpact2.ogg",
+        "/sfx/az/elecimpact3.ogg"
+      ]
+    }
+  ],
+   "periodicActions" : [
+    {
+      "action" : "particle",
+      "specification" : "teslabolt",
+      "time" : 0.05,
+      "repeat" : true
+    }
+	],
+  "scripts" : [ "/projectiles/activeitems/boomerang/boomerangprojectile.lua" ]
+}

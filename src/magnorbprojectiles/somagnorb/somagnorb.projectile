@@ -1,0 +1,38 @@
+{
+  "projectileName" : "somagnorb",
+  "image" : "somagnorb.png",
+  "pointLight" : true,
+  "lightColor" : [160, 120, 0],
+  "flippable" : true,
+  "orientationLocked" : true,
+  "actionOnReap" : [ ],
+  "statusEffects" : [ "burning" ],
+  "damagePoly" : [[-3, 0], [0, 3], [3, 0], [0, -3]],
+  "power" : 5.0,
+  "speed" : 110,
+  "damageKind" : "hammer",
+  "physics" : "laser",
+  "bounces" : -1,
+  "piercing" : true,
+  "timeToLive" : 3,
+
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/az/impact1.ogg",
+        "/sfx/az/impact2.ogg",
+        "/sfx/az/impact3.ogg"
+      ]
+    }
+  ],
+   "periodicActions" : [
+    {
+      "action" : "particle",
+      "specification" : "glowstim",
+      "time" : 0.1,
+      "repeat" : true
+    }
+	],
+  "scripts" : [ "/projectiles/activeitems/boomerang/boomerangprojectile.lua" ]
+}

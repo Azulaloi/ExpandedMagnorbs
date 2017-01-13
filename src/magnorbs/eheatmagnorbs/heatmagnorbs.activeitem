@@ -1,0 +1,58 @@
+{
+  "itemName" : "heatmagnorbs",
+  "level" : 6,
+  "price" : 8000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A heated set of Magnorbs that will burn a target on impact.",
+  "shortdescription" : "Heated Magnorbs",
+  "tooltipKind" : "base",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+  "learnBlueprintsOnPickup" : [ "blankmagnorbs" ],
+
+  "inventoryIcon" : "icon.png",
+  "animation" : "heatmagnorbs.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "orb1" : "orb.png",
+    "orb2" : "orb.png",
+    "orb3" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["heatmagnorbs.lua"],
+
+  "orbitRate" : 1.5,
+
+  "projectileType" : "heatmagnorb",
+  "projectileParameters" : {
+    "power" : 3.00,
+    "knockback" : 5,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : false,
+    "controlForce" : 140,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 4.0
+  },
+
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 80,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}
