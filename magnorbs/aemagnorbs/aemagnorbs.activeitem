@@ -1,0 +1,60 @@
+{
+  "itemName" : "aemagnorbs",
+  "level" : 6,
+  "price" : 9000,
+  "maxStack" : 1,
+  "rarity" : "Legendary",
+  "description" : "A set of aegisalt bracers for throwing and catching magnetic orbs.",
+  "shortdescription" : "Long Range Magnorbs",
+  "tooltipKind" : "base",
+  "category" : "uniqueWeapon",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+  "learnBlueprintsOnPickup" : [ "aesmagnorbs" ],
+  
+  
+  "inventoryIcon" : "icon.png",
+  "animation" : "aemagnorbs.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "orb1" : "orb.png",
+    "orb2" : "orb.png",
+    "orb3" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/scripts/dynamicnorb.lua"],
+  
+  "orbTotal" : 3,
+  "orbitRate" : 1.3,
+
+  "projectileType" : "aemagnorb",
+  "projectileParameters" : {
+    "power" : 4.0,
+    "knockback" : 5,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : false,
+    "controlForce" : 220,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 100
+  },
+
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 60,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}

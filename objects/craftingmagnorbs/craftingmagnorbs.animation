@@ -1,0 +1,34 @@
+{
+  "animatedParts" : {
+    "partStates" : {
+      "stage" : {
+        "default" : "craftingmagnorbs",
+        "states" : {
+          "craftingmagnorbs" : {
+            "frames" : 14,
+            "cycle" : 1.2,
+            "mode" : "loop"
+          }
+        }
+      }
+     }
+    },
+    "parts" : {
+      "craftingmagnorbs" : {
+        "properties" : {
+          "centered" : false,
+          "fullbright" : true
+        },
+        "partStates" : {
+          "stage" : {
+            "craftingmagnorbs" : {
+              "properties" : {
+                "image" : "<partImage>:on.<frame>"
+              }
+            }
+          }
+        }
+      }
+    }
+}
+
