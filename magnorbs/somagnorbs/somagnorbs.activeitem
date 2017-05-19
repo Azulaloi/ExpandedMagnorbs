@@ -23,7 +23,7 @@
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
   
-  "singleOrbShift" : true,
+  "shieldRotateValue" : 1.0,
   "emitterQuantity" : 2,
   "orbTotal" : 1,
   "orbitRate" : 1.0,

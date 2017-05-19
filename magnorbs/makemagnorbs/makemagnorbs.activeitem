@@ -25,7 +25,7 @@
   "scripts" : ["/scripts/dynamicnorb.lua"],
   
   "orbTotal" : 3,
-  "shieldLock" : true,
+  "shieldLock" : false,
   "orbitRate" : 1.0,
 
   "projectileType" : "makemagnorb",

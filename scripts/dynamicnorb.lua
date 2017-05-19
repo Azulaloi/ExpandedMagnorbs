@@ -17,10 +17,11 @@ function init()
 	else
 	self.lockValue = (self.orbTotal)
   end
-  if config.getParameter("singleOrbShift") then
-	self.shieldRotateValue = 1.0
+  
+  if config.getParameter("shieldRotateValue") then
+	ShieldRotate = tonumber(config.getParameter("shieldRotateValue"))
 	else
-	self.shieldRotateValue = 0.7
+	ShieldRotate = 0.7
   end
   
   if config.getParameter("shieldSpacingQ") then
@@ -125,7 +126,7 @@ function update(dt, fireMode, shiftHeld)
 
   if self.shieldTransformTimer > 0 then
     local transformRatio = self.shieldTransformTimer / self.shieldTransformTime
-    setOrbPosition(SpacingQ - transformRatio * (self.shieldRotateValue), transformRatio * 0.75)
+    setOrbPosition(SpacingQ - transformRatio * ShieldRotate, transformRatio * 0.75)
     animator.resetTransformationGroup("orbs")
     animator.translateTransformationGroup("orbs", {transformRatio * -1.5, 0})
   else

@@ -18,19 +18,19 @@
     "glove" : "glove.png",
     "orb1" : "orb.png",
     "orb2" : "orb.png",
-    "orb3" : "orb.png",
-	"orb4" : "orb.png"
+    "orb3" : "orb.png"
   },
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
   
-  "orbTotal" : 4,
+  "shieldRotateValue" : 1,
+  "orbTotal" : 3,
   "orbitRate" : 1.2,
 
   "projectileType" : "aesmagnorb",
   "projectileParameters" : {
-    "power" : 5.2,
+    "power" : 5.9,
     "knockback" : 5,
 
     "returnOnHit" : true,

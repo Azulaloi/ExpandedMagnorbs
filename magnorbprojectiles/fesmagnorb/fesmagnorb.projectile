@@ -13,7 +13,7 @@
   "physics" : "laser",
   "bounces" : -1,
   "piercing" : true,
-  "timeToLive" : 3,
+  "timeToLive" : 2,
 
   "actionOnCollide" : [
     {

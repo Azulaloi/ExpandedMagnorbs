@@ -11,9 +11,9 @@
   "speed" : 210,
   "damageKind" : "hammer",
   "physics" : "laser",
-  "bounces" : -1,
+  "bounces" : 1,
   "piercing" : true,
-  "timeToLive" : 3,
+  "timeToLive" : 5,
 
   "actionOnCollide" : [
     {
