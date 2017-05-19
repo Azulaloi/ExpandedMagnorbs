@@ -27,6 +27,7 @@
   "orbTotal" : 3,
   "shieldLock" : false,
   "orbitRate" : 1.0,
+ 
 
   "projectileType" : "makemagnorb",
   "projectileParameters" : {
@@ -40,8 +41,9 @@
     "snapDistance" : 4.0
   },
 
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 120,
+  "shieldHealth" : 35,
+  "shieldKnockback" : 2,
+  "shieldEnergyCost" : 10,
 
   "stances" : {
     "idle" : {

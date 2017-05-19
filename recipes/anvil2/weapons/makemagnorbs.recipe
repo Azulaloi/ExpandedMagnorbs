@@ -1,10 +1,10 @@
 {
   "input" : [
-    { "item" : "durasteelbar", "count" : 6 },
+    { "item" : "titaniumbar", "count" : 6 },
 	{ "item" : "darkwoodmaterial", "count" : 24 },
-    { "item" : "battery", "count" : 1 },
-	{ "item" : "wire", "count" : 12 },
-	{ "item" : "siliconboard", "count" : 2 }
+    { "item" : "battery", "count" : 2 },
+	{ "item" : "copperbar", "count" : 12 },
+	{ "item" : "ironore", "count" : 3}
   ],
   "output" : { "item" : "makemagnorbs", "count" : 1 },
   "groups" : [ "craftinganvil2", "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
