@@ -40,8 +40,9 @@
     "snapDistance" : 4.0
   },
 
+  "shieldHealth" : 40,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 80,
+  "shieldEnergyCost" : 25,
 
   "stances" : {
     "idle" : {
