@@ -5,8 +5,6 @@
   "race" : "generic",
   "category" : "crafting",
 
-  "breakDropOptions" : [],
-
   "price" : 350,
   "printable" : false,
 
@@ -22,7 +20,7 @@
   "placementImage" : "craftingmagnorbs.png:default.default",
   "placementImagePosition" : [-6, 0],
 
-  "description" : "This magnetic station can be used to craft different magnetic based weaponry.",
+  "description" : "This magnetic station can be used to craft magnetic based weaponry.",
   "shortdescription" : "^orange;Magnorb Station^white;",
 
   "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
@@ -31,7 +29,7 @@
   "glitchDescription" : "Cautious. The Glitch need to be careful around these kinds of magnets.",
   "humanDescription" : "A magnetic crafting station. Could be used to make some interesting weapons.",
   "hylotlDescription" : "I could make magnetic weapons here.",
-  "novakidDescription" : "I have no use for these kinds of magnetic fields...",
+  "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could.",
 
   "learnBlueprintsOnPickup" : [ "aemagnorbaddon", "femagnorbaddon", "vimagnorbaddon" ],
 
