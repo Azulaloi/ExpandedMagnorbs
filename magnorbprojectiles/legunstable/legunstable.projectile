@@ -1,0 +1,35 @@
+{
+  "projectileName" : "unstablemagnorb",
+  "image" : "legunstable.png",
+  "pointLight" : false,
+  "flippable" : true,
+  "orientationLocked" : true,
+  "actionOnReap" : [ ],
+  "statusEffects" : [ "unstablestrike" ],
+  "damagePoly" : [[-3, 0], [0, 3], [3, 0], [0, -3]],
+  "power" : 5.0,
+  "speed" : 94,
+  "damageKind" : "hammer",
+  "physics" : "laser",
+  "bounces" : 1,
+  "returnOnHit" : true,
+  "piercing" : true,
+  "timeToLive" : 3,
+
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/projectiles/magnorb_impact1.ogg",
+        "/sfx/projectiles/magnorb_impact2.ogg",
+        "/sfx/projectiles/magnorb_impact3.ogg"
+      ]
+    },
+	{
+      "action" : "config",
+      "file" : "/projectiles/explosions/regularexplosion2/regularexplosion2.config"
+    }
+  ],
+
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
+}

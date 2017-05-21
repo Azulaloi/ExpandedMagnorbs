@@ -1,0 +1,15 @@
+{
+  "name" : "unstablestrike",
+  "blockingStat" : "specialStatusImmunity",
+  "effectConfig" : {
+    "minMaxHealth" : 5,
+    "healthDamageFactor" : 0.5,
+    "bombConfig" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config",
+    "flashDirectives" : "fade=FF0000;0.5"
+  },
+  "defaultDuration" : 0.1,
+
+  "scripts" : [
+    "unstablestrike.lua"
+  ]
+}
