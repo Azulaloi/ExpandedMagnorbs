@@ -1,0 +1,22 @@
+[
+  {
+    "op": "add",
+    "path": "/layers/5/objects/9",
+    "value": {
+      "height": 8,
+      "id": 900,
+      "name": "",
+      "properties": {
+        "npc": "novakid",
+        "seed": "7",
+        "typeName": "azu"
+      },
+      "rotation": 0,
+      "type": "",
+      "visible": true,
+      "width": 8,
+      "x": 2568,
+      "y": 1120
+    }
+  }
+]

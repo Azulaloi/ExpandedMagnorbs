@@ -1,0 +1,167 @@
+{
+  "type" : "azu",
+  "baseType" : "outpostcivilian",
+  
+  "npcname" : "Azulaloi",
+  "identity" : {
+    "name" : "Azulaloi",
+    "gender" : "male",
+    "hairGroup" : "hair",
+    "hairType" : "male2",
+    "facialHairGroup" : "brand",
+    "facialHairType" : "7",
+    "personalityIdle" : "idle.2",
+    "personalityArmIdle" : "idle.2"
+  },
+
+  "scriptConfig" : {
+    "offeredQuests" : [ ],
+    "turnInQuests" : [ ],
+
+    "reactions" : {
+      "spontaneous" : [
+      ]
+    },
+
+    "personalities" : [
+        [1.0, { "personality" : "normal", "reactions" : {} }]
+    ],
+    
+    "dialog" : {
+	
+      "converse" : {
+        "default" : {
+		  "default" : [
+			"I'm not feeling too well. I apologize.",
+			"I'd really rather not talk right now.",
+			"Please leave me alone."
+		  ],
+          "generic" : [
+		    "Hello!",
+			"Did you know that Novakid produce strong magnetic fields?",
+			"Have you heard of our lord and saviour, Magnetar?",
+			"Any species can learn to appreciate the majesty of Magnetar.",
+			"This is a pretty nice place, isn't it?",
+			"So many different cultures in one place - I wonder how many of them use magnets?",
+			"Magnets, how do they work? Magnetar. Magnetar makes them work.",
+			"Have you ever seen someone use Magnorbs in combat?",
+			"Magnetic weapons are the pinnacle of combat technology.",
+			"Have you ever used a Magnetic Induction Station?",
+			"I heard that rainbow chests sometimes contain special rainbow Magnorbs.",
+			"You should try using Magnorbs on your next adventure.",
+			"I wonder what happened to whoever built that old structure outside.",
+			"Do you think the Ancients died, or did they just leave this galaxy?",
+			"What kind of species would we find outside of this galaxy?",
+			"The memories of the Novakid can be restored by the power of Magnetar.",
+			"Have you met any Novakid on your travels?",
+			"Please tell me if you find any Novakid colonies.",
+			"The ancient structure has eight spaces for sculptures, but only seven are filled. Who is the eighth species?",
+			"Why are there only six slots on the ancient structure, when there are seven sculptures?",
+			"Sometimes I try to read the runes on the ancient structure. They seem familiar, but I just can't remember...",
+			"I've found gates in caves on some planets, similar in design to the structure outside. Do you think they're related?",
+			"If you find anything about the Novakid in your travels, please let me know."
+          ],
+		  "novakid" : [
+		    "Howdy!",
+			"A fellow student of Magnetar, I'm sure.",
+			"Isn't Magnetar the greatest?",
+			"I'm trying to tell these people about the power of Magnetar.",
+			"Magnetar's teachings taught me how to use magnetic fields to stabilize my convection.",
+			"If I can convince more Novakid to follow Magnetar, maybe we could save our kind.",
+			"You know of Magnetar's teachings, right? You're not gonna forget what I tell you?",
+			"Most of us have forgetten about Magnetar.",
+			"I don't remember what made us all forget.",
+			"It's so frustrating trying to teach other Novakid about Magnetar when they just forget.",
+			"What if we forgot something really important?",
+			"Do you think Magnetar is still out there?",
+			"Do you ever dream of the stars?",
+			"Please don't forget about Magnetar.",
+			"I restored my ability to form memories, but I can't restore what I lost.",
+			"Do you think the creature that destroyed Earth is responsible for our memories being lost?",
+			"Burn bright."
+		  ],
+		  "hylotl" : [
+			"The Hylotl use magnets to seal their airlocks. Truly marvellous.",
+			"Can you still see the stars, deep below the ocean?",
+			"I would feel awfully nervous, living underwater.",
+			"Does having three eyes grant you greater depth perception?",
+			"I can't swim.",
+			"Do you think art could be used to tell other Novakid about Magnetar?",
+			"The Hylotl are unburdened by internal conflict. Of all the species, yours has the most freedom to help the Novakid, if you wished.",
+			"Can your three eyes see Ultraviolet?",
+			"Your kind values knowledge. What do you know of Magnetar?",
+			"Hylotl have the largest troves of knowledge in the galaxy. Do you have anything about the Novakid?",
+			"Tell me, historian. What is the history of the Novakid?"
+		  ],
+		  "apex" : [
+		    "The Miniknog doesn't allow the word of Magnetar. His loss.",
+			"I've seen what the Miniknog does to rebels. Such cruelty.",
+			"I tried to meet the Miniknog and petition for help for the Novakid. It didn't go well.",
+			"At least the Avian god Kluex is benevolent. The Miniknog is just evil.",
+			"How did you escape the grasp of the Miniknog?",
+			"The Apex have something in common with the Novakid: you lost your history, too.",
+			"Is there a way to reverse what was done to the Apex?",
+			"I wonder who the Miniknog really is.",
+			"Do you think the Miniknog feels regret for his oppression of your people?",
+			"What do you mean the Miniknog isn't an individual?"
+		  ],
+		  "avian" : [
+		    "Greetings, feathered friend!",
+			"Do Avians truly have wings when they are born?",
+			"I empathize with the Avians - like the Novakid's memories, your wings were stolen from you.",
+			"Your Kluex reminds me of Magnetar.",
+			"The Avians and Novakid would be strong allies, if Novakid had their memories.",
+			"Maybe, one day, there will be a way to restore the Avian's wings."
+		  ],
+		  "floran" : [
+			"Uh... hi.",
+			"I've never met a Floran before.",
+			"Do the Florans worship anything?",
+			"Have you heard the word of Magnetar?",
+			"I don't really know much about Floran culture.",
+			"How do the Florans reproduce?",
+			"Please don't try to pollenate me."
+		  ],
+		  "glitch" : [
+			"The Glitch don't usually enjoy my professions on Magnetar.",
+			"Even the Glitch can use magnetic equipment... with proper precautions, anyway.",
+			"Lucid Novakid are even more rare than self-aware Glitch.",
+			"I wonder if it is Magnetar who grants self-awareness to the glitch, just as he grants memory to the Novakid.",
+			"You and I are greatly alike. Alone amongst even our own kind.",
+			"The Glitch and Novakid have the most in common. Both are barred from greatness by the curse of ignorance.",
+			"You seem like an adventurer. Are you trying to find a way to help the other Glitch?",
+			"I'm on a quest to help the Novakid by using Magnetar's teachings to restore their memory."
+		  ],
+		  "human" : [ 
+			"I heard about what happened to Earth. I'm sorry.",
+			"The Protectorate never did much to help the Novakid.",
+			"Wouldn't 'Protectorate' mean 'one who is protected'?",
+			"I bet the Protectorate had the influence necessary to help the Novakid. Too bad they're gone.",
+			"Did the Protectorate really not have any bases away from Earth?",
+			"I would have expected someone to help the Earth.",
+			"I received the emergency broadcast from Earth, but there wasn't anything I could do.",
+			"Are there any new Human colonies yet?",
+			"I'm sorry about what happened to your kind. Another great species struck down.",
+			"It wasn't just Humans who died in the attack. So many lives of so many species, lost at once.",
+			"More than lives that day - the galaxy lost a bastion of cooperation, the greatest hope for galactic peace.",
+			"Maybe if the Protectorate helped the Novakid, we could have tipped the scales.",
+			"The Novakid will rise again, and maybe we could do it hand-in-hand with humans.",
+			"I had hoped to ask the Protectorate to help the Novakid using the teachings of Magnetar I uncovered, but I was too slow."
+		  ]
+        }
+      }
+    }
+  },
+
+  "items" : {
+    "override" : [
+      [0, [
+          {
+            "head" : [ { "name" : "apextier5shead", "parameters" : { "colorIndex" : 9 } } ],
+            "chest" : [ { "name" : "novatier5mchest", "parameters" : { "colorIndex" : 9 } } ],
+            "legs" : [ { "name" : "novatier5mpants", "parameters" : { "colorIndex" : 9 } } ]
+          }
+        ] ]
+    ]
+  }
+}
