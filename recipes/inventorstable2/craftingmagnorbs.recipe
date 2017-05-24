@@ -1,7 +1,7 @@
 {
   "input" : [
-    { "item" : "tungstenbar", "count" : 6 },
-	{ "item" : "darkwoodmaterial", "count" : 24 },
+    { "item" : "titaniumbar", "count" : 6 },
+	{ "item" : "glass", "count" : 12 },
     { "item" : "battery", "count" : 1 },
 	{ "item" : "copperbar", "count" : 12 }
   ],
