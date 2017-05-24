@@ -1,6 +1,6 @@
 {
   "animatedParts" : {
-    "partStates" : {
+    "stateTypes" : {
       "stage" : {
         "default" : "craftingmagnorbs",
         "states" : {
@@ -11,8 +11,7 @@
           }
         }
       }
-     }
-    },
+     },
     "parts" : {
       "craftingmagnorbs" : {
         "properties" : {
@@ -23,12 +22,25 @@
           "stage" : {
             "craftingmagnorbs" : {
               "properties" : {
-                "image" : "<partImage>:on.<frame>"
-              }
-            }
+                "image" : "craftingmagnorbs.png:on.<frame>"
           }
+         }
         }
+       }
       }
-    }
-}
+     }
+ },
 
+    "sounds" : {
+        "fanfare" : ["/sfx/cinematics/mission_unlock_event.ogg"],
+        "fanfare2" : ["/sfx/cinematics/license_acquired_event.ogg"]
+     },
+    "particleEmitters" : {
+        "dust" : {
+          "emissionRate" : 0.0,
+          "burstCount"  : 10,
+          "offsetRegion" : [-2, -2, 2, 2],
+          "particles" : [{ "particle" : "dust2"}]
+       }
+     }
+}

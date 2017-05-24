@@ -8,13 +8,9 @@
   "price" : 350,
   "printable" : false,
 
-  "scripts" : [ "/scripts/objectaddons.lua" ],
-  "startingUpgradeStage" : 1,
+  "scripts" : [ "/objects/crafting/upgradeablecraftingobjects/upgradeablecraftingobject.lua" ],
 
   "animation" : "craftingmagnorbs.animation",
-  "animationParts" : {
-    "craftingmagnorbs" : "craftingmagnorbs.png"
-  },
   "animationPosition" : [-6, 0],
 
   "inventoryIcon" : "craftingmagnorbsicon.png",
@@ -33,87 +29,143 @@
   "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could.",
 
   "learnBlueprintsOnPickup" : [ ],
+  "breakDropOptions" : [],
 
-  "interactAction" : "OpenCraftingInterface",
-  "interactData" : {
-      "config" : "/interface/windowconfig/craftingmagnorbs.config",
-      "paneLayoutOverride" : {
-        "windowtitle" : {
-          "title" : "Magnorb Station",
-          "subtitle" : "Magnetic Induction",
-          "icon" : {
-            "file" : "/interface/crafting/cmicon.png"
-          }
-        }
+  "startingUpgradeStage" : 1,
+  "maxUpgradeStage" : 3,
+  "upgradeStages" : [
+  {
+    //T1
+    "animationState" : "craftingmagnorbs",
+
+    "itemSpawnParameters" : {
+      "price" : 350,
+      "inventoryIcon" : "craftingmagnorbsicon.png",
+      "placementImage" : "craftingmagnorbs.png:default.default",
+      "placementImagePosition" : [-6, 0],
+
+      "description" : "This magnetic station can be used to craft magnetic based weaponry.",
+      "shortdescription" : "^orange;Magnorb Station 1^white;",
+
+      "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
+      "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
+      "floranDescription" : "Magnetssss, could be used to catch a Glitch.",
+      "glitchDescription" : "Cautious. The Glitch need to be careful around these kinds of magnets.",
+      "humanDescription" : "A magnetic crafting station. Could be used to make some interesting weapons.",
+      "hylotlDescription" : "I could make magnetic weapons here.",
+      "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could."
       },
-      "filter" : [ "craftingmagnorbs" ],
-      "initialRecipeUnlocks" : [ "ampmagnorbs" ],
-      "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
-    },
 
-    "materialSpaces" : [
+      "interactData" : {
+          "config" : "/interface/windowconfig/craftingmagnorbs.config",
+          "paneLayoutOverride" : {
+            "windowtitle" : {
+              "title" : "Magnorb Station",
+              "subtitle" : "Magnetic Induction",
+              "icon" : {
+                "file" : "/interface/crafting/cmicon.png"
+              }
+            }
+          },
+          "filter" : [ "craftingmagnorbs" ],
+          "initialRecipeUnlocks" : [ "ampmagnorbs" ],
+          "craftingSound" : "/sfx/interface/crafting_tech1.ogg",
+          "upgradeMaterials" : [
+          { "item" : "coalore", "count" : 4 }
+          ]
+      },
+      "upgradeSoundEffect" : "fanfare",
+      "upgradeParticleEffect" : "dust"
+  },
+
+  {
+    //T2
+    "animationState" : "craftingmagnorbs",
+
+    "itemSpawnParameters" : {
+      "price" : 850,
+      "inventoryIcon" : "craftingmagnorbsicon.png",
+      "placementImage" : "craftingmagnorbs.png:default.default",
+      "placementImagePosition" : [-6, 0],
+
+      "description" : "This magnetic station can be used to craft magnetic based weaponry.",
+      "shortdescription" : "^orange;Magnorb Station 2^white;",
+
+      "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
+      "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
+      "floranDescription" : "Magnetssss, could be used to catch a Glitch.",
+      "glitchDescription" : "Cautious. The Glitch need to be careful around these kinds of magnets.",
+      "humanDescription" : "A magnetic crafting station. Could be used to make some interesting weapons.",
+      "hylotlDescription" : "I could make magnetic weapons here.",
+      "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could."
+      },
+
+      "interactData" : {
+          "config" : "/interface/windowconfig/craftingmagnorbs.config",
+          "paneLayoutOverride" : {
+            "windowtitle" : {
+              "title" : "Magnorb Station 2",
+              "subtitle" : "Magnetic Induction",
+              "icon" : {
+                "file" : "/interface/crafting/cmicon.png"
+              }
+            }
+          },
+          "filter" : [ "craftingmagnorbs", "craftingmagnorbs2" ],
+          "initialRecipeUnlocks" : [ ],
+          "craftingSound" : "/sfx/interface/crafting_tech1.ogg",
+          "upgradeMaterials" : [
+          { "item" : "coalore", "count" : 4 }
+          ]
+      },
+      "upgradeSoundEffect" : "fanfare",
+      "upgradeParticleEffect" : "dust"
+  },
+  {
+    //T3
+    "animationState" : "craftingmagnorbs",
+
+    "itemSpawnParameters" : {
+      "price" : 1050,
+      "inventoryIcon" : "craftingmagnorbsicon.png",
+      "placementImage" : "craftingmagnorbs.png:default.default",
+      "placementImagePosition" : [-6, 0],
+
+      "description" : "This magnetic station can be used to craft magnetic based weaponry.",
+      "shortdescription" : "^orange;Magnorb Station 3^white;",
+
+      "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
+      "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
+      "floranDescription" : "Magnetssss, could be used to catch a Glitch.",
+      "glitchDescription" : "Cautious. The Glitch need to be careful around these kinds of magnets.",
+      "humanDescription" : "A magnetic crafting station. Could be used to make some interesting weapons.",
+      "hylotlDescription" : "I could make magnetic weapons here.",
+      "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could."
+      },
+
+      "interactData" : {
+          "config" : "/interface/windowconfig/craftingmagnorbs.config",
+          "paneLayoutOverride" : {
+            "windowtitle" : {
+              "title" : "Magnorb Station 3",
+              "subtitle" : "Magnetic Induction",
+              "icon" : {
+                "file" : "/interface/crafting/cmicon.png"
+              }
+            }
+          },
+          "filter" : [ "craftingmagnorbs", "craftingmagnorbs2", "craftingmagnorbs3" ],
+          "initialRecipeUnlocks" : [ ],
+          "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+       },
+      "upgradeSoundEffect" : "fanfare",
+      "upgradeParticleEffect" : "dust"
+  }
+  ],
+  "materialSpaces" : [
       [[-1, 2], "metamaterial:anviladdonbase"],
       [[0, 2], "metamaterial:anviladdonbase"]
-    ],
-
-      "addonConfig" : {
-        "usesAddons" : [
-          {
-            "name" : "acceleratorAddon",
-            "position" : [0, 3],
-            "addonData" : {
-              "animationState" : "accelerator",
-              "interactData" : {
-                "paneLayoutOverride" : {
-                  "windowtitle" : {
-                    "title" : " Accelerator's Table",
-                    "icon" : {
-                      "file" : "/interface/crafting/acceleratortable.png"
-                    }
-                  }
-                },
-                "filter" : [ "craftinganvil", "craftinganvil2", "craftinganvil3", "craftingaccelerator" ]
-              }
-            }
-          },
-          {
-            "name" : "separatorAddon",
-            "position" : [0, 3],
-            "addonData" : {
-              "animationState" : "separator",
-              "interactData" : {
-                "paneLayoutOverride" : {
-                  "windowtitle" : {
-                    "title" : " Separator's Table",
-                    "icon" : {
-                      "file" : "/interface/crafting/separatortable.png"
-                    }
-                  }
-                },
-                "filter" : [ "craftinganvil", "craftinganvil2", "craftinganvil3", "craftingseparator" ]
-              }
-            }
-          },
-          {
-            "name" : "manipulatorAddon",
-            "position" : [0, 3],
-            "addonData" : {
-              "animationState" : "manipulator",
-              "interactData" : {
-                "paneLayoutOverride" : {
-                  "windowtitle" : {
-                    "title" : " Manipulator's Table",
-                    "icon" : {
-                      "file" : "/interface/crafting/manipulatortable.png"
-                    }
-                  }
-                },
-                "filter" : [ "craftinganvil", "craftinganvil2", "craftinganvil3", "craftingmanipulator" ]
-              }
-            }
-          }
-        ]
-      },
+  ],
   "orientations" : [
     {
       "imageLayers" : [ { "image" : "craftingmagnorbs.png:on.<frame>" } ],
@@ -122,7 +174,7 @@
       "direction" : "left",
       "flipImages" : true,
 
-      "frames" : 12,
+      "frames" : 14,
 
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ],
@@ -133,8 +185,8 @@
       "imagePosition" : [-6, 0],
 
       "direction" : "right",
-      
-      "frames" : 12,
+
+      "frames" : 14,
 
       "spaceScan" : 0.1,
       "anchors" : [ "bottom" ],
