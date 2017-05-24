@@ -1,6 +1,6 @@
 {
   "itemName" : "ampmagnorbs",
-  "level" : 6,
+  "level" : 2,
   "price" : 6000,
   "maxStack" : 1,
   "rarity" : "Legendary",
@@ -11,8 +11,8 @@
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "chillmagnorbs", "heatmagnorbs", "toxmagnorbs", "elecmagnorbs", "blankmagnorbs" ],
-  
-  
+
+
   "inventoryIcon" : "icon.png",
   "animation" : "ampmagnorbs.animation",
   "animationParts" : {
@@ -24,13 +24,13 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
-  
+
   "orbTotal" : 3,
   "orbitRate" : 1.5,
 
   "projectileType" : "ampmagnorb",
   "projectileParameters" : {
-    "power" : 2.85,
+    "power" : 1.0,
     "knockback" : 5,
 
     "returnOnHit" : true,

@@ -1,7 +1,7 @@
 {
   "itemName" : "makemagnorbs",
-  "level" : 4,
-  "price" : 4000,
+  "level" : 2,
+  "price" : 980,
   "maxStack" : 1,
   "rarity" : "Rare",
   "description" : "A makeshift set of magnetic bracers for throwing and catching magnetic orbs.",
@@ -27,7 +27,6 @@
   "orbTotal" : 3,
   "shieldLock" : false,
   "orbitRate" : 1.0,
- 
 
   "projectileType" : "makemagnorb",
   "projectileParameters" : {
