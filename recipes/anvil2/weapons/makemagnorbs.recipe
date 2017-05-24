@@ -7,5 +7,5 @@
 	{ "item" : "ironore", "count" : 3}
   ],
   "output" : { "item" : "makemagnorbs", "count" : 1 },
-  "groups" : [ "craftinganvil2", "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+  "groups" : [  "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
 }
