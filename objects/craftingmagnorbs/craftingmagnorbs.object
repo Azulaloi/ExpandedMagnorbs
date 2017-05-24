@@ -32,7 +32,7 @@
   "hylotlDescription" : "I could make magnetic weapons here.",
   "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could.",
 
-  "learnBlueprintsOnPickup" : [ "aemagnorbaddon", "femagnorbaddon", "vimagnorbaddon" ],
+  "learnBlueprintsOnPickup" : [ ],
 
   "interactAction" : "OpenCraftingInterface",
   "interactData" : {
@@ -47,7 +47,7 @@
         }
       },
       "filter" : [ "craftingmagnorbs" ],
-      "initialRecipeUnlocks" : [ "acceleratoraddon", "separatoraddon", "manipulatoraddon", "ampmagnorbs" ],
+      "initialRecipeUnlocks" : [ "ampmagnorbs" ],
       "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
     },
 
