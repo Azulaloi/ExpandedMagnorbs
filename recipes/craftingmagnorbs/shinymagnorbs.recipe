@@ -1,0 +1,10 @@
+{
+  "input" : [
+    { "item" : "titaniumbar", "count" : 12 },
+    { "item" : "lodestone", "count" : 1 },
+	{ "item" : "copperbar", "count" : 6 },
+	{ "item" : "smallbattery", "count" : 3}
+  ],
+  "output" : { "item" : "shinymagnorbs", "count" : 1 },
+  "groups" : [  "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+}
