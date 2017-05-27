@@ -1,10 +1,10 @@
 {
   "itemName" : "lodestone",
-  "price" : 200,
+  "price" : 30,
   "rarity" : "Common",
   "category" : "craftingMaterial",
   "inventoryIcon" : "lodestone.png",
-  "description" : "This Lodstone is naturally magnetized. It could be used to make other magnetic objects.",
+  "description" : "This Lodstone is naturally magnetized. It could be used to aid in the crafting of other magnetic objects.",
   "shortdescription" : "Lodestone",
   "itemTags" : [ "reagent" ]
 }
