@@ -6,7 +6,7 @@
   "rarity" : "Legendary",
   "description" : "An amplified set of magnetic bracers for throwing and catching magnetic orbs.",
   "shortdescription" : "Amplified Magnorbs",
-  "tooltipKind" : "base",
+  "tooltipKind" : "magnorb",
   "category" : "uniqueWeapon",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
@@ -24,9 +24,12 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
   
   "orbTotal" : 3,
   "orbitRate" : 1.5,
+  "shieldLock" : false,
+
 
   "projectileType" : "ampmagnorb",
   "projectileParameters" : {

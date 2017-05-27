@@ -1,0 +1,103 @@
+{
+  "background" : {
+    "type" : "background",
+    "fileHeader" : "/interface/tooltips/header.png",
+    "fileBody" : "/interface/tooltips/bodyObject4.png",
+    "fileFooter" : "/interface/tooltips/footer.png"
+  },
+  "objectImage" : {
+    "type" : "image",
+    "position" : [67, 140],
+    "file" : "",
+    "centered" : true,
+    "maxSize" : [38, 38],
+    "minSize" : [38, 38]
+  },
+  "hitDamageLabel" : {
+    "type" : "label",
+    "position" : [127, 103],
+    "hAnchor" : "right",
+    "value" : ""
+  },
+  "hitDamageTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 103],
+    "hAnchor" : "left",
+    "value" : "Damage On Hit:"
+  },
+  "orbTotalLabel" : {
+    "type" : "label",
+    "position" : [127, 94],
+    "hAnchor" : "right",
+    "value" : ""
+  },
+  "orbTotalTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 94],
+    "hAnchor" : "left",
+    "value" : "Orbs:"
+  },
+  "azSecondaryLabel" : {
+    "type" : "label",
+    "position" : [127, 85],
+    "hAnchor" : "right",
+    "value" : ""
+  },
+  "azSecondaryTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 85],
+    "hAnchor" : "left",
+    "value" : ""
+  },
+  "azSecondaryMagnitudeLabel" : {
+    "type" : "label",
+    "position" : [127, 76],
+    "hAnchor" : "right",
+    "value" : ""
+  },
+  "azSecondaryMagnitudeTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 76],
+    "hAnchor" : "left",
+    "value" : ""
+  },
+  "azSecondaryCostLabel" : {
+    "type" : "label",
+    "position" : [127, 67],
+    "hAnchor" : "right",
+    "value" : ""
+  },
+  "azSecondaryCostTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 67],
+    "hAnchor" : "left",
+    "value" : ""
+  },
+  "descriptionLabel" : {
+    "type" : "label",
+    "position" : [12, 47],
+    "hAnchor" : "left",
+    "vAnchor" : "top",
+    "wrapWidth" : 124,
+    "lineSpacing" : 1.0,
+    "value" : ""
+  },
+  "priceLabel" : {
+    "type" : "label",
+    "position" : [120, 23],
+    "hAnchor" : "left",
+    "value" : "tree"
+  },
+  "moneyIcon" : {
+    "type" : "image",
+    "position" : [107, 23],
+    "file" : "/interface/money.png"
+  },
+  "rarityLabel" : {
+    "type" : "label",
+    "position" : [7, 23],
+    "hAnchor" : "left",
+    "centered" : true,
+    "wrapWidth" : 126
+  }
+}
