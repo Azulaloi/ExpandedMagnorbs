@@ -1,0 +1,11 @@
+{
+  "input" : [
+    { "item" : "durasteelbar", "count" : 12 },
+    { "item" : "lodestone", "count" : 1 },
+	{ "item" : "wire", "count" : 8 },
+    { "item" : "copperbar", "count": 4},
+	{ "item" : "smallbattery", "count" : 4}
+  ],
+  "output" : { "item" : "duramagnorbs", "count" : 1 },
+  "groups" : [  "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+}
