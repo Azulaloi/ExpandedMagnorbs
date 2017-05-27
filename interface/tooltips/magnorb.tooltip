@@ -84,18 +84,18 @@
   },
   "priceLabel" : {
     "type" : "label",
-    "position" : [120, 23],
+    "position" : [115, 22],
     "hAnchor" : "left",
     "value" : "tree"
   },
   "moneyIcon" : {
     "type" : "image",
-    "position" : [107, 23],
+    "position" : [102, 22],
     "file" : "/interface/money.png"
   },
   "rarityLabel" : {
     "type" : "label",
-    "position" : [7, 23],
+    "position" : [7, 22],
     "hAnchor" : "left",
     "centered" : true,
     "wrapWidth" : 126
