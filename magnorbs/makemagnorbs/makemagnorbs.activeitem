@@ -10,7 +10,7 @@
   "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
-  "learnBlueprintsOnPickup" : [ "ampmagnorbs" ],
+  "learnBlueprintsOnPickup" : [ ],
 
   "inventoryIcon" : "icon.png",
   "animation" : "makemagnorbs.animation",
@@ -26,9 +26,8 @@
   "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 3,
-  "shieldLock" : false,
   "orbitRate" : 1.0,
- 
+  "shieldLock" : false,
 
   "projectileType" : "makemagnorb",
   "projectileParameters" : {

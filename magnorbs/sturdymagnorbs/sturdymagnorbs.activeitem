@@ -12,7 +12,6 @@
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ ],
   
-  
   "inventoryIcon" : "icon.png",
   "animation" : "sturdymagnorbs.animation",
   "animationParts" : {
@@ -30,15 +29,14 @@
   "orbitRate" : 1.5,
   "shieldLock" : false,
 
-
   "projectileType" : "sturdymagnorb",
   "projectileParameters" : {
-    "power" : 2.925,
+    "power" : 1.95,
     "knockback" : 5,
 
     "returnOnHit" : true,
     "ignoreTerrain" : false,
-    "controlForce" : 140,
+    "controlForce" : 110,
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
