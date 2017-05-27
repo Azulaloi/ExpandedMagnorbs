@@ -2,13 +2,23 @@
   "animatedParts" : {
     "stateTypes" : {
       "stage" : {
-        "default" : "craftingmagnorbs",
+        "default" : "craftingmagnorbs1",
         "states" : {
-          "craftingmagnorbs" : {
+          "craftingmagnorbs1" : {
             "frames" : 14,
             "cycle" : 1.2,
             "mode" : "loop"
-          }
+          },
+          "craftingmagnorbs2" : {
+             "frames" : 14,
+             "cycle" : 1.2,
+             "mode" : "loop"
+          },
+          "craftingmagnorbs3" : {
+             "frames" : 14,
+             "cycle" : 1.2,
+             "mode" : "loop"
+           }
         }
       }
      },
@@ -16,15 +26,25 @@
       "craftingmagnorbs" : {
         "properties" : {
           "centered" : false,
-          "fullbright" : true
+          "fullbright" : false
         },
         "partStates" : {
           "stage" : {
-            "craftingmagnorbs" : {
+            "craftingmagnorbs1" : {
               "properties" : {
-                "image" : "craftingmagnorbs.png:on.<frame>"
-          }
-         }
+                "image" : "craftingmagnorbs1.png:default.<frame>"
+               }
+            },
+            "craftingmagnorbs2" : {
+              "properties" : {
+                "image" : "craftingmagnorbs2.png:default.<frame>"
+              }
+            },
+            "craftingmagnorbs3" : {
+              "properties" : {
+                "image" : "craftingmagnorbs3.png:default.<frame>"
+              }
+            }
         }
        }
       }

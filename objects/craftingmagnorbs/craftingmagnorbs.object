@@ -13,12 +13,12 @@
   "animation" : "craftingmagnorbs.animation",
   "animationPosition" : [-6, 0],
 
-  "inventoryIcon" : "craftingmagnorbsicon.png",
-  "placementImage" : "craftingmagnorbs.png:default.default",
+  "inventoryIcon" : "craftingmagnorbs1icon.png",
+  "placementImage" : "craftingmagnorbs1.png:default.default",
   "placementImagePosition" : [-6, 0],
 
   "description" : "This magnetic station can be used to craft magnetic based weaponry.",
-  "shortdescription" : "^orange;Magnorb Station^white;",
+  "shortdescription" : "^orange;Lodestone Stand^white;",
 
   "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
   "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
@@ -36,16 +36,16 @@
   "upgradeStages" : [
   {
     //T1
-    "animationState" : "craftingmagnorbs",
+    "animationState" : "craftingmagnorbs1",
 
     "itemSpawnParameters" : {
       "price" : 350,
-      "inventoryIcon" : "craftingmagnorbsicon.png",
-      "placementImage" : "craftingmagnorbs.png:default.default",
+      "inventoryIcon" : "craftingmagnorbs1icon.png",
+      "placementImage" : "craftingmagnorbs1.png:default.default",
       "placementImagePosition" : [-6, 0],
 
       "description" : "This magnetic station can be used to craft magnetic based weaponry.",
-      "shortdescription" : "^orange;Magnorb Station 1^white;",
+      "shortdescription" : "^orange;Lodestone Stand^white;",
 
       "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
       "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
@@ -60,8 +60,8 @@
           "config" : "/interface/windowconfig/craftingmagnorbs.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
-              "title" : "Magnorb Station",
-              "subtitle" : "Magnetic Induction",
+              "title" : "Lodestone Stand",
+              "subtitle" : "Polarization Station",
               "icon" : {
                 "file" : "/interface/crafting/cmicon.png"
               }
@@ -71,7 +71,10 @@
           "initialRecipeUnlocks" : [ "ampmagnorbs" ],
           "craftingSound" : "/sfx/interface/crafting_tech1.ogg",
           "upgradeMaterials" : [
-          { "item" : "coalore", "count" : 4 }
+            { "item" : "titaniumbar", "count" : 6 },
+            { "item" : "glass", "count" : 12 },
+            { "item" : "battery", "count" : 1 },
+            { "item" : "copperbar", "count" : 12 }
           ]
       },
       "upgradeSoundEffect" : "fanfare",
@@ -80,16 +83,16 @@
 
   {
     //T2
-    "animationState" : "craftingmagnorbs",
+    "animationState" : "craftingmagnorbs2",
 
     "itemSpawnParameters" : {
       "price" : 850,
-      "inventoryIcon" : "craftingmagnorbsicon.png",
-      "placementImage" : "craftingmagnorbs.png:default.default",
+      "inventoryIcon" : "craftingmagnorbs2icon.png",
+      "placementImage" : "craftingmagnorbs2.png:default.default",
       "placementImagePosition" : [-6, 0],
 
       "description" : "This magnetic station can be used to craft magnetic based weaponry.",
-      "shortdescription" : "^orange;Magnorb Station 2^white;",
+      "shortdescription" : "^orange;Magnetic Induction Station^white;",
 
       "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
       "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
@@ -104,8 +107,8 @@
           "config" : "/interface/windowconfig/craftingmagnorbs.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
-              "title" : "Magnorb Station 2",
-              "subtitle" : "Magnetic Induction",
+              "title" : "Magnetic Induction Station",
+              "subtitle" : "Polarization Station",
               "icon" : {
                 "file" : "/interface/crafting/cmicon.png"
               }
@@ -115,7 +118,7 @@
           "initialRecipeUnlocks" : [ ],
           "craftingSound" : "/sfx/interface/crafting_tech1.ogg",
           "upgradeMaterials" : [
-          { "item" : "coalore", "count" : 4 }
+
           ]
       },
       "upgradeSoundEffect" : "fanfare",
@@ -123,12 +126,12 @@
   },
   {
     //T3
-    "animationState" : "craftingmagnorbs",
+    "animationState" : "craftingmagnorbs3",
 
     "itemSpawnParameters" : {
       "price" : 1050,
-      "inventoryIcon" : "craftingmagnorbsicon.png",
-      "placementImage" : "craftingmagnorbs.png:default.default",
+      "inventoryIcon" : "craftingmagnorbs3icon.png",
+      "placementImage" : "craftingmagnorbs3.png:default.default",
       "placementImagePosition" : [-6, 0],
 
       "description" : "This magnetic station can be used to craft magnetic based weaponry.",
