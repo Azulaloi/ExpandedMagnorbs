@@ -12,6 +12,7 @@ function init()
   self.cooldownTime = config.getParameter("cooldownTime", 0)
   self.cooldownTimer = self.cooldownTime
   self.orbTotal = config.getParameter("orbTotal")
+  self.level = config.getParameter("level")
   if config.getParameter("shieldLock") then
 	self.lockValue = (self.orbTotal) + 1
 	else

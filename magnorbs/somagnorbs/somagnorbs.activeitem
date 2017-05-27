@@ -6,7 +6,7 @@
   "rarity" : "Legendary",
   "description" : "A bracer powerful enough to manipulate a Solarium orb.",
   "shortdescription" : "Solarium Bracer",
-  "tooltipKind" : "base",
+  "tooltipKind" : "magnorb",
   "category" : "uniqueWeapon",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
@@ -22,11 +22,13 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
   
   "shieldRotateValue" : 1.0,
   "emitterQuantity" : 2,
   "orbTotal" : 1,
   "orbitRate" : 1.0,
+  "secondaryName" : "Solar Aegis",
 
   "projectileType" : "somagnorb",
   "projectileParameters" : {

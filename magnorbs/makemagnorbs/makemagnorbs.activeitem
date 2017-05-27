@@ -1,13 +1,13 @@
 {
   "itemName" : "makemagnorbs",
-  "level" : 4,
-  "price" : 4000,
+  "level" : 1,
+  "price" : 180,
   "maxStack" : 1,
-  "rarity" : "Rare",
-  "description" : "A makeshift set of magnetic bracers for throwing and catching magnetic orbs.",
+  "rarity" : "Common",
+  "description" : "A makeshift set of magnetic bracers constructed from iron.",
   "shortdescription" : "Makeshift Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "ampmagnorbs" ],
@@ -23,7 +23,8 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
-  
+  "builder" : "/scripts/buildnorb.lua",
+
   "orbTotal" : 3,
   "shieldLock" : false,
   "orbitRate" : 1.0,

@@ -6,8 +6,8 @@
   "rarity" : "Legendary",
   "description" : "A chilled set of Magnorbs that will chill a target on impact.",
   "shortdescription" : "Chilled Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "blankmagnorbs" ],
@@ -23,6 +23,7 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 3,
   "orbitRate" : 1.5,
