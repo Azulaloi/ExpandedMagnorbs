@@ -1,6 +1,5 @@
 {
   "input" : [
-    { "item" : "blankmagnorbs", "count" : 1 },
     { "item" : "solariumstar", "count" : 48 },
 	{ "item" : "battery", "count" : 4 },
 	{ "item" : "diamond", "count" : 24 },
@@ -10,5 +9,5 @@
 	
   ],
   "output" : { "item" : "somagnorbs", "count" : 1 },
-  "groups" : [ "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+  "groups" : [ "craftingmagnorbs3", "mainnorbs", "weapons", "all" ]
 }

@@ -1,17 +1,16 @@
 {
   "itemName" : "somagnorbs",
   "level" : 7,
-  "price" : 12000,
+  "price" : 2250,
   "maxStack" : 1,
   "rarity" : "Legendary",
   "description" : "A bracer powerful enough to manipulate a Solarium orb.",
   "shortdescription" : "Solarium Bracer",
   "tooltipKind" : "magnorb",
-  "category" : "uniqueWeapon",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [],
-  
   
   "inventoryIcon" : "icon.png",
   "animation" : "somagnorbs.animation",
@@ -32,7 +31,7 @@
 
   "projectileType" : "somagnorb",
   "projectileParameters" : {
-    "power" : 20.00,
+    "power" : 17.50,
     "knockback" : 5,
 
     "returnOnHit" : true,
