@@ -1,11 +1,11 @@
 {
   "input" : [
-    { "item" : "ampmagnorbs", "count" : 1 },
+    { "item" : "shinymagnorbs", "count" : 1 },
     { "item" : "battery", "count" : 1 },
 	{ "item" : "wire", "count" : 6 },
 	{ "item" : "durasteelbar", "count" : 4 },
 	{ "item" : "cryonicextract", "count" : 15 }
   ],
   "output" : { "item" : "chillmagnorbs", "count" : 1 },
-  "groups" : [ "craftingmagnorbs", "elementalnorbs", "weapons", "all" ]
+  "groups" : [ "craftingmagnorbs2", "elementalnorbs", "weapons", "all" ]
 }
