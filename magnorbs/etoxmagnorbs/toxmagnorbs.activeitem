@@ -1,16 +1,16 @@
 {
   "itemName" : "toxmagnorbs",
-  "level" : 6,
-  "price" : 8000,
+  "level" : 4,
+  "price" : 1240,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Uncommon",
   "description" : "A toxin-coated set of Magnorbs that will poison a target on impact.",
   "shortdescription" : "Toxic Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
-  "learnBlueprintsOnPickup" : [ "blankmagnorbs" ],
+  "learnBlueprintsOnPickup" : [ ],
 
   "inventoryIcon" : "icon.png",
   "animation" : "toxmagnorbs.animation",
@@ -23,13 +23,14 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 3,
   "orbitRate" : 1.5,
 
   "projectileType" : "toxmagnorb",
   "projectileParameters" : {
-    "power" : 3.00,
+    "power" : 1.95,
     "knockback" : 5,
 
     "returnOnHit" : true,
