@@ -1,9 +1,9 @@
 {
   "input" : [
-    { "item" : "titaniumbar", "count" : 6 },
-	{ "item" : "darkwoodmaterial", "count" : 24 },
-    { "item" : "battery", "count" : 2 },
-	{ "item" : "copperbar", "count" : 12 },
+    { "item" : "ironbar", "count" : 12 },
+	{ "item" : "darkwoodmaterial", "count" : 18 },
+    { "item" : "climbingrope", "count" : 2 },
+	{ "item" : "lodestone", "count" : 1 },
 	{ "item" : "ironore", "count" : 3}
   ],
   "output" : { "item" : "makemagnorbs", "count" : 1 },

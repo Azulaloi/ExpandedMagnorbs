@@ -71,10 +71,10 @@
           "initialRecipeUnlocks" : [ "ampmagnorbs" ],
           "craftingSound" : "/sfx/interface/crafting_tech1.ogg",
           "upgradeMaterials" : [
-            { "item" : "titaniumbar", "count" : 6 },
+            { "item" : "titaniumbar", "count" : 12 },
             { "item" : "glass", "count" : 12 },
-            { "item" : "battery", "count" : 1 },
-            { "item" : "copperbar", "count" : 12 }
+            { "item" : "smallbattery", "count" : 5 },
+            { "item" : "copperbar", "count" : 8 }
           ]
       },
       "upgradeSoundEffect" : "fanfare",
@@ -118,7 +118,10 @@
           "initialRecipeUnlocks" : [ ],
           "craftingSound" : "/sfx/interface/crafting_tech1.ogg",
           "upgradeMaterials" : [
-
+            { "item" : "durasteelbar", "count" : 10 },
+            { "item" : "glass", "count" : 8 },
+            { "item" : "battery", "count" : 1 },
+            { "item" : "wire", "count" : 6 }
           ]
       },
       "upgradeSoundEffect" : "fanfare",
@@ -135,7 +138,7 @@
       "placementImagePosition" : [-6, 0],
 
       "description" : "This magnetic station can be used to craft magnetic based weaponry.",
-      "shortdescription" : "^orange;Magnorb Station 3^white;",
+      "shortdescription" : "^orange;Gauss Manipulator^white;",
 
       "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
       "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
@@ -150,8 +153,8 @@
           "config" : "/interface/windowconfig/craftingmagnorbs.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
-              "title" : "Magnorb Station 3",
-              "subtitle" : "Magnetic Induction",
+              "title" : "Gauss Manipulator",
+              "subtitle" : "Polarization Station",
               "icon" : {
                 "file" : "/interface/crafting/cmicon.png"
               }
