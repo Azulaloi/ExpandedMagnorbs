@@ -1,6 +1,6 @@
 {
   "input" : [
-    { "item" : "toxmagnorbs", "count" : 1 },
+    { "item" : "poismagnorbs", "count" : 1 },
     { "item" : "diamond", "count" : 2 },
 	{ "item" : "smallbattery", "count" : 6 },
 	{ "item" : "siliconboard", "count" : 3 }

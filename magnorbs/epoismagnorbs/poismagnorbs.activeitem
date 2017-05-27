@@ -1,0 +1,62 @@
+{
+  "itemName" : "poismagnorbs",
+  "level" : 4,
+  "price" : 1240,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "A toxin-coated set of Magnorbs that will poison a target on impact.",
+  "shortdescription" : "Poisoned Magnorbs",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+  "learnBlueprintsOnPickup" : [ ],
+
+  "inventoryIcon" : "icon.png",
+  "animation" : "poismagnorbs.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "orb1" : "orb.png",
+    "orb2" : "orb.png",
+    "orb3" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
+
+  "orbTotal" : 3,
+  "orbitRate" : 1.5,
+  "elementalType" : "poison",
+
+  "projectileType" : "poismagnorb",
+  "projectileParameters" : {
+    "power" : 1.95,
+    "knockback" : 5,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : false,
+    "controlForce" : 140,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 4.0
+  },
+
+  "shieldHealth" : 45,
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 30,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}
