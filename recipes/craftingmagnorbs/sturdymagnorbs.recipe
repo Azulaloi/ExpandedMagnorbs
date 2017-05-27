@@ -1,9 +1,9 @@
 {
   "input" : [
-    { "item" : "tungsten", "count" : 12 },
+    { "item" : "tungstenbar", "count" : 12 },
 	{ "item" : "lodestone", "count" : 1 },
-    { "item" : "copper", "count" : 4 },
-	{ "item" : "rope", "count" : 2 }
+    { "item" : "copperbar", "count" : 4 },
+	{ "item" : "climbingrope", "count" : 2 }
   ],
   "output" : { "item" : "sturdymagnorbs", "count" : 1 },
   "groups" : [ "craftingmagnorbs", "mainnorbs", "weapons", "all" ]

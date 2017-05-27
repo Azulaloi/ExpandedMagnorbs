@@ -1,9 +1,9 @@
 {
   "itemName" : "sturdymagnorbs",
   "level" : 2,
-  "price" : 100,
+  "price" : 980,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Common",
   "description" : "A sturdy set of magnetic bracers constructed from tungsten.",
   "shortdescription" : "Sturdy Magnorbs",
   "tooltipKind" : "magnorb",
