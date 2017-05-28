@@ -2,9 +2,7 @@
   "input" : [
     { "item" : "shinymagnorbs", "count" : 1 },
     { "item" : "battery", "count" : 1 },
-	{ "item" : "wire", "count" : 6 },
-	{ "item" : "durasteelbar", "count" : 4 },
-	{ "item" : "venomsample", "count" : 15 }
+	{ "item" : "venomsample", "count" : 16 }
   ],
   "output" : { "item" : "poismagnorbs", "count" : 1 },
   "groups" : [ "craftingmagnorbs2", "elementalnorbs", "weapons", "all" ]

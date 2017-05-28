@@ -6,5 +6,5 @@
 	{ "item" : "siliconboard", "count" : 3 }
   ],
   "output" : { "item" : "ampmagnorbs", "count" : 1 },
-  "groups" : [ "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+  "groups" : [ "craftingmagnorbs2", "mainnorbs", "weapons", "all" ]
 }

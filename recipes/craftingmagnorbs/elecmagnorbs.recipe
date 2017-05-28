@@ -2,9 +2,7 @@
   "input" : [
     { "item" : "shinymagnorbs", "count" : 1 },
     { "item" : "battery", "count" : 1 },
-	{ "item" : "wire", "count" : 6 },
-	{ "item" : "durasteelbar", "count" : 4 },
-	{ "item" : "staticcell", "count" : 15 }
+	{ "item" : "staticcell", "count" : 16 }
   ],
   "output" : { "item" : "elecmagnorbs", "count" : 1 },
   "groups" : [ "craftingmagnorbs2", "elementalnorbs", "weapons", "all" ]
