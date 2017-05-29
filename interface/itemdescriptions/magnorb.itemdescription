@@ -115,6 +115,13 @@
     "centered" : true,
     "wrapWidth" : 126
   },
+  "levelLabel" : {
+    "type" : "label",
+    "position" : [125, 168],
+    "hAnchor" : "left",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
   "damageKindImage" : {
     "type" : "image",
     "position" : [125, 135],

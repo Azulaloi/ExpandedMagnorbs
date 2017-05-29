@@ -1,13 +1,13 @@
 {
   "background" : {
     "type" : "background",
-    "fileHeader" : "/interface/tooltips/header.png",
-    "fileBody" : "/interface/tooltips/bodyObject4.png",
-    "fileFooter" : "/interface/tooltips/footer.png"
+    "fileHeader" : "/interface/tooltips/headerMagnorb.png",
+    "fileBody" : "/interface/tooltips/bodyObjectMagnorb.png",
+    "fileFooter" : "/interface/tooltips/footerMagnorb.png"
   },
   "objectImage" : {
     "type" : "image",
-    "position" : [67, 140],
+    "position" : [67, 148],
     "file" : "",
     "centered" : true,
     "maxSize" : [38, 38],
@@ -15,67 +15,67 @@
   },
   "hitDamageLabel" : {
     "type" : "label",
-    "position" : [127, 103],
+    "position" : [127, 111],
     "hAnchor" : "right",
     "value" : ""
   },
   "hitDamageTitleLabel" : {
     "type" : "label",
-    "position" : [12, 103],
+    "position" : [12, 111],
     "hAnchor" : "left",
     "value" : "Damage On Hit:"
   },
   "orbTotalLabel" : {
     "type" : "label",
-    "position" : [127, 94],
+    "position" : [127, 102],
     "hAnchor" : "right",
     "value" : ""
   },
   "orbTotalTitleLabel" : {
     "type" : "label",
-    "position" : [12, 94],
+    "position" : [12, 102],
     "hAnchor" : "left",
     "value" : "Orbs:"
   },
   "azSecondaryLabel" : {
     "type" : "label",
-    "position" : [127, 85],
+    "position" : [127, 93],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryTitleLabel" : {
     "type" : "label",
-    "position" : [12, 85],
+    "position" : [12, 93],
     "hAnchor" : "left",
     "value" : ""
   },
   "azSecondaryMagnitudeLabel" : {
     "type" : "label",
-    "position" : [127, 76],
+    "position" : [127, 84],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryMagnitudeTitleLabel" : {
     "type" : "label",
-    "position" : [12, 76],
+    "position" : [12, 84],
     "hAnchor" : "left",
     "value" : ""
   },
   "azSecondaryCostLabel" : {
     "type" : "label",
-    "position" : [127, 67],
+    "position" : [127, 75],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryCostTitleLabel" : {
     "type" : "label",
-    "position" : [12, 67],
+    "position" : [12, 75],
     "hAnchor" : "left",
     "value" : ""
   },
   "descriptionLabel" : {
     "type" : "label",
-    "position" : [12, 60],
+    "position" : [12, 68],
     "hAnchor" : "left",
     "vAnchor" : "top",
     "wrapWidth" : 124,
@@ -84,25 +84,32 @@
   },
   "priceLabel" : {
     "type" : "label",
-    "position" : [115, 22],
+    "position" : [111, 24],
     "hAnchor" : "left",
     "value" : "tree"
   },
   "moneyIcon" : {
     "type" : "image",
-    "position" : [102, 22],
+    "position" : [98, 24],
     "file" : "/interface/money.png"
   },
   "rarityLabel" : {
     "type" : "label",
-    "position" : [7, 22],
+    "position" : [8, 24],
+    "hAnchor" : "left",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
+  "levelLabel" : {
+    "type" : "label",
+    "position" : [120, 162],
     "hAnchor" : "left",
     "centered" : true,
     "wrapWidth" : 126
   },
   "damageKindImage" : {
     "type" : "image",
-    "position" : [120, 125],
+    "position" : [120, 136],
     "file" : "",
     "centered" : true,
     "maxSize" : [16, 16],

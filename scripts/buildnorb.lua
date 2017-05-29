@@ -32,6 +32,7 @@ function build(directory, config, parameters, level, seed)
     config.tooltipFields.subtitle = parameters.category
     config.tooltipFields.orbTotalLabel = configParameter("orbTotal")
     config.tooltipFields.hitDamageLabel = util.round(config.projectileParameters.power * config.damageLevelMultiplier, 1)
+    config.tooltipFields.levelLabel = configParameter("level")
     if elementalType ~= "physical" then
         config.tooltipFields.damageKindImage = "/interface/elements/" .. elementalType .. ".png"
     end
