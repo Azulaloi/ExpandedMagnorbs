@@ -20,67 +20,67 @@
   },
   "hitDamageLabel" : {
     "type" : "label",
-    "position" : [130, 105],
+    "position" : [133, 105],
     "hAnchor" : "right",
     "value" : ""
   },
   "hitDamageTitleLabel" : {
     "type" : "label",
-    "position" : [20, 105],
+    "position" : [17, 105],
     "hAnchor" : "left",
     "value" : "Damage On Hit:"
   },
   "orbTotalLabel" : {
     "type" : "label",
-    "position" : [130, 96],
+    "position" : [133, 96],
     "hAnchor" : "right",
     "value" : ""
   },
   "orbTotalTitleLabel" : {
     "type" : "label",
-    "position" : [20, 96],
+    "position" : [17, 96],
     "hAnchor" : "left",
     "value" : "Orbs:"
   },
   "azSecondaryLabel" : {
     "type" : "label",
-    "position" : [130, 87],
+    "position" : [133, 87],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryTitleLabel" : {
     "type" : "label",
-    "position" : [20, 87],
+    "position" : [17, 87],
     "hAnchor" : "left",
     "value" : ""
   },
   "azSecondaryMagnitudeLabel" : {
     "type" : "label",
-    "position" : [130, 78],
+    "position" : [133, 78],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryMagnitudeTitleLabel" : {
     "type" : "label",
-    "position" : [20, 78],
+    "position" : [17, 78],
     "hAnchor" : "left",
     "value" : ""
   },
   "azSecondaryCostLabel" : {
     "type" : "label",
-    "position" : [130, 69],
+    "position" : [133, 69],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryCostTitleLabel" : {
     "type" : "label",
-    "position" : [20, 69],
+    "position" : [17, 69],
     "hAnchor" : "left",
     "value" : ""
   },
   "descriptionLabel" : {
     "type" : "label",
-    "position" : [20, 60],
+    "position" : [17, 60],
     "hAnchor" : "left",
     "vAnchor" : "top",
     "wrapWidth" : 122,
