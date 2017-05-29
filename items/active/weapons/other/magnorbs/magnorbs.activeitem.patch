@@ -1,9 +1,19 @@
 [
   {
-    "op": "add",
-    "path": "/learnBlueprintsOnPickup",
-    "value": [
-      "ampmagnorbs"
-    ]
+    "op": "replace",
+    "path": "/tooltipKind",
+    "value": "vanillamagnorb"
+  },
+  {
+    "op": "replace",
+    "path": "/category",
+    "value": "magnorb"
+  },
+  {
+      "op": "add",
+      "path": "/learnBlueprintsOnPickup",
+      "value": [
+        "ampmagnorbs"
+      ]
   }
 ]

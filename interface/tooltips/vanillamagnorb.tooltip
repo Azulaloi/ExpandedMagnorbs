@@ -1,0 +1,111 @@
+{
+  "background" : {
+    "type" : "background",
+    "fileHeader" : "/interface/tooltips/header.png",
+    "fileBody" : "/interface/tooltips/bodyObject4.png",
+    "fileFooter" : "/interface/tooltips/footer.png"
+  },
+  "objectImage" : {
+    "type" : "image",
+    "position" : [67, 140],
+    "file" : "",
+    "centered" : true,
+    "maxSize" : [38, 38],
+    "minSize" : [38, 38]
+  },
+  "hitDamageLabel" : {
+    "type" : "label",
+    "position" : [127, 103],
+    "hAnchor" : "right",
+    "value" : "7.9"
+  },
+  "hitDamageTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 103],
+    "hAnchor" : "left",
+    "value" : "Damage On Hit:"
+  },
+  "orbTotalLabel" : {
+    "type" : "label",
+    "position" : [127, 94],
+    "hAnchor" : "right",
+    "value" : "3"
+  },
+  "orbTotalTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 94],
+    "hAnchor" : "left",
+    "value" : "Orbs:"
+  },
+  "azSecondaryLabel" : {
+    "type" : "label",
+    "position" : [127, 85],
+    "hAnchor" : "right",
+    "value" : "Perfect Magshield"
+  },
+  "azSecondaryTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 85],
+    "hAnchor" : "left",
+    "value" : "Alt:"
+  },
+  "azSecondaryMagnitudeLabel" : {
+    "type" : "label",
+    "position" : [127, 76],
+    "hAnchor" : "right",
+    "value" : "1000"
+  },
+  "azSecondaryMagnitudeTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 76],
+    "hAnchor" : "left",
+    "value" : "Alt Strength:"
+  },
+  "azSecondaryCostLabel" : {
+    "type" : "label",
+    "position" : [127, 67],
+    "hAnchor" : "right",
+    "value" : "80/s"
+  },
+  "azSecondaryCostTitleLabel" : {
+    "type" : "label",
+    "position" : [12, 67],
+    "hAnchor" : "left",
+    "value" : "Alt Energy Cost:"
+  },
+  "descriptionLabel" : {
+    "type" : "label",
+    "position" : [12, 60],
+    "hAnchor" : "left",
+    "vAnchor" : "top",
+    "wrapWidth" : 124,
+    "lineSpacing" : 1.0,
+    "value" : ""
+  },
+  "priceLabel" : {
+    "type" : "label",
+    "position" : [115, 22],
+    "hAnchor" : "left",
+    "value" : "tree"
+  },
+  "moneyIcon" : {
+    "type" : "image",
+    "position" : [102, 22],
+    "file" : "/interface/money.png"
+  },
+  "rarityLabel" : {
+    "type" : "label",
+    "position" : [7, 22],
+    "hAnchor" : "left",
+    "centered" : true,
+    "wrapWidth" : 126
+  },
+  "damageKindImage" : {
+    "type" : "image",
+    "position" : [120, 125],
+    "file" : "",
+    "centered" : true,
+    "maxSize" : [16, 16],
+    "minSize" : [16, 16]
+  }
+}
