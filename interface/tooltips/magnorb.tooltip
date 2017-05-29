@@ -15,67 +15,67 @@
   },
   "hitDamageLabel" : {
     "type" : "label",
-    "position" : [127, 111],
+    "position" : [129, 111],
     "hAnchor" : "right",
     "value" : ""
   },
   "hitDamageTitleLabel" : {
     "type" : "label",
-    "position" : [12, 111],
+    "position" : [10, 111],
     "hAnchor" : "left",
     "value" : "Damage On Hit:"
   },
   "orbTotalLabel" : {
     "type" : "label",
-    "position" : [127, 102],
+    "position" : [129, 102],
     "hAnchor" : "right",
     "value" : ""
   },
   "orbTotalTitleLabel" : {
     "type" : "label",
-    "position" : [12, 102],
+    "position" : [10, 102],
     "hAnchor" : "left",
     "value" : "Orbs:"
   },
   "azSecondaryLabel" : {
     "type" : "label",
-    "position" : [127, 93],
+    "position" : [129, 93],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryTitleLabel" : {
     "type" : "label",
-    "position" : [12, 93],
+    "position" : [10, 93],
     "hAnchor" : "left",
     "value" : ""
   },
   "azSecondaryMagnitudeLabel" : {
     "type" : "label",
-    "position" : [127, 84],
+    "position" : [129, 84],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryMagnitudeTitleLabel" : {
     "type" : "label",
-    "position" : [12, 84],
+    "position" : [10, 84],
     "hAnchor" : "left",
     "value" : ""
   },
   "azSecondaryCostLabel" : {
     "type" : "label",
-    "position" : [127, 75],
+    "position" : [129, 75],
     "hAnchor" : "right",
     "value" : ""
   },
   "azSecondaryCostTitleLabel" : {
     "type" : "label",
-    "position" : [12, 75],
+    "position" : [10, 75],
     "hAnchor" : "left",
     "value" : ""
   },
   "descriptionLabel" : {
     "type" : "label",
-    "position" : [12, 68],
+    "position" : [10, 68],
     "hAnchor" : "left",
     "vAnchor" : "top",
     "wrapWidth" : 124,
@@ -102,8 +102,8 @@
   },
   "levelLabel" : {
     "type" : "label",
-    "position" : [120, 162],
-    "hAnchor" : "left",
+    "position" : [129, 162],
+    "hAnchor" : "right",
     "centered" : true,
     "wrapWidth" : 126
   },

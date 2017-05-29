@@ -117,8 +117,8 @@
   },
   "levelLabel" : {
     "type" : "label",
-    "position" : [125, 168],
-    "hAnchor" : "left",
+    "position" : [133, 168],
+    "hAnchor" : "right",
     "centered" : true,
     "wrapWidth" : 126
   },
