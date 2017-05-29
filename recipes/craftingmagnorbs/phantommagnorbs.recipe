@@ -1,6 +1,6 @@
 {
   "input" : [
-    { "item" : "blankmagnorbs", "count" : 1 },
+    { "item" : "duramagnorbs", "count" : 1 },
     { "item" : "battery", "count" : 1 },
 	{ "item" : "wire", "count" : 6 },
 	{ "item" : "siliconboard", "count" : 1 },
