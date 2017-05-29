@@ -1,13 +1,13 @@
 {
   "itemName" : "femagnorbs",
-  "level" : 6,
-  "price" : 9000,
+  "level" : 5,
+  "price" : 1200,
   "maxStack" : 1,
-  "rarity" : "Legendary",
-  "description" : "A set of ferozium magnetic bracers for throwing and catching additional magnetic orbs.",
+  "rarity" : "Rare",
+  "description" : "A ferozium bracer that can control a large number of magnetic orbs.",
   "shortdescription" : "Multiple Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "fesmagnorbs" ],
@@ -25,14 +25,16 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
   
   "shieldSpacingQ" : 1.2,
   "orbTotal" : 5,
   "orbitRate" : 1.5,
+  "secondaryName" : "Magshell",
 
   "projectileType" : "femagnorb",
   "projectileParameters" : {
-    "power" : 3.05,
+    "power" : 2.4, // 3.05
     "knockback" : 16,
 
     "returnOnHit" : true,

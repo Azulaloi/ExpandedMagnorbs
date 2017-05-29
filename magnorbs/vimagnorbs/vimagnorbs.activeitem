@@ -1,18 +1,17 @@
 {
   "itemName" : "vimagnorbs",
-  "level" : 6,
-  "price" : 9000,
+  "level" : 5,
+  "price" : 1200,
   "maxStack" : 1,
-  "rarity" : "Legendary",
-  "description" : "A set of violium bracers for throwing and catching magnetic orbs.",
+  "rarity" : "Rare",
+  "description" : "A violium bracer that can tightly control magnetic orbs at high speeds.",
   "shortdescription" : "Shredding Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "vismagnorbs" ],
-  
-  
+
   "inventoryIcon" : "icon.png",
   "animation" : "vimagnorbs.animation",
   "animationParts" : {
@@ -24,13 +23,14 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
   
   "orbTotal" : 3,
   "orbitRate" : 2.0,
 
   "projectileType" : "vimagnorb",
   "projectileParameters" : {
-    "power" : 3.0,
+    "power" : 2.3, //3.0
     "knockback" : 5,
 
     "returnOnHit" : true,

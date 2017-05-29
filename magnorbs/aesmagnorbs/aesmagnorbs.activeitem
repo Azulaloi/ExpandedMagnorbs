@@ -1,13 +1,13 @@
 {
   "itemName" : "aesmagnorbs",
   "level" : 6,
-  "price" : 10000,
+  "price" : 1300,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A set of solarium-reinforced aegisalt bracers for throwing and catching magnetic orbs.",
+  "description" : "A solarium-reinforced aegisalt bracer that can accelerate magnetic orbs to extreme velocities.",
   "shortdescription" : "High-Velocity Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "somagnorbs" ],
@@ -23,14 +23,16 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
-  
+  "builder" : "/scripts/buildnorb.lua",
+
   "shieldRotateValue" : 1,
   "orbTotal" : 3,
   "orbitRate" : 1.2,
+  "secondaryName" : "Small Magshield",
 
   "projectileType" : "aesmagnorb",
   "projectileParameters" : {
-    "power" : 5.9,
+    "power" : 4.2, //5.9
     "knockback" : 5,
 
     "returnOnHit" : true,

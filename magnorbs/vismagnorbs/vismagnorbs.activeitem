@@ -1,13 +1,13 @@
 {
   "itemName" : "vismagnorbs",
   "level" : 6,
-  "price" : 9000,
+  "price" : 1300,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A set of solarium-reinforced violium bracers for throwing and catching magnetic orbs.",
+  "description" : "A solarium-reinforced violium bracer that can control magnorbs at vicious speeds.",
   "shortdescription" : "High-Speed Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "somagnorbs" ],
@@ -24,13 +24,14 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 4,
   "orbitRate" : 2.2,
 
   "projectileType" : "vismagnorb",
   "projectileParameters" : {
-    "power" : 3.5,
+    "power" : 2.5, //3.5
     "knockback" : 5,
 
     "returnOnHit" : true,

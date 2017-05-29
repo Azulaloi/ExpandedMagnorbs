@@ -1,13 +1,13 @@
 {
   "itemName" : "fesmagnorbs",
   "level" : 6,
-  "price" : 9000,
+  "price" : 1300,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "An improved set of solarium-reinforced ferozium bracers for throwing and catching many magnetic orbs.",
+  "description" : "A solarium-reinforced ferozium bracer that can control a huge number of magnetic orbs at once.",
   "shortdescription" : "High-Count Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "somagnorbs" ],
@@ -26,14 +26,16 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
   
   "shieldSpacingQ" : 1.27,
   "orbTotal" : 6,
   "orbitRate" : 1.5,
+  "secondaryName" : "Magshell",
 
   "projectileType" : "fesmagnorb",
   "projectileParameters" : {
-    "power" : 3.85,
+    "power" : 2.4, //3.85
     "knockback" : 20,
 
     "returnOnHit" : true,
