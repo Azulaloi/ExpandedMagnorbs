@@ -1,9 +1,10 @@
 {
   "input" : [
-    { "item" : "blankmagnorbs", "count" : 1 },
-	{ "item" : "refinedviolium", "count" : 12 },
+	{ "item" : "refinedviolium", "count" : 16 },
+    { "item" : "durasteelbar", "count" : 8 },
+    { "item" : "wire", "count" : 6 },
     { "item" : "battery", "count" : 2 }
   ],
   "output" : { "item" : "vimagnorbs", "count" : 1 },
-  "groups" : [ "craftingmagnorbs", "mainnorbs", "weapons", "all" ]
+  "groups" : [ "craftingmagnorbs3", "mainnorbs", "weapons", "all" ]
 }
