@@ -1,13 +1,13 @@
 {
   "itemName" : "rainbowmagnorbs",
-  "level" : 10,
-  "price" : 20000,
+  "level" : 6,
+  "price" : 1400,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A set of colorful orbs that seem to bend space itself.",
-  "shortdescription" : "Asutoro Obu",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "description" : "This bracer controls a set of colorful orbs that seem to bend space itself.",
+  "shortdescription" : "Asuteru Obu",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
 
@@ -24,6 +24,7 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 5,
   "shieldLock" : true,
@@ -31,7 +32,7 @@
 
   "projectileType" : "legrainbow",
   "projectileParameters" : {
-    "power" : 4.85,
+    "power" : 2.97, //4.85
     "knockback" : 20,
 
     "returnOnHit" : true,
