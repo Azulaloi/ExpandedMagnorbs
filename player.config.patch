@@ -1,4 +1,7 @@
 [
 	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "makemagnorbs" } },
+	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "sturdymagnorbs" } },
+	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "shinymagnorbs" } },
+	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "duramagnorbs" } },
 	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "craftingmagnorbs" } }
 ]
