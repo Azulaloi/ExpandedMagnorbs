@@ -73,7 +73,7 @@
           "upgradeMaterials" : [
             { "item" : "titaniumbar", "count" : 12 },
             { "item" : "glass", "count" : 12 },
-            { "item" : "smallbattery", "count" : 5 },
+            { "item" : "smallbattery", "count" : 4 },
             { "item" : "copperbar", "count" : 8 }
           ]
       },
