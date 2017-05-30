@@ -10,7 +10,7 @@
   "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
-  "learnBlueprintsOnPickup" : [ "blankmagnorbs" ],
+  "learnBlueprintsOnPickup" : [ ],
 
   "inventoryIcon" : "icon.png",
   "animation" : "heatmagnorbs.animation",

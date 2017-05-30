@@ -10,7 +10,7 @@
   "category" : "uniqueWeapon",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
-  "learnBlueprintsOnPickup" : [ "chillmagnorbs", "heatmagnorbs", "toxmagnorbs", "elecmagnorbs", "blankmagnorbs" ],
+  "learnBlueprintsOnPickup" : [ ],
   
   
   "inventoryIcon" : "icon.png",
