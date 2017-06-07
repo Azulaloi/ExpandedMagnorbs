@@ -174,7 +174,7 @@
   ],
   "orientations" : [
     {
-      "imageLayers" : [ { "image" : "craftingmagnorbs.png:on.<frame>" } ],
+      "imageLayers" : [ { "image" : "craftingmagnorbs1.png:on.<frame>" } ],
       "imagePosition" : [-6, 0],
 
       "direction" : "left",
@@ -187,7 +187,7 @@
 	  "animationCycle" : 1.0
     },
     {
-      "imageLayers" : [ { "image" : "craftingmagnorbs.png:on.<frame>" } ],
+      "imageLayers" : [ { "image" : "craftingmagnorbs1.png:on.<frame>" } ],
       "imagePosition" : [-6, 0],
 
       "direction" : "right",
