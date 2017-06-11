@@ -34,5 +34,5 @@
       "repeat" : true
     }
 	],
-  "scripts" : [ "/projectiles/activeitems/boomerang/boomerangprojectile.lua" ]
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
 }
