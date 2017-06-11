@@ -175,9 +175,9 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
+    "fire" : [ "/sfx/az/magnorbs_firewoosh1.ogg", "/sfx/az/magnorbs_firewoosh2.ogg", "/sfx/az/magnorbs_firewoosh3.ogg" ],
     "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
+    "shieldLoop" : ["/sfx/az/shinyshieldmaintain.ogg"],
     "shieldOff" : [],
     "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
     "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
