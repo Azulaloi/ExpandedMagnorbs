@@ -9,5 +9,5 @@
 	
   ],
   "output" : { "item" : "somagnorbs", "count" : 1 },
-  "groups" : [ "craftingmagnorbs3", "mainnorbs", "weapons", "all" ]
+  "groups" : [ "craftingmagnorbs3", "upgradednorbs", "weapons", "all" ]
 }

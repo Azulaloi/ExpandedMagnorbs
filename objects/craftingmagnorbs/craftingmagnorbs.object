@@ -47,17 +47,19 @@
       "description" : "This magnetic station can be used to craft magnetic based weaponry.",
       "shortdescription" : "^orange;Lodestone Stand^white;",
 
-      "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
-      "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
-      "floranDescription" : "Magnetssss, could be used to catch a Glitch.",
-      "glitchDescription" : "Cautious. The Glitch need to be careful around these kinds of magnets.",
-      "humanDescription" : "A magnetic crafting station. Could be used to make some interesting weapons.",
-      "hylotlDescription" : "I could make magnetic weapons here.",
-      "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could."
+      "apexDescription" : "This stand can be used to induct magnetism in ferrous  materials.",
+      "avianDescription" : "The lodestone on this stand is magnetically suspended. It could be used to create more magnets.",
+      "floranDescription" : "Ssstrange stone, floating on pillar.",
+      "glitchDescription" : "Intrigued. The lodestone on this stand has a strange effect on my chassis.",
+      "humanDescription" : "This stand uses a ferrous lodestone as a source for a magnetic induction field.",
+      "hylotlDescription" : "This is a rather simplistic method of magnetic induction, using a natural lodestone to produce a magnetic field.",
+      "novakidDescription" : "This here lodestone produces a weak magnetic field.",
+      "feneroxDescription" : "Magnet inductor. Rather simple. Feeling curious!",
+      "iodralDescription" : "This wooden stand is rather shoddy. Not to mention the floating stone."
       },
 
       "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs.config",
+          "config" : "/interface/windowconfig/craftingmagnorbs4.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
               "title" : "Lodestone Stand",
@@ -69,7 +71,7 @@
           },
           "filter" : [ "craftingmagnorbs" ],
           "initialRecipeUnlocks" : [ "ampmagnorbs" ],
-          "craftingSound" : "/sfx/interface/crafting_tech1.ogg",
+          "craftingSound" : "/sfx/crafting_magnorbs.ogg",
           "upgradeMaterials" : [
             { "item" : "titaniumbar", "count" : 12 },
             { "item" : "glass", "count" : 12 },
@@ -95,16 +97,18 @@
       "shortdescription" : "^orange;Magnetic Induction Station^white;",
 
       "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
-      "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
-      "floranDescription" : "Magnetssss, could be used to catch a Glitch.",
+      "avianDescription" : "A metal stand that produces a strong magnetic field.",
+      "floranDescription" : "Floran create dangerousss magnetsss.",
       "glitchDescription" : "Cautious. The Glitch need to be careful around these kinds of magnets.",
-      "humanDescription" : "A magnetic crafting station. Could be used to make some interesting weapons.",
-      "hylotlDescription" : "I could make magnetic weapons here.",
-      "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could."
+      "humanDescription" : "A magnetic induction station. Could be used to make some interesting weapons.",
+      "hylotlDescription" : "Anything metallic run through those two prongs will become strongly magnetized.",
+      "novakidDescription" : "Well I'll be... an artificial magnetic field.",
+      "feneroxDescription" : "Metal table. Magnetic field? Maybe useful.",
+      "iodralDecription" : "I must say, I've never seen anything like this before."
       },
 
       "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs.config",
+          "config" : "/interface/windowconfig/craftingmagnorbs4.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
               "title" : "Magnetic Induction Station",
@@ -116,7 +120,7 @@
           },
           "filter" : [ "craftingmagnorbs", "craftingmagnorbs2" ],
           "initialRecipeUnlocks" : [ ],
-          "craftingSound" : "/sfx/interface/crafting_tech1.ogg",
+          "craftingSound" : "/sfx/crafting_magnorbs.ogg",
           "upgradeMaterials" : [
             { "item" : "durasteelbar", "count" : 10 },
             { "item" : "glass", "count" : 8 },
@@ -140,17 +144,19 @@
       "description" : "This magnetic station can be used to craft magnetic based weaponry.",
       "shortdescription" : "^orange;Gauss Manipulator^white;",
 
-      "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
-      "avianDescription" : "A small stand, with magnetic instruments embedded in it.",
-      "floranDescription" : "Magnetssss, could be used to catch a Glitch.",
-      "glitchDescription" : "Cautious. The Glitch need to be careful around these kinds of magnets.",
-      "humanDescription" : "A magnetic crafting station. Could be used to make some interesting weapons.",
-      "hylotlDescription" : "I could make magnetic weapons here.",
-      "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could."
+      "apexDescription" : "This could produce extremely strong magnetic fields.",
+      "avianDescription" : "A sleek metal stand, with magnetic instruments embedded in it.",
+      "floranDescription" : "Very sssstrong magnetssss, could be usssed to catch a Glitch.",
+      "glitchDescription" : "Nervous. I could get stuck to this thing.",
+      "humanDescription" : "This is pretty advanced. I bet it could create some really powerful magnetic fields.",
+      "hylotlDescription" : "I could make advanced magnetic weapons here, if I so desired.",
+      "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could.",
+      "feneroxDescription" : "Very shiny. In awe. Makes magnets?",
+      "iodralDescription" : "What in the blazes even is this thing?"
       },
 
       "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs.config",
+          "config" : "/interface/windowconfig/craftingmagnorbs4.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
               "title" : "Gauss Manipulator",
@@ -162,7 +168,7 @@
           },
           "filter" : [ "craftingmagnorbs", "craftingmagnorbs2", "craftingmagnorbs3" ],
           "initialRecipeUnlocks" : [ ],
-          "craftingSound" : "/sfx/interface/crafting_tech1.ogg"
+          "craftingSound" : "/sfx/crafting_magnorbs.ogg"
        },
       "upgradeSoundEffect" : "fanfare",
       "upgradeParticleEffect" : "dust"

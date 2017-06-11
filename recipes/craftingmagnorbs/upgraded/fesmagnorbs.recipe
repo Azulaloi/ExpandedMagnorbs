@@ -5,5 +5,5 @@
 	{ "item" : "battery", "count" : 3 }
   ],
   "output" : { "item" : "fesmagnorbs", "count" : 1 },
-  "groups" : [ "craftingmagnorbs3", "mainnorbs", "weapons", "all" ]
+  "groups" : [ "craftingmagnorbs3", "upgradednorbs", "weapons", "all" ]
 }
