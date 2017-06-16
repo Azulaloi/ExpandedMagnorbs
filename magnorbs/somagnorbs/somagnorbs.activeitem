@@ -4,7 +4,7 @@
   "price" : 2250,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A bracer powerful enough to manipulate a Solarium orb.",
+  "description" : "A bracer powerful enough to manipulate a Solarium orb. Harness the power of the sun!",
   "shortdescription" : "Solarium Bracer",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

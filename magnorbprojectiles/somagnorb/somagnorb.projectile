@@ -2,7 +2,7 @@
   "projectileName" : "somagnorb",
   "image" : "somagnorb.png",
   "pointLight" : true,
-  "lightColor" : [160, 120, 0],
+  "lightColor" : [255, 255, 180],
   "flippable" : true,
   "orientationLocked" : true,
   "actionOnReap" : [ ],
@@ -29,7 +29,7 @@
    "periodicActions" : [
     {
       "action" : "particle",
-      "specification" : "glowstim",
+      "specification" : "solartrail",
       "time" : 0.1,
       "repeat" : true
     }
