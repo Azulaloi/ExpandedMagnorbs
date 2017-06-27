@@ -262,11 +262,11 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
-    "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
-    "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
+    "fire" : [ "/sfx/az/firefire1.ogg", "/sfx/az/firefire2.ogg", "/sfx/az/firefire3.ogg"  ],
+    "shieldOn" : ["/sfx/projectiles/fire_barrier_kill.ogg"],
+    "shieldLoop" : ["/sfx/melee/elemental_aura_fire.ogg"],
+    "shieldOff" : ["/sfx/projecitles/firerain_impact.ogg"],
+    "shieldBlock" : ["/sfx/projectiles/fireball_bounce1.ogg","/sfx/projectiles/fireball_bounce2.ogg","/sfx/projectiles/fireball_bounce3.ogg"], //sfx/gun/firebow_loose_perfect?
+    "shieldBreak" : ["/sfx/projectiles/fireball_poof.ogg"]
   }
 }
