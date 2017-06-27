@@ -30,6 +30,13 @@
       "file" : "/projectiles/explosions/regularexplosion2/regularexplosion2.config"
     }
   ],
-
+  "periodicActions" : [
+    {
+      "action" : "particle",
+      "specification" : "azunstable",
+      "time" : 0.05,
+      "repeat" : true
+    }
+  ],
   "scripts" : [ "/scripts/dynamicprojectile.lua" ]
 }

@@ -6,13 +6,12 @@
   "rarity" : "Legendary",
   "description" : "A set of orbs made from core fragments and a bracer for controlling them. Be careful.",
   "shortdescription" : "Unstable Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [],
-  
-  
+
   "inventoryIcon" : "icon.png",
   "animation" : "legunstable.animation",
   "animationParts" : {
@@ -24,13 +23,19 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 3,
   "orbitRate" : 1.5,
 
+  "noPoly" : true,
+  "ward" : true,
+  "wardEffectQuantity" : 1,
+  "wardEffect1" : "glow",
+
   "projectileType" : "unstablemagnorb",
   "projectileParameters" : {
-    "power" : 2.85,
+    "power" : 1.9, //2.85
     "knockback" : 5,
 
     "returnOnHit" : true,
@@ -40,6 +45,7 @@
     "snapDistance" : 4.0
   },
 
+  "shieldHealth" : 60,
   "shieldKnockback" : 10,
   "shieldEnergyCost" : 80,
 
@@ -53,7 +59,7 @@
     "shield" : {
       "armRotation" : 0,
       "twoHanded" : false,
-      "allowRotate" : true,
+      "allowRotate" : false,
       "allowFlip" : true
     }
   }
