@@ -7,7 +7,13 @@
       "orb1" : {
         "default" : "orb",
         "states" : {
-          "orb" : {},
+          "orb" : {
+//            "properties" : {
+//              "particleEmittersOn": [
+//                "physicalswoosh"
+//              ]
+//            }
+          },
           "hidden" : {},
           "shield"  : {
             "cycle" : 0.2,
@@ -173,9 +179,19 @@
       "interpolated" : true
     }
   },
-
+//  "particleEmitters" : {
+//    "physicalswoosh" : {
+//      "active" : false,
+//      "transformationGroups" : ["orbs"],
+//      "burstCount" : 4,
+//      "particles" : [
+//        { "particle" : "energyblade"},
+//        { "particle" : "energyblade2"}
+//      ]
+//    }
+//  },
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
+    "fire" : [ "/sfx/az/vifire1.ogg", "/sfx/az/vifire2.ogg", "/sfx/az/vifire3.ogg" ],
     "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
     "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
     "shieldOff" : [],
