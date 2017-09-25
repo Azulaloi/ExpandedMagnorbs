@@ -19,9 +19,11 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/projectiles/magnorb_impact1.ogg",
-        "/sfx/projectiles/magnorb_impact2.ogg",
-        "/sfx/projectiles/magnorb_impact3.ogg"
+        "/sfx/az/feimpact1.ogg",
+        "/sfx/az/feimpact2.ogg",
+        "/sfx/az/feimpact3.ogg"
+       // "/sfx/melee/laser_weapon_swing2.ogg",
+       // "/sfx/melee/laser_weapon_swing3.ogg"
       ]
     }
   ],

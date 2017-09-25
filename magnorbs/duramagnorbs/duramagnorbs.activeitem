@@ -4,7 +4,7 @@
   "price" : 980,
   "maxStack" : 1,
   "rarity" : "Uncommon",
-  "description" : "A tough magnetic bracer constructed from solid durasteel.",
+  "description" : "A tough magnetic gauntlet constructed from solid durasteel.",
   "shortdescription" : "Durable Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

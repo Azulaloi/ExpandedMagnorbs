@@ -126,7 +126,7 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
+    "fire" : [ "/sfx/az/aefire1.ogg", "/sfx/az/aefire2.ogg", "/sfx/az/aefire3.ogg"],
     "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
     "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
     "shieldOff" : [],

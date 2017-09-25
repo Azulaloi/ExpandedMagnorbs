@@ -30,7 +30,7 @@
     {
       "action" : "particle",
       "specification" : "icethrowertrail",
-      "time" : 0.3,
+      "time" : 0.05, //0.3
       "repeat" : true
     }
 	],

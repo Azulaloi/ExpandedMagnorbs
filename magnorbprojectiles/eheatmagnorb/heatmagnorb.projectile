@@ -30,7 +30,7 @@
     {
       "action" : "particle",
       "specification" : "burningdust",
-      "time" : 0.3,
+      "time" : 0.05, //0.3
       "repeat" : true
     }
 	],

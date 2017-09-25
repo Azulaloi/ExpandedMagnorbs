@@ -175,9 +175,9 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
-    "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
+    "fire" : [ "/sfx/az/poisonfire4.ogg", "/sfx/az/poisonfire5.ogg", "/sfx/az/poisonfire6.ogg" ],
+    "shieldOn" : ["/sfx/projectiles/acid_hit.ogg"],
+    "shieldLoop" : ["/sfx/melee/elemental_aura_poison.ogg"],
     "shieldOff" : [],
     "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
     "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]

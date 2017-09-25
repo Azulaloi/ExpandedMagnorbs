@@ -1,9 +1,5 @@
 .idea
 *.iml
 *.iws
-/interface/crafting/anvilbodyold1.png
-/interface/crafting/cmicon.pdn
-/interface/crafting/anvilbodysh.png
-/interface/crafting/anvilbodyold2.png
-/interface/crafting/anvilbodybg.png
-/interface/tooltips/bodyObjectMagnorb.pdn
+*.pdn
+*old.png

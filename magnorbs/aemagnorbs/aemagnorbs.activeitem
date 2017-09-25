@@ -38,8 +38,8 @@
     "returnOnHit" : true,
     "ignoreTerrain" : false,
     "controlForce" : 220,
-    "pickupDistance" : 1.5,
-    "snapDistance" : 100
+    "pickupDistance" : 5.5,
+    "snapDistance" : 10.0
   },
 
   "shieldHealth" : 70,

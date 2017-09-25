@@ -7,5 +7,5 @@
 	{ "item" : "phasematter", "count" : 20 }
   ],
   "output" : { "item" : "phantommagnorbs", "count" : 1 },
-  "groups" : [ "craftingmagnorbs", "specialnorbs", "weapons", "all" ]
+  "groups" : [ "craftingmagnorbs2", "specialnorbs", "weapons", "all" ]
 }
