@@ -59,7 +59,7 @@
       },
 
       "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs4.config",
+          "config" : "/interface/windowconfig/craftingmagnorbs.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
               "title" : "Lodestone Stand",
@@ -108,7 +108,7 @@
       },
 
       "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs4.config",
+          "config" : "/interface/windowconfig/craftingmagnorbs.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
               "title" : "Magnetic Induction Station",
@@ -156,7 +156,7 @@
       },
 
       "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs4.config",
+          "config" : "/interface/windowconfig/craftingmagnorbs.config",
           "paneLayoutOverride" : {
             "windowtitle" : {
               "title" : "Gauss Manipulator",
@@ -187,10 +187,15 @@
       "flipImages" : true,
 
       "frames" : 14,
+      "animationCycle" : 1.0,
+      //"spaceScan" : 0.1,
 
-      "spaceScan" : 0.1,
-      "anchors" : [ "bottom" ],
-	  "animationCycle" : 1.0
+      "spaces" : [
+       [-1, 2], [0, 2],
+       [-1, 1], [0, 1],
+       [-1, 0], [0, 0]
+      ],
+      "anchors" : [ "bottom" ]
     },
     {
       "imageLayers" : [ { "image" : "craftingmagnorbs1.png:on.<frame>" } ],
@@ -199,10 +204,15 @@
       "direction" : "right",
 
       "frames" : 14,
+      "animationCycle" : 1.0,
+      //"spaceScan" : 0.1,
 
-      "spaceScan" : 0.1,
-      "anchors" : [ "bottom" ],
-	  "animationCycle" : 1.0
+      "spaces" : [
+       [-1, 2], [0, 2],
+       [-1, 1], [0, 1],
+       [-1, 0], [0, 0]
+      ],
+      "anchors" : [ "bottom" ]
     }
   ]
 }
