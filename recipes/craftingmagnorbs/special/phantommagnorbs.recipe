@@ -3,7 +3,7 @@
     { "item" : "duramagnorbs", "count" : 1 },
     { "item" : "battery", "count" : 1 },
 	{ "item" : "wire", "count" : 6 },
-	{ "item" : "siliconboard", "count" : 1 },
+	{ "item" : "upgrademodule", "count" : 1 },
 	{ "item" : "phasematter", "count" : 20 }
   ],
   "output" : { "item" : "phantommagnorbs", "count" : 1 },
