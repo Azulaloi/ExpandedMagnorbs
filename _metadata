@@ -2,6 +2,7 @@
   "author" : "Azulaloi",
   "description" : "An expanded series of magnorbs. \n\nThe makeshift set is known by default and craftable at the tier 2 anvil. Other sets must be crafted at the Magnetic Induction Station, craftable at the tier 2 inventors table. Currently, all magnorbs have the same shield ability, but in the future I plan to replace these with thematic abilities. \n\nFeel free to leave feedback regarding damage, progression and abilities, or ideas for new sets of magnorbs. Please report any bugs you find.\n\nPlease note that this mod replaces the functionality of my previous mod (High-Velocity Magnorbs) but is technically compatible. I would recommend only one or the other (depending on how much magnorb related content you desire).",
   "friendlyName" : "Expanded Magnorbs",
+  "includes" : ["Legendary Tooltips"],
   "link" : "steam://url/CommunityFilePage/746884345",
   "name" : "az-expandedmagnorbs",
   "steamContentId" : "746884345",
