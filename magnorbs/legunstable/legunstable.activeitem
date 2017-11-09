@@ -1,9 +1,9 @@
 {
   "itemName" : "unstablemagnorbs",
-  "level" : 6,
-  "price" : 7000,
+  "level" : 5,
+  "price" : 1380,
   "maxStack" : 1,
-  "rarity" : "Legendary",
+  "rarity" : "Rare",
   "description" : "A set of orbs made from core fragments and a bracer for controlling them. Be careful.",
   "shortdescription" : "Unstable Magnorbs",
   "tooltipKind" : "magnorb",
