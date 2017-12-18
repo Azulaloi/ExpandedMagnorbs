@@ -31,7 +31,7 @@
   "noPoly" : true,
   "ward" : true,
   "wardEffectQuantity" : 1,
-  "wardEffect1" : "glow",
+  "wardEffect1" : "unstableward",
 
   "projectileType" : "unstablemagnorb",
   "projectileParameters" : {
@@ -47,7 +47,7 @@
 
   "shieldHealth" : 60,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 80,
+  "shieldEnergyCost" : 35,
 
   "stances" : {
     "idle" : {
@@ -57,9 +57,10 @@
       "allowFlip" : true
     },
     "shield" : {
+      "aimAngle" : 10,
       "armRotation" : 0,
       "twoHanded" : false,
-      "allowRotate" : false,
+      "allowRotate" : true,
       "allowFlip" : true
     }
   }

@@ -1,0 +1,24 @@
+{
+  "name" : "unstableward",
+  "blockingStat" : "specialStatusImmunity",
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 0.1,
+    "triggerDamageThreshold" : 1,
+    "explosionDamageAmount" : 130,
+
+    "power" : 30.0,
+    "bombConfig" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config",
+    "flashDirectives" : "fade=FF0000;0.5"
+  },
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "unstableward.lua"
+  ],
+
+  "animationConfig" : "unstableward.animation",
+
+  "label" : "Unstable Ward",
+  "icon" : "/interface/statuses/doomed.png"
+}

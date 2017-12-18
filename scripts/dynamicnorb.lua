@@ -151,12 +151,6 @@ function update(dt, fireMode, shiftHeld)
     end
   end
 
-  if self.wardActive then
-    for i, v in ipairs(wardEffects) do
-      --status
-      end
-  end
-
   if self.shieldTransformTimer > 0 then
     local transformRatio = self.shieldTransformTimer / self.shieldTransformTime
     setOrbPosition(SpacingQ - transformRatio * ShieldRotate, transformRatio * 0.75)
@@ -177,6 +171,13 @@ function update(dt, fireMode, shiftHeld)
 
   updateAim()
   updateHand()
+
+  if self.wardActive then
+    activeItem.setFacingDirection(90)
+    for i, v in ipairs(wardEffects) do
+      status.addEphemeralEffect(v)
+    end
+  end
 end
 
 function shieldTypeActivate()
