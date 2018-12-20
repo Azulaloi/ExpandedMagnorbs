@@ -179,164 +179,66 @@
       "interpolated" : true
     }
   },
+
   "particleEmitters" : {
-    "shieldEmitter1": {
+    "shieldEmitter1": { //CYAN
       "active": false,
       "transformationGroups": [
         "orb1"
       ],
       "offsetRegion": [
         0.45,
-        -0.6,
+        -0.2,
         0.45,
         -1.6
       ],
       "emissionRate": 30,
       "particles": [
         {
-          "particle": {
-            "type": "ember",
-            "size": 1.5,
-            "color": [
-              255,
-              255,
-              150,
-              255
-            ],
-            "position": [
-              0,
-              0
-            ],
-            "initialVelocity": [
-              0,
-              0
-            ],
-            "light": [
-              255,
-              255,
-              180
-            ],
-            "timeToLive": 0.8,
-            "destructionAction": "fade",
-            "destructionTime": 0.1,
-            "layer": "front",
-            "fullbright": true,
-            "variance": {
-              "initialVelocity": [
-                0,
-                0
-              ],
-              "size": 1.0
-            }
-          }
+          "particle": "shieldvi0"
         }
       ]
     },
-    "shieldEmitter2": {
+
+    "shieldEmitter2": { //MAGENTA
       "active": false,
       "transformationGroups": [
         "orb2"
       ],
       "offsetRegion": [
-        0,
-        0,
-        0,
-        0
+        0.1,
+        0.65,
+        0.1,
+        -0.65
       ],
       "emissionRate": 30,
       "particles": [
         {
-          "particle": {
-            "type": "ember",
-            "size": 1.5,
-            "color": [
-              255,
-              255,
-              150,
-              255
-            ],
-            "position": [
-              0,
-              0
-            ],
-            "initialVelocity": [
-              0.0,
-              0.0
-            ],
-            "light": [
-              255,
-              255,
-              180
-            ],
-            "timeToLive": 0.8,
-            "destructionAction": "fade",
-            "destructionTime": 0.1,
-            "layer": "front",
-            "fullbright": true,
-            "variance": {
-              "initialVelocity": [
-                0,
-                0
-              ],
-              "size": 1.0
-            }
-          }
+          "particle": "shieldvi0"
         }
       ]
     },
-    "shieldEmitter3": {
+
+    "shieldEmitter3": { //YELLOW
       "active": false,
       "transformationGroups": [
         "orb3"
       ],
       "offsetRegion": [
-        0,
-        1,
-        0,
-        0
+        0.45,
+        0.2,
+        0.45,
+        1.6
       ],
       "emissionRate": 30,
       "particles": [
         {
-          "particle": {
-            "type": "ember",
-            "size": 1.5,
-            "color": [
-              255,
-              255,
-              150,
-              255
-            ],
-            "position": [
-              0,
-              0
-            ],
-            "initialVelocity": [
-              0,
-              0
-            ],
-            "light": [
-              255,
-              255,
-              180
-            ],
-            "timeToLive": 0.8,
-            "destructionAction": "fade",
-            "destructionTime": 0.1,
-            "layer": "front",
-            "fullbright": true,
-            "variance": {
-              "initialVelocity": [
-                0,
-                0
-              ],
-              "size": 1.0
-            }
-          }
+          "particle": "shieldvi0"
         }
       ]
     }
   },
+
   "sounds" : {
     "fire" : [ "/sfx/az/vifire1.ogg", "/sfx/az/vifire2.ogg", "/sfx/az/vifire3.ogg" ],
     "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
@@ -345,44 +247,4 @@
     "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
     "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
   }
-
-  //      "particles": [
-  //        {
-  //          "particle": {
-  //            "type": "ember",
-  //            "size": 1.5,
-  //            "color": [
-  //              255,
-  //              255,
-  //              150,
-  //              255
-  //            ],
-  //            "position": [
-  //              0,
-  //              0
-  //            ],
-  //            "initialVelocity": [
-  //              -2.0,
-  //              -5.0
-  //            ],
-  //            "light": [
-  //              255,
-  //              255,
-  //              180
-  //            ],
-  //            "timeToLive": 0.8,
-  //            "destructionAction": "fade",
-  //            "destructionTime": 0.1,
-  //            "layer": "front",
-  //            "fullbright": true,
-  //            "variance": {
-  //              "initialVelocity": [
-  //                0,
-  //                2.0
-  //              ],
-  //              "size": 1.0
-  //            }
-  //          }
-  //        }
-  //      ]
 }

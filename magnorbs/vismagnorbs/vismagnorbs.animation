@@ -223,6 +223,84 @@
 	}
   },
 
+  "particleEmitters" : {
+    "shieldEmitter1": { //CYAN
+      "active": false,
+      "transformationGroups": [
+        "orb1"
+      ],
+      "offsetRegion": [
+        0.35,
+        0,
+        0.35,
+        -1.4
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldvi0"
+        }
+      ]
+    },
+
+    "shieldEmitter2": { //MAGENTA
+      "active": false,
+      "transformationGroups": [
+        "orb2"
+      ],
+      "offsetRegion": [
+        0.1,
+        0.70,
+        0.1,
+        -0.40
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldvi0"
+        }
+      ]
+    },
+
+   "shieldEmitter3": { //YELLOW
+      "active": false,
+      "transformationGroups": [
+        "orb3"
+      ],
+      "offsetRegion": [
+        0.40,
+        0.4,
+        0.40,
+        1.0
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldvi0"
+        }
+      ]
+    },
+
+    "shieldEmitter4": { //RED
+      "active": false,
+      "transformationGroups": [
+        "orb4"
+      ],
+      "offsetRegion": [
+        0.70,
+        0.8,
+        0.70,
+        1.8
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldvi0"
+        }
+      ]
+    }
+  },
+
   "sounds" : {
     "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
     "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
