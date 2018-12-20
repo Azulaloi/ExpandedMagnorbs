@@ -321,6 +321,120 @@
 	}
   },
 
+  "particleEmitters" : {
+    "shieldEmitter1": { //CYAN
+      "active": false,
+      "transformationGroups": [
+        "orb1"
+      ],
+      "offsetRegion": [
+        0.35,
+        0,
+        0.35,
+        -1.4
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldfes"
+        }
+      ]
+    },
+
+    "shieldEmitter2": { //MAGENTA
+      "active": false,
+      "transformationGroups": [
+        "orb2"
+      ],
+      "offsetRegion": [
+        0.1,
+        0.70,
+        0.1,
+        -0.40
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldfes"
+        }
+      ]
+    },
+
+    "shieldEmitter3": { //YELLOW
+      "active": false,
+      "transformationGroups": [
+        "orb3"
+      ],
+      "offsetRegion": [
+        0.40,
+        0.4,
+        0.40,
+        1.8
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldfes"
+        }
+      ]
+    },
+
+    "shieldEmitter4": { //RED
+      "active": false,
+      "transformationGroups": [
+        "orb4"
+      ],
+      "offsetRegion": [
+        1.2,
+        0.8,
+        1.2,
+        2.0
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldfes"
+        }
+      ]
+    },
+    "shieldEmitter5": { //RED
+      "active": false,
+      "transformationGroups": [
+        "orb5"
+      ],
+      "offsetRegion": [
+        2.0,
+        0.6,
+        2.0,
+        2.0
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldfes"
+        }
+      ]
+    },
+    "shieldEmitter6": { //RED
+      "active": false,
+      "transformationGroups": [
+        "orb6"
+      ],
+      "offsetRegion": [
+        2.7,
+        0.3,
+        2.7,
+        1.7
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldfes"
+        }
+      ]
+    }
+  },
+
   "sounds" : {
     "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
     "shieldOn" : ["/sfx/melee/sword_guard.ogg"],

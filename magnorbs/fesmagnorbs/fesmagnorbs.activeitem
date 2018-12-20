@@ -27,7 +27,8 @@
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
   "builder" : "/scripts/buildnorb.lua",
-  
+
+  "emitterQuantity" : 6,
   "shieldSpacingQ" : 1.27,
   "orbTotal" : 6,
   "orbitRate" : 1.5,
