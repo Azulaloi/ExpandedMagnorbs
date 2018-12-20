@@ -20,9 +20,9 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/az/elecimpact1.ogg",
-        "/sfx/az/elecimpact2.ogg",
-        "/sfx/az/elecimpact3.ogg"
+        "/sfx/az/elemental/elec_impact1.ogg",
+        "/sfx/az/elemental/elec_impact2.ogg",
+        "/sfx/az/elemental/elec_impact3.ogg"
       ]
     }
   ],

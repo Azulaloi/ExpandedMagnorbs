@@ -234,11 +234,11 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/az/electricfire1.ogg", "/sfx/az/electricfire2.ogg", "/sfx/az/electricfire3.ogg" ],
-    "shieldOn" : ["/sfx/az/electricshieldraise.ogg"],
-    "shieldLoop" : ["/sfx/az/electricshieldmaintain.ogg"],
-    "shieldOff" : ["/sfx/az/electricshieldend.ogg"],
-    "shieldBlock" : ["/sfx/az/electricshieldhit.ogg"],
-    "shieldBreak" : ["/sfx/az/electricshieldbreak.ogg"]
+    "fire" : [ "/sfx/az/elemental/elec_fire1.ogg", "/sfx/az/elemental/elec_fire2.ogg", "/sfx/az/elemental/elec_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/elemental/elec_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/elemental/elec_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/elemental/elec_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/elemental/elec_shield_hit.ogg"],
+    "shieldBreak" : ["/sfx/az/elemental/elec_shield_break.ogg"]
   }
 }
