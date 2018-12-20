@@ -20,17 +20,17 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/projectiles/magnorb_impact1.ogg",
-        "/sfx/projectiles/magnorb_impact2.ogg",
-        "/sfx/projectiles/magnorb_impact3.ogg"
+        "/sfx/az/elemental/pois_impact1.ogg",
+        "/sfx/az/elemental/pois_impact2.ogg",
+        "/sfx/az/elemental/pois_impact3.ogg"
       ]
     }
   ],
    "periodicActions" : [
     {
       "action" : "particle",
-      "specification" : "poisondust",
-      "time" : 0.1, //0.3
+      "specification" : "norbpoistrail",
+      "time" : 0.1,
       "repeat" : true
     }
 	],

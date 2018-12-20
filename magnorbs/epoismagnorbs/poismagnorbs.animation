@@ -196,7 +196,7 @@
 //          "particle": "poisonswoosh1" - Bubbly!
 //          "particle": "poisonswoosh2" - Drippy!
 
-          "particle": "aznorbelementalpoisonshield"
+          "particle": "norbpoisshield"
         }
       ]
     },
@@ -215,7 +215,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "aznorbelementalpoisonshield"
+          "particle": "norbpoisshield"
         }
       ]
     },
@@ -234,18 +234,18 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "aznorbelementalpoisonshield"
+          "particle": "norbpoisshield"
         }
       ]
     }
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/az/poisonfire4.ogg", "/sfx/az/poisonfire5.ogg", "/sfx/az/poisonfire6.ogg" ],
-    "shieldOn" : ["/sfx/projectiles/acid_hit.ogg"],
-    "shieldLoop" : ["/sfx/melee/elemental_aura_poison.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
-    "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
+    "fire" : [ "/sfx/az/elemental/pois_fire1.ogg", "/sfx/az/elemental/pois_fire2.ogg", "/sfx/az/elemental/pois_fire2.ogg" ],
+    "shieldOn" : ["/sfx/az/elemental/pois_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/elemental/pois_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/elemental/pois_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/elemental/pois_shield_hit.ogg"],
+    "shieldBreak" : ["/sfx/az/elemental/pois_shield_break.ogg"]
   }
 }
