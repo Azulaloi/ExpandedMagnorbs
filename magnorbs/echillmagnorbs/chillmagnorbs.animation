@@ -189,7 +189,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "aznorbelementaliceshield"
+          "particle": "norbchillshield"
         }
       ]
     },
@@ -208,7 +208,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "aznorbelementaliceshield"
+          "particle": "norbchillshield"
 
         }
       ]
@@ -228,7 +228,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "aznorbelementaliceshield"
+          "particle": "norbchillshield"
         }
       ]
     }
