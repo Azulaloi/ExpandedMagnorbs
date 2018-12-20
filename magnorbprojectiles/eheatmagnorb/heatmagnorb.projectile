@@ -29,7 +29,7 @@
    "periodicActions" : [
     {
       "action" : "particle",
-      "specification" : "burningdust",
+      "specification" : "norbfiretrail",
       "time" : 0.05, //0.3
       "repeat" : true
     }

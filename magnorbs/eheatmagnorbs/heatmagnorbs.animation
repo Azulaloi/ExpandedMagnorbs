@@ -176,8 +176,7 @@
       "emissionRate": 30,
       "particles": [
         {
-//                    "particle": "sparks"
-          "particle": "aznorbelementalfireshield"
+          "particle": "norbfireshield"
         }
       ]
     },
@@ -196,7 +195,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "aznorbelementalfireshield"
+          "particle": "norbfireshield"
         }
       ]
     },
@@ -215,7 +214,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "aznorbelementalfireshield"
+          "particle": "norbfireshield"
         }
       ]
     }

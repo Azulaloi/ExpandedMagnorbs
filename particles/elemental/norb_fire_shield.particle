@@ -1,9 +1,9 @@
 {
-  "kind" : "aznorbelementalfireshield",
+  "kind" : "norbfireshield",
   "definition" : {
     "type" : "animated",
     "looping" : true,
-    "animation" : "/animations/statuseffects/burning/burning.animation",
+    "animation" : "/animations/norbs/fire.animation",
     "position" : [0, 0],
     "initialVelocity" : [0.0, 3.0],
     "finalVelocity" : [0.0, 7.0],
