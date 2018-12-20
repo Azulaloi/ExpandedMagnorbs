@@ -4,7 +4,7 @@
   "price" : 1240,
   "maxStack" : 1,
   "rarity" : "Uncommon",
-  "description" : "A chilled set of Magnorbs that will chill a target on impact.",
+  "description" : "A chilled set of Magnorbs that will freeze a target on impact.",
   "shortdescription" : "Chilled Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",
