@@ -20,9 +20,9 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/projectiles/magnorb_impact1.ogg",
-        "/sfx/projectiles/magnorb_impact2.ogg",
-        "/sfx/projectiles/magnorb_impact3.ogg"
+        "/sfx/az/elemental/fire_impact1.ogg",
+        "/sfx/az/elemental/fire_impact2.ogg",
+        "/sfx/az/elemental/fire_impact3.ogg"
       ]
     }
   ],
@@ -30,7 +30,7 @@
     {
       "action" : "particle",
       "specification" : "norbfiretrail",
-      "time" : 0.05, //0.3
+      "time" : 0.05,
       "repeat" : true
     }
 	],

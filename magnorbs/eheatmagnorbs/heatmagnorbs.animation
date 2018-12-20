@@ -237,11 +237,11 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/az/firefire1.ogg", "/sfx/az/firefire2.ogg", "/sfx/az/firefire3.ogg"  ],
-    "shieldOn" : ["/sfx/projectiles/fire_barrier_kill.ogg"],
-    "shieldLoop" : ["/sfx/melee/elemental_aura_fire.ogg"],
-    "shieldOff" : ["/sfx/projecitles/firerain_impact.ogg"],
-    "shieldBlock" : ["/sfx/projectiles/fireball_bounce1.ogg","/sfx/projectiles/fireball_bounce2.ogg","/sfx/projectiles/fireball_bounce3.ogg"], //sfx/gun/firebow_loose_perfect?
-    "shieldBreak" : ["/sfx/projectiles/fireball_poof.ogg"]
+    "fire" : [ "/sfx/az/elemental/fire_fire1.ogg", "/sfx/az/elemental/fire_fire2.ogg", "/sfx/az/elemental/fire_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/elemental/fire_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/elemental/fire_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/elemental/fire_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/elemental/fire_shield_hit1.ogg", "/sfx/az/elemental/fire_shield_hit2.ogg", "/sfx/az/elemental/fire_shield_hit3.ogg"],
+    "shieldBreak" : ["/sfx/az/elemental/fire_shield_break.ogg"]
   }
 }
