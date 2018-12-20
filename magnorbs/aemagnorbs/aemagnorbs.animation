@@ -125,6 +125,27 @@
     }
   },
 
+  "particleEmitters" : {
+    "shieldEmitter1": {
+      "active": false,
+      "transformationGroups": [
+        "orb1"
+      ],
+      "offsetRegion": [
+        0.2,
+        0.4,
+        0.3,
+        -0.3
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "shieldae"
+        }
+      ]
+    }
+  },
+
   "sounds" : {
     "fire" : [ "/sfx/az/aefire1.ogg", "/sfx/az/aefire2.ogg", "/sfx/az/aefire3.ogg"],
     "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
