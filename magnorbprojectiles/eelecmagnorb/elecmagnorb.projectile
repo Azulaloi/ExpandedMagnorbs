@@ -29,7 +29,7 @@
    "periodicActions" : [
     {
       "action" : "particle",
-      "specification" : "teslabolt",
+      "specification" : "norbelectrail",
       "time" : 0.05,
       "repeat" : true
     }

@@ -189,13 +189,7 @@
       "emissionRate": 20,
       "particles": [
         {
-//          "particle": "teslabolt"
-//          "particle": "castelectric"
-//          "particle": "sparks"
-//          "particle": "electricenergy"
-//          "particle": "electricswoosh1"
-
-          "particle": "aznorbelementalelectricshield"
+          "particle": "norbelecshield"
         }
       ]
     },
@@ -214,7 +208,7 @@
       "emissionRate": 20,
       "particles": [
         {
-          "particle": "aznorbelementalelectricshield"
+          "particle": "norbelecshield"
         }
       ]
     },
@@ -233,7 +227,7 @@
       "emissionRate": 20,
       "particles": [
         {
-          "particle": "aznorbelementalelectricshield"
+          "particle": "norbelecshield"
         }
       ]
     }

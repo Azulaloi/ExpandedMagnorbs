@@ -1,9 +1,9 @@
 {
-  "kind" : "aznorbelementalelectricshield",
+  "kind" : "norbelecshield",
   "definition" : {
     "type" : "animated",
     "looping" : true,
-    "animation" : "/animations/teslabolt/teslabolt.animation",
+    "animation" : "/animations/norbs/elec.animation",
     "position" : [0, 0],
     "finalVelocity" : [0, 0],
     "approach" : [50, 50],
