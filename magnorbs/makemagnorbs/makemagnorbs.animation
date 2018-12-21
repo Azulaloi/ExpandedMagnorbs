@@ -175,11 +175,11 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
-    "shieldOn" : ["/sfx/az/makeshiftshieldraise.ogg"],
+    "fire" : [ "/sfx/az/main/make_fire1.ogg", "/sfx/az/main/make_fire2.ogg", "/sfx/az/main/make_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/main/make_shield_raise.ogg"],
     "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/az/makeshiftshieldhit1.ogg", "/sfx/az/makeshiftshieldhit2.ogg", "/sfx/az/makeshiftshieldhit3.ogg" ],
-    "shieldBreak" : ["/sfx/az/makeshiftshieldbreak.ogg"]
+    "shieldOff" : ["/sfx/az/main/make_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/main/make_shield_hit1.ogg", "/sfx/az/main/make_shield_hit2.ogg", "/sfx/az/main/make_shield_hit3.ogg" ],
+    "shieldBreak" : ["/sfx/az/main/make_shield_break.ogg"]
   }
 }

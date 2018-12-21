@@ -19,9 +19,9 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/projectiles/magnorb_impact1.ogg",
-        "/sfx/projectiles/magnorb_impact2.ogg",
-        "/sfx/projectiles/magnorb_impact3.ogg"
+        "/sfx/az/main/make_impact1.ogg",
+        "/sfx/az/main/make_impact2.ogg",
+        "/sfx/az/main/make_impact3.ogg"
       ]
     }
   ],
