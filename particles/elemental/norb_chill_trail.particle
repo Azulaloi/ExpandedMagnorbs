@@ -2,7 +2,7 @@
   "kind" : "norbchilltrail",
   "definition" : {
     "type" : "animated",
-    "animation" : "/animations/norbs/chill.animation",
+    "animation" : "/animations/norbs/elemental/chill.animation",
     "fade" : 0.75,
     "destructionAction" : "shrink",
     "destructionTime" : 1,

@@ -2,7 +2,7 @@
   "kind" : "norbpoistrail",
   "definition" : {
     "type" : "animated",
-    "animation" : "/animations/norbs/pois.animation",
+    "animation" : "/animations/norbs/elemental/pois.animation",
     "position" : [0, 0],
     "finalVelocity" : [0, 0],
     "approach" : [50, 50],

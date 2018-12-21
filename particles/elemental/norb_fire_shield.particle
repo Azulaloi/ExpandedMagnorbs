@@ -3,7 +3,7 @@
   "definition" : {
     "type" : "animated",
     "looping" : true,
-    "animation" : "/animations/norbs/fire.animation",
+    "animation" : "/animations/norbs/elemental/fire.animation",
     "position" : [0, 0],
     "initialVelocity" : [0.0, 3.0],
     "finalVelocity" : [0.0, 7.0],

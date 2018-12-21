@@ -2,7 +2,7 @@
   "kind" : "norbpoisshield",
   "definition" : {
     "type" : "animated",
-    "animation" : "/animations/norbs/poisshield.animation",
+    "animation" : "/animations/norbs/elemental/poisshield.animation",
     "position" : [0, 0],
     "finalVelocity" : [0, 2],
     "approach" : [0, 50],
