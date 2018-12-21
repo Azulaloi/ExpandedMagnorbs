@@ -140,7 +140,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "shieldae"
+          "particle": "aeshield"
         }
       ]
     }

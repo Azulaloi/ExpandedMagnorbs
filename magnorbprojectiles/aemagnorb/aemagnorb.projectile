@@ -23,8 +23,49 @@
         "/sfx/projectiles/plasmabullet_ricochet2.ogg",
         "/sfx/projectiles/plasmabullet_ricochet3.ogg"
       ]
+    },
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "aeimpact1",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "aeimpact0",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "aeimpact1",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "aeimpact0",
+          "time" : 0.01,
+          "repeat" : true
+        }
+      ]
     }
   ],
 
-  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
+  "periodicActions" : [
+    {
+      "action" : "particle",
+      "specification" : "aeorbtrail",
+      "rotate" : true,
+      "time" : 0.032,
+      "repeat" : true
+    }
+  ],
+
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ],
+  "emitters" : [ "aeproj" ]
 }
