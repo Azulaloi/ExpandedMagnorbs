@@ -19,14 +19,43 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/az/feimpact1.ogg",
-        "/sfx/az/feimpact2.ogg",
-        "/sfx/az/feimpact3.ogg"
-       // "/sfx/melee/laser_weapon_swing2.ogg",
-       // "/sfx/melee/laser_weapon_swing3.ogg"
+        "/sfx/az/upgrade/fe_impact1.ogg",
+        "/sfx/az/upgrade/fe_impact2.ogg",
+        "/sfx/az/upgrade/fe_impact3.ogg"
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "viimpact1",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "viimpact0",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "viimpact1",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "viimpact0",
+          "time" : 0.1,
+          "repeat" : true
+        }
       ]
     }
   ],
 
-  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ],
+  "emitters" : [ "viproj" ]
 }

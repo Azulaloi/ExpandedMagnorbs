@@ -79,6 +79,7 @@
       },
       "orb1" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -107,6 +108,7 @@
       },
       "orb2" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -135,6 +137,7 @@
       },
       "orb3" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -194,9 +197,7 @@
       ],
       "emissionRate": 30,
       "particles": [
-        {
-          "particle": "shieldvi0"
-        }
+        { "particle": "vishield0" }, { "particle":  "vishield1" }
       ]
     },
 
@@ -213,9 +214,7 @@
       ],
       "emissionRate": 30,
       "particles": [
-        {
-          "particle": "shieldvi0"
-        }
+        { "particle": "vishield0" }, { "particle":  "vishield1" }
       ]
     },
 
@@ -232,19 +231,17 @@
       ],
       "emissionRate": 30,
       "particles": [
-        {
-          "particle": "shieldvi0"
-        }
+        { "particle": "vishield0" }, { "particle":  "vishield1" }
       ]
     }
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/az/vifire1.ogg", "/sfx/az/vifire2.ogg", "/sfx/az/vifire3.ogg" ],
-    "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
-    "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
+    "fire" : [ "/sfx/az/upgrade/vi_fire1.ogg", "/sfx/az/upgrade/vi_fire2.ogg", "/sfx/az/upgrade/vi_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/upgrade/vi_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/upgrade/vi_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/upgrade/vi_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/upgrade/vi_shield_hit.ogg"],
+    "shieldBreak" : ["/sfx/az/upgrade/vi_shield_break.ogg"]
   }
 }
