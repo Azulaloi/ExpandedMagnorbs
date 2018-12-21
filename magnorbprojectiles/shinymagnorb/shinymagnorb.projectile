@@ -19,9 +19,9 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/az/magnorb_impactwhoosh1.ogg",
-        "/sfx/az/magnorb_impactwhoosh2.ogg",
-        "/sfx/az/magnorb_impactwhoosh3.ogg"
+        "/sfx/az/main/shiny_impact1.ogg",
+        "/sfx/az/main/shiny_impact2.ogg",
+        "/sfx/az/main/shiny_impact3.ogg"
       ]
     }
   ],
