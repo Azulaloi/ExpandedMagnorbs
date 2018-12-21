@@ -1,5 +1,5 @@
 {
-  "kind" : "solartrail",
+  "kind" : "soproj1",
   "definition" : {
      "type" : "ember",
      "size" : 1.5,

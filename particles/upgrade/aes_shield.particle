@@ -3,7 +3,7 @@
   "definition" : {
     "type" : "ember",
     "size" : 1,
-    "color" : [252, 153, 100],
+    "color" : [255, 239, 168],
     "light" : [145, 98, 56],
     "position" : [0, 0],
     "destructionAction" : "shrink",

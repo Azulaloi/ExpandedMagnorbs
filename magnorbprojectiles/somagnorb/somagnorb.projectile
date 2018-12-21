@@ -24,15 +24,39 @@
         "/sfx/az/solarimpact2.ogg",
         "/sfx/az/solarimpact3.ogg"
       ]
+    },
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "soimpact1",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "soimpact0",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "soimpact1",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "soimpact0",
+          "time" : 0.01,
+          "repeat" : true
+        }
+      ]
     }
   ],
-   "periodicActions" : [
-    {
-      "action" : "particle",
-      "specification" : "solartrail",
-      "time" : 0.1,
-      "repeat" : true
-    }
-	],
-  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
+
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ],
+  "emitters" : [ "soproj" ]
 }

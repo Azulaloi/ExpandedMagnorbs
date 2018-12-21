@@ -1,0 +1,21 @@
+{
+  "kind" : "aesimpact1",
+  "definition" : {
+    "type" : "ember",
+    "size" : 1.4,
+    "color" : [167, 203, 255],
+    "light" : [139, 173, 209],
+    "position" : [0, 0],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.4,
+    "fade" : 1,
+    "layer" : "middle",
+    "fullbright" : true,
+    "timeToLive" : 0.4,
+    "variance" : {
+      "initialVelocity" : [1.0, 1.0],
+      "size" : 0.5,
+      "position" : [0.3, 0]
+    }
+  }
+}
