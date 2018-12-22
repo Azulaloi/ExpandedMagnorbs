@@ -44,8 +44,6 @@
 
   "shieldKnockback" : 10,
   "shieldEnergyCost" : 60,
-  
-  "altAbilityType" : "astraltear",
 
   "stances" : {
     "idle" : {
