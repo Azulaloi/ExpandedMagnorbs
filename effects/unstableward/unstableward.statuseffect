@@ -4,12 +4,14 @@
   "effectConfig" : {
     "activateDelay" : 0.1,
     "deactivateDelay" : 0.1,
-    "triggerDamageThreshold" : 1,
+    "triggerDamageThreshold" : 5,
     "explosionDamageAmount" : 130,
 
-    "power" : 30.0,
-    "bombConfig" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config",
-    "flashDirectives" : "fade=FF0000;0.5"
+    "power" : 1.7,
+    "bombConfig" : "/magnorbprojectiles/legunstable/reaction/reactionward.config",
+    "flashDirectives" : "fade=FF0000;0.5",
+
+    "resistance": 20.0
   },
   "defaultDuration" : 1,
 

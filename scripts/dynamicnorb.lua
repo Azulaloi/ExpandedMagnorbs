@@ -173,7 +173,8 @@ function update(dt, fireMode, shiftHeld)
   updateHand()
 
   if self.wardActive then
-    activeItem.setFacingDirection(90)
+    --activeItem.setFacingDirection(90)
+    activeItem.setArmAngle(20)
     for i, v in ipairs(wardEffects) do
       status.addEphemeralEffect(v)
     end
@@ -324,6 +325,7 @@ function deactivateWard()
     status.removeEphemeralEffect(v)
   end
 end
+
 function activateNoPoly()
   self.shieldActive = true
   animator.resetTransformationGroup("orbs")

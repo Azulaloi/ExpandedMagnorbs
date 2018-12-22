@@ -1,9 +1,11 @@
 {
-  "kind" : "azunstable",
+  "kind" : "unstableproj",
   "definition" : {
     "type" : "ember",
     "size" : 1.0,
     "color" : [253, 160, 57, 255],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.4,
     "fade" : 0.9,
     "initialVelocity" : [0.0, 0.0],
     "finalVelocity" : [0.0, 0.0],

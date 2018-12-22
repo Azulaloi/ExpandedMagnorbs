@@ -6,8 +6,13 @@ function init()
     self.triggerDamageThreshold = config.getParameter("triggerDamageThreshold")
     self.timeUntilActive = config.getParameter("activateDelay")
 
+    animator.setParticleEmitterOffsetRegion("sparks", mcontroller.boundBox())
     animator.setParticleEmitterActive("sparks", true)
     effect.setParentDirectives("fade=FFFFCC;0.03?border=2;FFFFCC20;00000000")
+
+    effect.addStatModifierGroup({
+        {stat = "protection", amount = config.getParameter("resistance", 1)}
+    })
 end
 
 function update(dt)
@@ -47,7 +52,7 @@ function trigger()
     local sourceEntityId = effect.sourceEntity() or entity.id()
     local sourceDamageTeam = world.entityDamageTeam(sourceEntityId)
     --local bombPower = status.resourceMax("health") * config.getParameter("healthDamageFactor", 1.0)
-    local bombPower = config.getParameter("power", 1.0)
+    local bombPower = status.resourceMax("health") * config.getParameter("power", 1.0)
     local projectileConfig = {
         power = bombPower,
         damageTeam = sourceDamageTeam,

@@ -28,6 +28,7 @@
   "orbTotal" : 3,
   "orbitRate" : 1.5,
 
+  "emitterQuantity" : 1,
   "noPoly" : true,
   "ward" : true,
   "wardEffectQuantity" : 1,
@@ -47,7 +48,7 @@
 
   "shieldHealth" : 60,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 35,
+  "shieldEnergyCost" : 1,
 
   "stances" : {
     "idle" : {
@@ -57,10 +58,9 @@
       "allowFlip" : true
     },
     "shield" : {
-      "aimAngle" : 10,
-      "armRotation" : 0,
+      "armRotation" : 90,
       "twoHanded" : false,
-      "allowRotate" : true,
+      "allowRotate" : false,
       "allowFlip" : true
     }
   }
