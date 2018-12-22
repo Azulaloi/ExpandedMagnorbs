@@ -1,10 +1,10 @@
 {
-  "kind" : "shieldfes",
+  "kind" : "feshield",
   "definition" : {
     "type" : "ember",
     "size" : 1,
-    "color" : [255, 75, 75],
-    "light" : [100, 20, 20],
+    "color" : [148, 192, 255],
+    "light" : [130, 110, 140],
     "position" : [0, 0],
     "destructionAction" : "shrink",
     "destructionTime" : 0.5,

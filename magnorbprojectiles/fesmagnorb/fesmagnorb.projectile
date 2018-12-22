@@ -19,12 +19,43 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/projectiles/magnorb_impact1.ogg",
-        "/sfx/projectiles/magnorb_impact2.ogg",
-        "/sfx/projectiles/magnorb_impact3.ogg"
+        "/sfx/az/upgrade/fe_impact1.ogg",
+        "/sfx/az/upgrade/fe_impact2.ogg",
+        "/sfx/az/upgrade/fe_impact3.ogg"
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 3,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "fesimpact",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "fesimpact",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "sosecondary",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "fesimpact",
+          "time" : 0.1,
+          "repeat" : true
+        }
       ]
     }
   ],
 
-  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ],
+  "emitters" : [ "fesproj", "sosecondary" ]
 }

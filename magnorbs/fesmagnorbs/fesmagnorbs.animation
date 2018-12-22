@@ -127,6 +127,7 @@
       },
       "orb1" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -155,6 +156,7 @@
       },
       "orb2" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -183,6 +185,7 @@
       },
       "orb3" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -211,6 +214,7 @@
       },
 	  "orb4" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -239,6 +243,7 @@
       },
 	  "orb5" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -267,6 +272,7 @@
       },
 	  "orb6" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -336,7 +342,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "shieldfes"
+          "particle": "fesshield"
         }
       ]
     },
@@ -355,7 +361,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "shieldfes"
+          "particle": "fesshield"
         }
       ]
     },
@@ -374,7 +380,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "shieldfes"
+          "particle": "fesshield"
         }
       ]
     },
@@ -393,7 +399,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "shieldfes"
+          "particle": "fesshield"
         }
       ]
     },
@@ -411,7 +417,7 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "shieldfes"
+          "particle": "fesshield"
         }
       ]
     },
@@ -429,18 +435,18 @@
       "emissionRate": 30,
       "particles": [
         {
-          "particle": "shieldfes"
+          "particle": "fesshield"
         }
       ]
     }
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
-    "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
-    "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
+    "fire" : [ "/sfx/az/upgrade/fes_fire1.ogg", "/sfx/az/upgrade/fes_fire2.ogg", "/sfx/az/upgrade/fes_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/upgrade/fes_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/upgrade/fes_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/upgrade/fes_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/upgrade/fes_shield_hit.ogg"],
+    "shieldBreak" : ["/sfx/az/upgrade/fes_shield_break.ogg"]
   }
 }

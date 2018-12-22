@@ -1,5 +1,5 @@
 {
-  "kind" : "shieldfe",
+  "kind" : "feimpact",
   "definition" : {
     "type" : "ember",
     "size" : 1,
@@ -13,7 +13,7 @@
     "fullbright" : true,
     "timeToLive" : 0.5,
     "variance" : {
-      "initialVelocity" : [0.2, 0.2],
+      "initialVelocity" : [1.0, 1.0],
       "size" : 0.3,
       "position" : [0.2, 0]
     }

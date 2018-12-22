@@ -91,6 +91,7 @@
       },
       "orb1" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -119,6 +120,7 @@
       },
       "orb2" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -147,6 +149,7 @@
       },
       "orb3" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -175,6 +178,7 @@
       },
 	  "orb4" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
