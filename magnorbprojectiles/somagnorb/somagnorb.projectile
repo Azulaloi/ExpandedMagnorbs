@@ -20,9 +20,9 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/az/solarimpact1.ogg",
-        "/sfx/az/solarimpact2.ogg",
-        "/sfx/az/solarimpact3.ogg"
+        "/sfx/az/upgrade/so_impact1.ogg",
+        "/sfx/az/upgrade/so_impact2.ogg",
+        "/sfx/az/upgrade/so_impact3.ogg"
       ]
     },
     {

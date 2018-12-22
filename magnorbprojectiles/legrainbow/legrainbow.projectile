@@ -19,9 +19,9 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/az/rimpact1.ogg",
-        "/sfx/az/rimpact2.ogg",
-        "/sfx/az/rimpact3.ogg"
+        "/sfx/az/special/obu_impact1.ogg",
+        "/sfx/az/special/obu_impact2.ogg",
+        "/sfx/az/special/obu_impact3.ogg"
       ]
     }
   ],

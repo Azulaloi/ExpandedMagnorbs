@@ -177,11 +177,11 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/az/solarfire1.ogg", "/sfx/az/solarfire2.ogg", "/sfx/az/solarfire3.ogg" ],
-    "shieldOn" : ["/sfx/az/solarshieldraise.ogg"],
-    "shieldLoop" : ["/sfx/az/solarshieldmaintain.ogg"],
-    "shieldOff" : ["/sfx/az/solarshieldend.ogg"],
-    "shieldBlock" : ["/sfx/az/solarshieldhit.ogg"],
-    "shieldBreak" : ["/sfx/melee/shockwave_physical_slam.ogg"]
+    "fire" : [ "/sfx/az/upgrade/so_fire1.ogg", "/sfx/az/upgrade/so_fire2.ogg", "/sfx/az/upgrade/so_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/upgrade/so_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/upgrade/so_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/upgrade/so_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/upgrade/so_shield_hit.ogg"],
+    "shieldBreak" : ["/sfx/az/upgrade/so_shield_break.ogg"]
   }
 }
