@@ -10,5 +10,6 @@
 	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "aemagnorbs" } },
 	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "femagnorbs" } },
 	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "vimagnorbs" } },
-	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "craftingmagnorbs" } }
+	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "craftingmagnorbs" } },
+	{ "op" : "add", "path" : "/defaultBlueprints/tier1/-", "value" : { "item" : "lodestone" } }
 ]
