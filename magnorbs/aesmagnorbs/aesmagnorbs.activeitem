@@ -43,7 +43,7 @@
     "snapDistance" : 100
   },
 
-   "shieldHealth" : 80,
+  "shieldHealth" : 80,
   "shieldKnockback" : 10,
   "shieldEnergyCost" : 35,
 
