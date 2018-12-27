@@ -1,6 +1,6 @@
 {
   "particleEmitters" : {
-    "sparks" : {
+    "sparkles" : {
       "enabled" : false,
       "emissionRate" : 25.0,
       "burstCount" : 30,
