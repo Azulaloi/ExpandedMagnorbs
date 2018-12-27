@@ -22,5 +22,5 @@
   "animationConfig" : "unstableward.animation",
 
   "label" : "Unstable Ward",
-  "icon" : "/interface/statuses/doomed.png"
+  "icon" : "/interface/statuses/unstableward.png"
 }

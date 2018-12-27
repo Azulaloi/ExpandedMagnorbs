@@ -29,6 +29,11 @@
   "orbTotal" : 3,
   "orbitRate" : 0.5,
 
+  "noPoly" : true,
+  "ward" : true,
+  "wardEffectQuantity" : 1,
+  "wardEffect1" : "phaseshift",
+
   "projectileType" : "phantommagnorb",
   "projectileParameters" : {
     "power" : 3.65, //3.65 * 3.5 (L6) = 12.775

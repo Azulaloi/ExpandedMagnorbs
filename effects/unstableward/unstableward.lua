@@ -8,7 +8,7 @@ function init()
 
     animator.setParticleEmitterOffsetRegion("sparks", mcontroller.boundBox())
     animator.setParticleEmitterActive("sparks", true)
-    effect.setParentDirectives("fade=FFFFCC;0.03?border=2;FFFFCC20;00000000")
+    effect.setParentDirectives("fade=FF6D44;0.03?border=2;FF6D4420;00000000")
 
     effect.addStatModifierGroup({
         {stat = "protection", amount = config.getParameter("resistance", 1)}

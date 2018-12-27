@@ -1,0 +1,17 @@
+{
+  "name" : "phaseshift",
+  "blockingStat" : "specialStatusImmunity",
+  "effectConfig" : {
+    "flashDirectives" : "fade=FF0000;0.5"
+  },
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "phaseshift.lua"
+  ],
+
+  "animationConfig" : "phaseshift.animation",
+
+  "label" : "Phase Shift",
+  "icon" : "/interface/statuses/phaseshift.png"
+}

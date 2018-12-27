@@ -28,6 +28,7 @@
   "orbTotal" : 3,
   "orbitRate" : 1.5,
 
+  "shieldRotateValue" : 1,
   "emitterQuantity" : 1,
   "noPoly" : true,
   "ward" : true,
