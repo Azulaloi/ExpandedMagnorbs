@@ -47,7 +47,7 @@ function init()
   end
   --self.wardEffectQuantity = config.getParameter("wardEffectQuantity")
 
-  if checkParam("sequenced") then
+  if config.getParameter("sequenced") then
     self.sequenced = true
   end
 
@@ -248,7 +248,7 @@ function fire(orbIndex)
   if world.lineCollision(mcontroller.position(), firePos) then return end
 
   if self.sequenced then
-    local projectileId = world.spawnProjectile(
+    projectileId = world.spawnProjectile(
         self.projectileType .. orbIndex,
         firePosition(orbIndex),
         activeItem.ownerEntityId(),
@@ -256,7 +256,7 @@ function fire(orbIndex)
         false,
         params
     ) else
-    local projectileId = world.spawnProjectile(
+    projectileId = world.spawnProjectile(
         self.projectileType,
         firePosition(orbIndex),
         activeItem.ownerEntityId(),
