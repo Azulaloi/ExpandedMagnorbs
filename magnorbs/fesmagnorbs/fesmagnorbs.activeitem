@@ -16,6 +16,7 @@
   "animation" : "fesmagnorbs.animation",
   "animationParts" : {
     "glove" : "glove.png",
+    "gloveFullbright" : "glovefullbright.png",
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png",

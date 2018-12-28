@@ -77,6 +77,17 @@
           "shieldPoly" : [ [0.0, -1.75], [0.0, 2.25], [0.875, 1.0], [0.875, -0.5] ]
         }
       },
+      "gloveFullbright" : {
+        "properties" : {
+          "zLevel" : 2,
+          "transformationGroups" : ["weapon"],
+          "fullbright" : true,
+          "rotationCenter" : [-1, 0],
+          "offset" : [-0.1, -0.19],
+          "centered" : true,
+          "image" : "<partImage>:<hand>"
+        }
+      },
       "orb1" : {
         "properties" : {
           "fullbright" : true,
