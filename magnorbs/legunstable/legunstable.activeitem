@@ -35,6 +35,7 @@
   "ward" : true,
   "wardEffectQuantity" : 1,
   "wardEffect1" : "unstableward",
+  "secondaryName" : "Unstable Ward",
 
   "projectileType" : "unstablemagnorb",
   "projectileParameters" : {

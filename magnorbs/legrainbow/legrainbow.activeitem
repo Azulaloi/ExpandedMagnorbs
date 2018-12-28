@@ -15,6 +15,7 @@
   "animation" : "legrainbow.animation",
   "animationParts" : {
     "glove" : "glove.png",
+    "gloveFullbright" : "glovefullbright.png",
     "orb1" : "orb1.png",
     "orb2" : "orb2.png",
     "orb3" : "orb3.png",
