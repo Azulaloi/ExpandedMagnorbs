@@ -47,6 +47,10 @@ function init()
   end
   --self.wardEffectQuantity = config.getParameter("wardEffectQuantity")
 
+  if checkParam("sequenced") then
+    self.sequenced = true
+  end
+
   initStances()
 
   storage.projectileIds = storage.projectileIds or {false, false, false, false, false, false}
@@ -242,19 +246,31 @@ function fire(orbIndex)
   params.ownerAimPosition = activeItem.ownerAimPosition()
   local firePos = firePosition(orbIndex)
   if world.lineCollision(mcontroller.position(), firePos) then return end
-  local projectileId = world.spawnProjectile(
-      self.projectileType,
-      firePosition(orbIndex),
-      activeItem.ownerEntityId(),
-      aimVector(orbIndex),
-      false,
-      params
-    )
+
+  if self.sequenced then
+    local projectileId = world.spawnProjectile(
+        self.projectileType .. orbIndex,
+        firePosition(orbIndex),
+        activeItem.ownerEntityId(),
+        aimVector(orbIndex),
+        false,
+        params
+    ) else
+    local projectileId = world.spawnProjectile(
+        self.projectileType,
+        firePosition(orbIndex),
+        activeItem.ownerEntityId(),
+        aimVector(orbIndex),
+        false,
+        params
+    ) end
+
   if projectileId then
     storage.projectileIds[orbIndex] = projectileId
     self.cooldownTimer = self.cooldownTime
     animator.playSound("fire")
   end
+
 end
 
 function firePosition(orbIndex)

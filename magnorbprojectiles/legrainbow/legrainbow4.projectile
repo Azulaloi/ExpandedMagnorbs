@@ -1,0 +1,30 @@
+{
+  "projectileName" : "legrainbow4",
+  "image" : "legrainbow4.png",
+  "pointLight" : false,
+  "flippable" : true,
+  "orientationLocked" : true,
+  "actionOnReap" : [ ],
+  "statusEffects" : [ ],
+  "damagePoly" : [[-3, 0], [0, 3], [3, 0], [0, -3]],
+  "power" : 5.0,
+  "speed" : 110,
+  "damageKind" : "hammer",
+  "physics" : "laser",
+  "bounces" : -1,
+  "piercing" : true,
+  "timeToLive" : 3,
+
+  "actionOnCollide" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/az/special/obu_impact1.ogg",
+        "/sfx/az/special/obu_impact2.ogg",
+        "/sfx/az/special/obu_impact3.ogg"
+      ]
+    }
+  ],
+
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
+}

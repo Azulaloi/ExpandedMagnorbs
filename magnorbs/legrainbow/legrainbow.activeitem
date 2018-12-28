@@ -31,7 +31,9 @@
   "shieldLock" : true,
   "orbitRate" : 1.3,
 
+  "sequenced" : true,
   "projectileType" : "legrainbow",
+
   "projectileParameters" : {
     "power" : 2.97, //4.85
     "knockback" : 20,
