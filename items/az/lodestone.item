@@ -6,5 +6,6 @@
   "inventoryIcon" : "lodestone.png",
   "description" : "This Lodstone exerts a powerful magnetic field. It could be used to aid in the crafting of other magnetic objects.",
   "shortdescription" : "Lodestone",
-  "itemTags" : [ "reagent" ]
+  "itemTags" : [ "reagent" ],
+  "tooltipKind" : "lodestone"
 }
