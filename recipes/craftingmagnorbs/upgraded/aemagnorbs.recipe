@@ -1,6 +1,7 @@
 {
   "input" : [
 	{ "item" : "refinedaegisalt", "count" : 16 },
+    { "item" : "lodestone", "count" : 2 },
     { "item" : "durasteelbar", "count" : 8 },
     { "item" : "wire", "count" : 6 },
     { "item" : "battery", "count" : 2 }

@@ -74,6 +74,7 @@
           "craftingSound" : "/sfx/crafting_magnorbs.ogg",
           "upgradeMaterials" : [
             { "item" : "titaniumbar", "count" : 12 },
+            { "item" : "lodestone", "count" : 3 },
             { "item" : "glass", "count" : 12 },
             { "item" : "smallbattery", "count" : 4 },
             { "item" : "copperbar", "count" : 8 }
@@ -123,6 +124,7 @@
           "craftingSound" : "/sfx/crafting_magnorbs.ogg",
           "upgradeMaterials" : [
             { "item" : "durasteelbar", "count" : 10 },
+            { "item" : "lodestone", "count" : 3 },
             { "item" : "glass", "count" : 8 },
             { "item" : "battery", "count" : 1 },
             { "item" : "wire", "count" : 6 }

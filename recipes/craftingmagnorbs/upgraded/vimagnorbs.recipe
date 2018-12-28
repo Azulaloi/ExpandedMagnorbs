@@ -1,6 +1,7 @@
 {
   "input" : [
 	{ "item" : "refinedviolium", "count" : 16 },
+    { "item" : "lodestone", "count" : 3 },
     { "item" : "durasteelbar", "count" : 8 },
     { "item" : "wire", "count" : 6 },
     { "item" : "battery", "count" : 2 }

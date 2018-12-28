@@ -1,6 +1,7 @@
 {
   "input" : [
     { "item" : "femagnorbs", "count" : 1 },
+    { "item" : "lodestone", "count" : 1 },
     { "item" : "solariumstar", "count" : 16 },
 	{ "item" : "battery", "count" : 3 }
   ],

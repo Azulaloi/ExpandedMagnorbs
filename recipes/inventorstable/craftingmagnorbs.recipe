@@ -2,7 +2,6 @@
   "input" : [
     { "item" : "ironbar", "count" : 8 },
 	{ "item" : "darkwoodmaterial", "count" : 24 },
-    { "item" : "lodestone", "count" : 1 },
 	{ "item" : "copperbar", "count" : 6 }
   ],
   "output" : { "item" : "craftingmagnorbs", "count" : 1 },

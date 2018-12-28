@@ -3,7 +3,7 @@
     { "item" : "ironbar", "count" : 12 },
 	{ "item" : "darkwoodmaterial", "count" : 18 },
     { "item" : "climbingrope", "count" : 2 },
-	{ "item" : "lodestone", "count" : 1 },
+	{ "item" : "lodestone", "count" : 3 },
 	{ "item" : "ironore", "count" : 3}
   ],
   "output" : { "item" : "makemagnorbs", "count" : 1 },

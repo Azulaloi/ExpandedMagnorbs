@@ -1,7 +1,8 @@
 {
   "input" : [
     { "item" : "vimagnorbs", "count" : 1 },
-	{ "item" : "solariumstar", "count" : 16 },
+    { "item" : "lodestone", "count" : 1 },
+    { "item" : "solariumstar", "count" : 16 },
     { "item" : "battery", "count" : 3 }
   ],
   "output" : { "item" : "vismagnorbs", "count" : 1 },

@@ -1,7 +1,8 @@
 {
   "input" : [
     { "item" : "aemagnorbs", "count" : 1 },
-	{ "item" : "solariumstar", "count" : 16 },
+    { "item" : "lodestone", "count" : 1 },
+    { "item" : "solariumstar", "count" : 16 },
     { "item" : "battery", "count" : 3 }
   ],
   "output" : { "item" : "aesmagnorbs", "count" : 1 },

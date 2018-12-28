@@ -1,7 +1,7 @@
 {
   "input" : [
     { "item" : "titaniumbar", "count" : 12 },
-    { "item" : "lodestone", "count" : 1 },
+    { "item" : "lodestone", "count" : 3 },
 	{ "item" : "copperbar", "count" : 6 },
 	{ "item" : "smallbattery", "count" : 3}
   ],

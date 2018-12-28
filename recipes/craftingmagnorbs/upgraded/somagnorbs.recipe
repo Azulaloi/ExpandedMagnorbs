@@ -1,8 +1,9 @@
 {
   "input" : [
-    { "item" : "solariumstar", "count" : 48 },
-	{ "item" : "battery", "count" : 4 },
-	{ "item" : "diamond", "count" : 24 },
+    { "item" : "solariumstar", "count" : 32 },
+    { "item" : "lodestone", "count" : 3 },
+    { "item" : "battery", "count" : 4 },
+	{ "item" : "diamond", "count" : 16 },
 	{ "item" : "refinedaegisalt", "count" : 12 },
 	{ "item" : "refinedferozium", "count" : 12 },
 	{ "item" : "refinedviolium", "count" : 12 }
