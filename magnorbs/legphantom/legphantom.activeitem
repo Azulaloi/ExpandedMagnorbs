@@ -12,7 +12,6 @@
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ ],
   
-  
   "inventoryIcon" : "icon.png",
   "animation" : "legphantom.animation",
   "animationParts" : {
@@ -30,6 +29,7 @@
   "orbTotal" : 3,
   "orbitRate" : 0.5,
 
+  "shieldRotateValue" : 1,
   "noPoly" : true,
   "ward" : true,
   "wardEffectQuantity" : 1,
