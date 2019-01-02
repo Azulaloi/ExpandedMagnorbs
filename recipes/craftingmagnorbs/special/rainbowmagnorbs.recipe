@@ -1,0 +1,13 @@
+{
+  "input" : [
+    { "item" : "duramagnorbs", "count" : 1 },
+    { "item" : "battery", "count" : 1 },
+    { "item" : "diamond", "count" : 12 },
+    { "item" : "lodestone", "count" : 2 },
+	{ "item" : "wire", "count" : 6 },
+	{ "item" : "upgrademodule", "count" : 1 },
+	{ "item" : "prisiliteore", "count" : 24 }
+  ],
+  "output" : { "item" : "rainbowmagnorbs", "count" : 1 },
+  "groups" : [ "craftingmagnorbs2", "specialnorbs", "weapons", "all" ]
+}
