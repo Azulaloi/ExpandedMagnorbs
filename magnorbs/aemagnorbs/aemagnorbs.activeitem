@@ -30,7 +30,7 @@
   "shieldSpacingQ" : false,
   "orbTotal" : 2,
   "orbitRate" : 1.3,
-  "secondaryName" : "Small Magshield",
+  "secondaryName" : "Magbracer",
 
   "projectileType" : "aemagnorb",
   "projectileParameters" : {
@@ -44,9 +44,9 @@
     "snapDistance" : 10.0
   },
 
-  "shieldHealth" : 70,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 30,
+  "shieldHealth" : 50,
+  "shieldKnockback" : 5,
+  "shieldEnergyCost" : 14,
 
   "stances" : {
     "idle" : {

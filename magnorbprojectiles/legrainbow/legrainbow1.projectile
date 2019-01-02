@@ -23,6 +23,36 @@
         "/sfx/az/special/obu_impact2.ogg",
         "/sfx/az/special/obu_impact3.ogg"
       ]
+    },
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "rainproj1",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "rainproj1",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "rainproj1",
+          "time" : 0.1,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "rainproj1",
+          "time" : 0.1,
+          "repeat" : true
+        }
+      ]
     }
   ],
 

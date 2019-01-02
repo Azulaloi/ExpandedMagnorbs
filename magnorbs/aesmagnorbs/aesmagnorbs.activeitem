@@ -30,7 +30,7 @@
   "shieldRotateValue" : 1,
   "orbTotal" : 3,
   "orbitRate" : 1.2,
-  "secondaryName" : "Small Magshield",
+  "secondaryName" : "Magbracer",
 
   "projectileType" : "aesmagnorb",
   "projectileParameters" : {
@@ -44,9 +44,9 @@
     "snapDistance" : 100
   },
 
-  "shieldHealth" : 80,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 35,
+  "shieldHealth" : 65,
+  "shieldKnockback" : 5,
+  "shieldEnergyCost" : 16,
 
   "stances" : {
     "idle" : {

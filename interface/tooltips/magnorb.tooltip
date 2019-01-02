@@ -49,25 +49,25 @@
     "hAnchor" : "left",
     "value" : ""
   },
-  "azSecondaryMagnitudeLabel" : {
+  "azSecondaryCostLabel" : {
     "type" : "label",
     "position" : [129, 84],
     "hAnchor" : "right",
     "value" : ""
   },
-  "azSecondaryMagnitudeTitleLabel" : {
+  "azSecondaryCostTitleLabel" : {
     "type" : "label",
     "position" : [10, 84],
     "hAnchor" : "left",
     "value" : ""
   },
-  "azSecondaryCostLabel" : {
+  "azSecondaryMagnitudeLabel" : {
     "type" : "label",
     "position" : [129, 75],
     "hAnchor" : "right",
     "value" : ""
   },
-  "azSecondaryCostTitleLabel" : {
+  "azSecondaryMagnitudeTitleLabel" : {
     "type" : "label",
     "position" : [10, 75],
     "hAnchor" : "left",

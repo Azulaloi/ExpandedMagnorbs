@@ -89,16 +89,19 @@ function init()
 	self.shieldHealth = 1000
   end
   self.shieldKnockback = config.getParameter("shieldKnockback", 0)
+
   if config.getParameter("doesDamage") then
-	self.knockbackDamageParam = "damage"
+	self.knockbackDamageParam = "Damage"
 	else 
 	self.knockbackDamageParam = "Knockback"
   end
+
   if config.getParameter("contactDamage") then
 	self.knockbackDamageQuantity = config.getParameter("contactDamage")
 	else
 	self.knockbackDamageQuantity = 0
   end
+
   if self.shieldKnockback > 0 then
     self.knockbackDamageSource = {
       poly = self.shieldPoly,
@@ -307,7 +310,7 @@ function activateShield()
         if status.resourcePositive("shieldStamina") then
           animator.playSound("shieldBlock")
         else
-          animator.playSound("shieldBreak")
+          --animator.playSound("shieldBreak")
         end
         return
       end
@@ -317,6 +320,9 @@ end
 
 function deactivateShield()
   self.shieldActive = false
+  if not status.resourcePositive("shieldStamina") then
+    animator.playSound("shieldBreak")
+  end
   animator.playSound("shieldOff")
   animator.stopAllSounds("shieldLoop")
   for i, v in ipairs(emitters) do		

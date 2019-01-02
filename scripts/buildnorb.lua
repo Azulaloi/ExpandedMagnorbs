@@ -40,10 +40,12 @@ function build(directory, config, parameters, level, seed)
     if configParameter("shieldLock") ~= true then
         config.tooltipFields.azSecondaryTitleLabel = "Alt:"
         config.tooltipFields.azSecondaryLabel = configParameter("secondaryName") or "Magshield"
-        config.tooltipFields.azSecondaryMagnitudeTitleLabel = "Alt Strength:"
-        config.tooltipFields.azSecondaryMagnitudeLabel = configParameter("shieldHealth")
         config.tooltipFields.azSecondaryCostTitleLabel = "Alt Energy Cost:"
         config.tooltipFields.azSecondaryCostLabel = configParameter("shieldEnergyCost") .. "/s"
+        if configParameter("noMagnitude") ~= true then
+            config.tooltipFields.azSecondaryMagnitudeTitleLabel = "Alt Strength:"
+            config.tooltipFields.azSecondaryMagnitudeLabel = configParameter("shieldHealth")
+        end
     end
 
     config.price = (config.price or 0) * root.evalFunction("itemLevelPriceMultiplier", configParameter("level", 1))

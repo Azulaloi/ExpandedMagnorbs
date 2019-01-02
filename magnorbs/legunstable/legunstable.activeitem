@@ -36,6 +36,7 @@
   "wardEffectQuantity" : 1,
   "wardEffect1" : "unstableward",
   "secondaryName" : "Unstable Ward",
+  "noMagnitude" : true,
 
   "projectileType" : "unstablemagnorb",
   "projectileParameters" : {
@@ -51,7 +52,7 @@
 
   "shieldHealth" : 60,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 1,
+  "shieldEnergyCost" : 30,
 
   "stances" : {
     "idle" : {

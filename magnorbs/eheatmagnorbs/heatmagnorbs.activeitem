@@ -30,9 +30,6 @@
   "orbTotal" : 3,
   "orbitRate" : 1.5,
   "elementalType" : "fire",
-  
-  "doesDamage" : true,
-  "contactDamage" : 10.5,
 
   "projectileType" : "heatmagnorb",
   "projectileParameters" : {
@@ -46,9 +43,9 @@
     "snapDistance" : 4.0
   },
 
-  "shieldHealth" : 45,
+  "shieldHealth" : 85,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 30,
+  "shieldEnergyCost" : 15,
 
   "stances" : {
     "idle" : {

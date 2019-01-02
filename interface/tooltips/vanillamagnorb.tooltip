@@ -51,25 +51,25 @@
   },
   "azSecondaryMagnitudeLabel" : {
     "type" : "label",
-    "position" : [129, 84],
+    "position" : [129, 75],
     "hAnchor" : "right",
     "value" : "1000"
   },
   "azSecondaryMagnitudeTitleLabel" : {
     "type" : "label",
-    "position" : [10, 84],
+    "position" : [10, 75],
     "hAnchor" : "left",
-    "value" : "Alt Energy Cost:"
+    "value" : "Alt Magnitude:"
   },
   "azSecondaryCostLabel" : {
     "type" : "label",
-    "position" : [129, 75],
+    "position" : [129, 84],
     "hAnchor" : "right",
     "value" : "80/s"
   },
   "azSecondaryCostTitleLabel" : {
     "type" : "label",
-    "position" : [10, 75],
+    "position" : [10, 84],
     "hAnchor" : "left",
     "value" : "Alt Energy Cost:"
   },
