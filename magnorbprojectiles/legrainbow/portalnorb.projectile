@@ -1,5 +1,5 @@
 {
-  "projectileName" : "legrainbow",
+  "projectileName" : "portalnorb",
   "image" : "legrainbow.png",
   "pointLight" : false,
   "flippable" : true,
@@ -8,10 +8,10 @@
   "statusEffects" : [ ],
   "damagePoly" : [[-3, 0], [0, 3], [3, 0], [0, -3]],
   "power" : 5.0,
-  "speed" : 110,
+  "speed" : 10,
   "damageKind" : "hammer",
   "physics" : "laser",
-  "bounces" : -1,
+  "bounces" : 1,
   "piercing" : true,
   "timeToLive" : 3,
 
@@ -26,5 +26,10 @@
     }
   ],
 
-  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
+  "scripts" : [ "portalnorb.lua" ],
+
+  "controlMovement" : {
+    "maxSpeed" : 60,
+    "controlForce" : 60
+  }
 }

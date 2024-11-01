@@ -24,15 +24,16 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
+  "scripts" : ["rainbow.lua"],
   "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 5,
   "shieldLock" : true,
   "orbitRate" : 1.3,
 
-  "sequenced" : true,
   "projectileType" : "legrainbow",
+
+  "shieldEnergyCost" : 60,
 
   "projectileParameters" : {
     "power" : 2.97, //4.85
@@ -44,9 +45,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 60,
 
   "stances" : {
     "idle" : {

@@ -1,6 +1,6 @@
 {
-  "projectileName" : "portalnorb",
-  "image" : "legrainbow.png",
+  "projectileName" : "portalnorb1",
+  "image" : "legrainbow1.png",
   "pointLight" : false,
   "flippable" : true,
   "orientationLocked" : true,
