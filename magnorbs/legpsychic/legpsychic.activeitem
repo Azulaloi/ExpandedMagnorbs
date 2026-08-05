@@ -1,0 +1,60 @@
+{
+  "itemName": "psychicmagnorbs",
+  "level": 5,
+  "price": 1250,
+  "maxStack": 1,
+  "rarity": "Rare",
+  "description": "A specialized bracer that can control a single orb from a distance.",
+  "shortdescription": "Psychic Magnorbs",
+  "tooltipKind": "magnorb",
+  "category": "magnorb",
+  "twoHanded": true,
+  "itemTags": ["weapon"],
+  //"learnBlueprintsOnPickup": ["psymagnorbs"],
+
+  "inventoryIcon" : "icon.png",
+  "animation" : "legpsychic.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "gloveFullbright" : "glovefullbright.png",
+    "orb1" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["psychic.lua"],
+  "builder" : "/scripts/buildnorb.lua",
+
+  "emitterQuantity" : 1,
+  "orbTotal" : 1,
+  "orbitRate" : 0.75,
+  "secondaryName" : "Focus",
+  "shieldEnergyCost" : 30,
+  "noMagnitude" : true,
+
+  "projectileType": "psymagnorb",
+  "projectileParameters": {
+    "power": 2.85,
+    "knockback": 30,
+
+    "returnOnHit": false,
+    "ignoreTerrain": false,
+    "controlForce": 140,
+    "pickupDistance": 1.5,
+    "snapDistance": 4.0
+  },
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}
