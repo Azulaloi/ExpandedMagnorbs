@@ -15,20 +15,20 @@ function init()
   self.orbTotal = config.getParameter("orbTotal")
   self.level = config.getParameter("level")
   if config.getParameter("shieldLock") then
-	self.lockValue = (self.orbTotal) + 1
-	else
-	self.lockValue = (self.orbTotal)
+    self.lockValue = (self.orbTotal) + 1
+  else
+    self.lockValue = (self.orbTotal)
   end
   
   if config.getParameter("shieldRotateValue") then
-	ShieldRotate = tonumber(config.getParameter("shieldRotateValue"))
-	else
-	ShieldRotate = 0.7
+  ShieldRotate = tonumber(config.getParameter("shieldRotateValue"))
+  else
+  ShieldRotate = 0.7
   end
   
   if config.getParameter("shieldSpacingQ") then
-	SpacingQ = tonumber(config.getParameter("shieldSpacingQ"))
-	else SpacingQ = 1
+  SpacingQ = tonumber(config.getParameter("shieldSpacingQ"))
+  else SpacingQ = 1
   end
 
   if checkParam("noPoly") then
@@ -60,12 +60,12 @@ function init()
   emitterQuantity = tonumber(self.emitterQuantity)
   emitters = {}
   if config.getParameter("emitterQuantity") then 
-	if (emitterQuantity >= 1) then
-	  for i = 1,(emitterQuantity) do
-		table.insert(emitters, ("shieldEmitter" .. i))
-		--for i, v in ipairs(emitters) do sb.logInfo(i, v) end
-	  end
-	end
+    if (emitterQuantity >= 1) then
+      for i = 1,(emitterQuantity) do
+      table.insert(emitters, ("shieldEmitter" .. i))
+      --for i, v in ipairs(emitters) do sb.logInfo(i, v) end
+      end
+    end
   end
 
   self.orbitRate = config.getParameter("orbitRate", 1) * -2 * math.pi
@@ -84,22 +84,22 @@ function init()
   end
   self.shieldEnergyCost = config.getParameter("shieldEnergyCost", 50)
   if config.getParameter("shieldHealth") then
-	self.shieldHealth = tonumber(config.getParameter("shieldHealth"))
-	else
-	self.shieldHealth = 1000
+    self.shieldHealth = tonumber(config.getParameter("shieldHealth"))
+  else
+    self.shieldHealth = 1000
   end
   self.shieldKnockback = config.getParameter("shieldKnockback", 0)
 
   if config.getParameter("doesDamage") then
-	self.knockbackDamageParam = "Damage"
-	else 
-	self.knockbackDamageParam = "Knockback"
+    self.knockbackDamageParam = "Damage"
+  else 
+    self.knockbackDamageParam = "Knockback"
   end
 
   if config.getParameter("contactDamage") then
-	self.knockbackDamageQuantity = config.getParameter("contactDamage")
-	else
-	self.knockbackDamageQuantity = 0
+    self.knockbackDamageQuantity = config.getParameter("contactDamage")
+  else
+    self.knockbackDamageQuantity = 0
   end
 
   if self.shieldKnockback > 0 then
@@ -298,8 +298,8 @@ function activateShield()
   animator.playSound("shieldOn")
   animator.playSound("shieldLoop", -1)
   for i, v in ipairs(emitters) do		
-	animator.setParticleEmitterActive(v, 1)		
-	end
+    animator.setParticleEmitterActive(v, 1)		
+  end
   setStance("shield")
   activeItem.setItemShieldPolys({self.shieldPoly})
   activeItem.setItemDamageSources({self.knockbackDamageSource})
@@ -326,8 +326,8 @@ function deactivateShield()
   animator.playSound("shieldOff")
   animator.stopAllSounds("shieldLoop")
   for i, v in ipairs(emitters) do		
-	animator.setParticleEmitterActive(v, false)		
-	end
+    animator.setParticleEmitterActive(v, false)		
+  end
   setStance("idle")
   activeItem.setItemShieldPolys()
   activeItem.setItemDamageSources()

@@ -1,0 +1,21 @@
+{
+  "kind" : "rain_spark5",
+  "definition" : {
+    "type" : "animated",
+    "animation" : "/animations/norbs/special/rainbow/sparkle5.animation",
+            "position" : [0, 0],
+            "layer" : "back",
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [0, 0],
+            "fade" : 0.5,
+            "destructionAction" : "shrink",
+            "destructionTime" : 1,
+            "size" : 0.4,
+            "timeToLive" : 1,
+            "fullbright" : true,
+            "variance" : {
+              "initialVelocity" : [0.4, 0.4]
+            }
+  }
+}

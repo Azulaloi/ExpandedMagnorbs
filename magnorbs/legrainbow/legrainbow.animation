@@ -277,10 +277,73 @@
     },
     "orb4" : {
       "interpolated" : true
-	},
-	"orb5" : {
-      "interpolated" : true  
-	}
+	  },
+	  "orb5" : {
+        "interpolated" : true  
+	  }
+  },
+
+  "particleEmitters": {
+    "idleparticles1" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb1", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark1"
+        }
+      ]
+    },
+    "idleparticles2" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb2", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark2"
+        }
+      ]
+    },
+    "idleparticles3" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb3", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark3"
+        }
+      ]
+    },
+    "idleparticles4" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb4", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark4"
+        }
+      ]
+    },
+    "idleparticles5" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb5", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark5"
+        }
+      ]
+    }
   },
 
   "sounds" : {
@@ -289,6 +352,7 @@
     "shieldLoop" : ["/sfx/az/generic_shield_loop.ogg"],
     "shieldOff" : ["/sfx/az/generic_shield_end.ogg"],
     "shieldBlock" : ["/sfx/az/generic_shield_hit.ogg"],
-    "shieldBreak" : ["/sfx/az/generic_shield_break.ogg"]
+    "shieldBreak" : ["/sfx/az/generic_shield_break.ogg"],
+    "impact": ["/sfx/az/special/obu_impact1.ogg"]
   }
 }
