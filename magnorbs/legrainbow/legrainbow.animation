@@ -264,7 +264,7 @@
   "transformationGroups" : {
     "weapon" : {},
     "orbs" : {
-      "interpolated" : true
+      "interpolated" : false
     },
     "orb1" : {
       "interpolated" : true
@@ -279,7 +279,7 @@
       "interpolated" : true
 	  },
 	  "orb5" : {
-        "interpolated" : true  
+      "interpolated" : true  
 	  }
   },
 

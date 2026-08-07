@@ -31,6 +31,11 @@ function init()
 
   --message.setHandler("triggerAltReturn", )
 
+  self.homeOffset = {0, 0}
+  message.setHandler("setHomeOffset", function(_, _, offset)
+    self.homeOffset = offset
+  end)
+   
   if boomerangExtra then
     boomerangExtra:init()
   end
@@ -63,10 +68,14 @@ function update(dt)
     else
       -- Returning branch.
 
-      local toTarget = world.distance(self.targetPosition or world.entityPosition(self.ownerId), mcontroller.position())
+      -- local toTarget = world.distance(self.targetPosition or world.entityPosition(self.ownerId), mcontroller.position())
+
+      local returnTarget = self.targetPosition or vec2.add(world.entityPosition(self.ownerId), self.homeOffset)
+      local toTarget = world.distance(returnTarget, mcontroller.position())
+
       if vec2.mag(toTarget) < self.pickupDistance then
         -- Return by pickup.
-        world.sendEntityMessage(self.ownerId, "orbReturn")
+        world.sendEntityMessage(self.ownerId, "orbReturn", entity.id(), mcontroller.velocity())
         projectile.die()
       elseif projectile.timeToLive() < self.timeToLive * 0.5 then
         -- Less than half of TTL remains, initiate no-clip fast return.
