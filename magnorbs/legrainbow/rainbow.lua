@@ -2,6 +2,9 @@ require "/scripts/vec2.lua"
 require "/scripts/util.lua"
 require "/scripts/status.lua"
 require "/scripts/activeitem/stances.lua" 
+require "/scripts/az_actions.lua"
+require "/scripts/az_dynamics.lua"
+require "/magnorbs/legrainbow/rainbow_portal.lua"
 
 function init()
   -- TODO: portal indicator on cursor?
@@ -21,6 +24,9 @@ function init()
 
   -- TODO: figure out actual baseline values, then read these from config parameter
   self.tune = {
+    throwKick = 1.0, -- Impulse scale for firing orbs
+    catchKick = 1.0, -- Impulse scale for catching orbs
+
     ringSpinKick = 0.1, -- Impulse scale for orbital ring spin
     ringSpinRelax = 3.0, -- Ring spinner recovery rate (3.0 should be roughly 1 second)
 
@@ -66,47 +72,61 @@ function init()
       -- during which further hand motion does not add to orb spring, and a new delta history is sampled.
       -- Basically, this value is used by the mechanism which prevents the orbs from exploding when the character sprite flips left/right, or on equip.
       -- 0.15 seems to work fine so far. More testing might find a more optimal value. But, like, it's fine.
-      handWarmingInterval = 0.15
+      warmingInterval = 0.15
+    },
+
+    portal = {
+      radius = 2.5,
+      squash = -0.15,
+      precessRate = 3.0,
+      spinBase = 2.5,
+      spinRelax = 1.5,
+      depthScale = 0.2, -- Shrink effect at "far" arc
+      backDirectives = "?brightness=-45", -- Darkening effect of "far" arc
+      frontLayer = "Player+1", -- Layer for near arc
+      backLayer = "Player-1", -- Layer for far arc
+      flickTime = 0.065, -- Time for an orb fired with portal up to "flick" into the space orb, after which it emerges from portal
+      transitKick = 2.0
     }
   }
-  self.projectileSpeed = root.projectileConfig(self.projectileType .. "1").speed
-  self.ringSpin = newSpinner(self.orbitRate * (storage.spinSign or 1), self.tune.ringSpinRelax)
 
-  self.orbSpin = {}
-  self.orbSpinAngle = {}
+  self.projectileSpeed = root.projectileConfig(self.projectileType .. "1").speed
+
+  -- DYNAMICS CONSTRUCTORS
+
+  self.ringSpin = azDynamics.Spinner.new(self.orbitRate * (storage.spinSign or 1), self.tune.ringSpinRelax)
+
+  self.orbSpin, self.orbSpinAngle, self.orbSpring = {}, {}, {}
   for i = 1, self.orbTotal do
-    self.orbSpin[i] = newSpinner(self.tune.orbSpinBase, self.tune.orbSpinRelax)
+    -- TODO: optional per-orb tuning
+    self.orbSpin[i] = azDynamics.Spinner.new(self.tune.orbSpinBase, self.tune.orbSpinRelax)
     self.orbSpinAngle[i] = 0
+    self.orbSpring[i] = azDynamics.Spring2D.new(self.tune.springK, self.tune.springDamp)
+    self.orbSpring[i]:reset({-1.5, 0}) -- Emerge offset. TODO: read 1.5 from orb radius
   end
 
+  self.armAngularSpring = azDynamics.Spring1D.new(self.tune.armK, self.tune.armDamp, self.tune.armAngularClamp)
+  self.armAxialSpring = azDynamics.Spring1D.new(self.tune.armK, self.tune.armDamp, self.tune.armAxialClamp)
+  self.handTracker = azDynamics.MomentumFrame.new(self.tune.deltaTracking)
 
-  self.armRecoil, self.armRecoilVel = 0, 0
-  self.armPush, self.armPushVel = 0, 0
+  self.debugHideRing = false -- hide ring orbs for tuning the space orb
 
   self.animTime = 0
   self.orbAngle = 0
-  self.orbOffset = {}
-  self.orbOffsetVel = {}
-  for i = 1, self.orbTotal do
-    self.orbOffset[i] = {-1.5, 0} -- TODO: derive radius/offset, or make one truth
-    self.orbOffsetVel[i] = {0, 0}
-  end
-  
+
   self.pendingReturns = {}
   message.setHandler("orbReturn", function(_, _, projId, velocity)
     self.pendingReturns[projId] = velocity
   end)
 
   initStances()
-  storage.projectileIds = storage.projectileIds or {false, false, false, false, false}
-  storage.projectileOutLast = storage.projectileOutLast or {false, false, false, false, false} -- TODO: rename this
+
+  storage.projectileIds = storage.projectileIds or {false, false, false, false, false}  -- need to figure out how to init these weird lua arrays with arbitrary sizes for other sets
+  storage.projectileFlags = storage.projectileFlags or {false, false, false, false, false}
   checkProjectiles(true)
+  sendSafely(storage.projectileIds, "triggerResurrection")
 
-  storage.portalId = storage.portalId or false
-  self.portalActive = false
-  checkPortal()
-  self.portalActiveLast = self.portalActive
-
+  magPortal.init()
 
   animator.resetTransformationGroup("orbs")
   for i = 1, self.orbTotal do
@@ -127,22 +147,22 @@ function update(dt, fireMode, shiftHeld)
 
   updateStance(dt)
   checkProjectiles(false)
-  checkPortal()
+  magPortal.checkPortal()
 
   -- TODO: add shift, hold, double-tap, and dual press detection/variation
 
   if fireMode == "alt" and self.lastFireMode ~= "alt" and not status.resourceLocked("energy") then
-    if (not self.portalActive) and (not storage.portalId) then activatePortal()
-    else collapsePortal(storage.portalId) end
+    magPortal.altTap()
   end
 
   if fireMode == "primary" and self.lastFireMode ~= "primary" and (self.cooldownTimer == 0) then
     local nextOrbIndex = nextOrb()
-    if nextOrbIndex then fire(nextOrbIndex, self.portalActive, storage.portalId) end
+    if nextOrbIndex then fire(nextOrbIndex) end
   end
   self.lastFireMode = fireMode
 
   updateAim()
+  magPortal.update(dt)
   updateAnim(dt)
   updateHand()
   drawDebug()
@@ -154,8 +174,39 @@ function uninit()
   activeItem.setItemDamageSources()
   -- Reset home offset of away projectiles, so they return to player center while item is stowed.
   sendSafely(storage.projectileIds, "setHomeOffset", {0, 0})
+  createGhosts()
+end
 
-  -- TODO: create ghost orbs for stashing return animation
+
+function createGhosts()
+  -- TODO: store ghosts/ids, check for them on init. if any returning ghosts are out, mark them as away, and begin notifying them of new orbital targets... maybe just promote them to real returning orbs? same difference?
+  -- (for the rare case where the bracer is reequipped before all ghosts have returned)
+  
+  local params = copy(self.projectileParameters)
+  params.ghost = true
+  params.returning = true
+  params.ignoreTerrain = true
+  params.power = 0
+  params.damageTeam = {type = "passive"}
+  params.timeToLive = 2
+  params.processing = "?multiply=FFFFFF88"
+
+  for i = 1, self.orbTotal do
+    if storage.projectileIds[i] == false then
+      local pid = world.spawnProjectile(self.projectileType .. i, firePosition(i), 
+        activeItem.ownerEntityId(), {0, 0}, false, params) 
+        -- {
+        --   ghost = true, returning = true, ignoreTerrain = true,
+        --   power = 0, damageTeam = {type = "passive"}, timeToLive = 2,
+        --   processing = "?multiply=FFFFFF88", controlForce = 140,
+        --   pickupDistance = 1.5, snapDistance = 4.0
+        -- })
+      if pid then
+        storage.projectileIds[i] = pid
+        storage.projectileFlags[i] = 1
+      end
+    end
+  end
 end
 
 
@@ -166,46 +217,27 @@ end
 function updateAnim(dt)
   self.animTime = self.animTime + dt
   
-  -- TODO: recoil/push aren't properly descriptive. recoil made sense when I hadn't done push yet, but now it should probably be "tilt" or "pitch" or something
-  self.armRecoilVel = self.armRecoilVel + (-self.tune.armK * self.armRecoil - self.tune.armDamp * self.armRecoilVel) * dt
-  self.armRecoil = util.clamp(self.armRecoil + self.armRecoilVel * dt, self.tune.armAngularClamp[1], self.tune.armAngularClamp[2])
-  self.armPushVel = self.armPushVel + (-self.tune.armK * self.armPush - self.tune.armDamp * self.armPushVel) * dt
-  self.armPush = util.clamp(self.armPush + self.armPushVel * dt, self.tune.armAxialClamp[1], self.tune.armAxialClamp[2])
-
-  activeItem.setArmAngle(self.armAngle + self.armRecoil)
+  activeItem.setArmAngle(self.armAngle + self.armAngularSpring:step(dt))
   animator.resetTransformationGroup("weapon")
-  animator.translateTransformationGroup("weapon", {self.armPush, 0})
+  animator.translateTransformationGroup("weapon", {self.armAxialSpring:step(dt), 0})
 
-  self.orbAngle = self.orbAngle + spinnerUpdate(self.ringSpin, dt)
+  self.orbAngle = self.orbAngle + self.ringSpin:step(dt)
 
   animator.resetTransformationGroup("orbs")
   animator.rotateTransformationGroup("orbs", -(self.armAngle or 0))
+
   local facing = mcontroller.facingDirection()
   if facing ~= self.lastFacing then resyncHandTracking() end
   self.lastFacing = facing
 
   local handBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0}))
-  local handVel = vec2.div(vec2.sub(handBase, self.lastHandBase or handBase), dt)
-  local dvel = vec2.sub(handVel, self.lastHandVel or handVel)
-  -- TODO: check for teleport discontinuity?
-
-  self.lastHandBase = handBase
-  self.lastHandVel = handVel
-
-  if self.handWarmup > 0 then
-    self.handWarmup = self.handWarmup - dt
-  else
-    if vec2.mag(dvel) / dt > self.tune.deltaTracking.threshold then
-      local thatSweetMotion = vec2.mul(dvel, -self.tune.deltaTracking.strength) 
-      for i = 1, self.orbTotal do
-        if storage.projectileIds[i] == false then
-          local toOrb = world.distance(firePosition(i), handBase)
-          if vec2.mag(toOrb) > 0.5 then
-            local radDir = vec2.norm(toOrb)
-            local tanDir = vec2.rotate(radDir, math.pi / 2)
-            self.orbOffsetVel[i][1] = self.orbOffsetVel[i][1] + vec2.dot(thatSweetMotion, radDir)
-            self.orbOffsetVel[i][2] = self.orbOffsetVel[i][2] + vec2.dot(thatSweetMotion, tanDir) * facing
-          end
+  local inject = self.handTracker:sample(handBase, dt)
+  if inject then
+    for i = 1, self.orbTotal do
+      if storage.projectileIds[i] == false then
+        local radDir, tanDir = azDynamics.frame(world.distance(firePosition(i), handBase))
+        if radDir then
+          self.orbSpring[i]:kick(vec2.dot(inject, radDir), vec2.dot(inject, tanDir) * facing)
         end
       end
     end
@@ -214,58 +246,77 @@ function updateAnim(dt)
   for i = 1, self.orbTotal do
     local home = storage.projectileIds[i] == false
 
-    for axis = 1, 2 do
-      self.orbOffsetVel[i][axis] = self.orbOffsetVel[i][axis] + (-self.tune.springK * self.orbOffset[i][axis] - self.tune.springDamp * self.orbOffsetVel[i][axis]) * dt
-      self.orbOffset[i][axis] = self.orbOffset[i][axis] + self.orbOffsetVel[i][axis] * dt
-    end
-
+    -- TODO: jiggle module for azDynamics?
     local J = self.tune.jiggle
     local jx = math.sin(self.animTime * J.radialFrequency + i * J.radialPhase) * J.radialAmplitude
     local jy = math.cos(self.animTime * J.tangentialFrequency + i * J.tangentialPhase) * J.tangentialAmplitude
 
     animator.resetTransformationGroup("orb"..i)
-    self.orbSpinAngle[i] = self.orbSpinAngle[i] + spinnerUpdate(self.orbSpin[i], dt)
-    animator.rotateTransformationGroup("orb"..i, self.orbSpinAngle[i] * facing, {1.5, 0}) -- TODO: derive the orb offset/radius?
+    self.orbSpinAngle[i] = self.orbSpinAngle[i] + self.orbSpin[i]:step(dt)
+
+    animator.rotateTransformationGroup("orb"..i, self.orbSpinAngle[i] * facing, {1.5, 0}) 
+    -- TODO: derive the orb offset/radius?
     -- TODO: should orb home pos radius affect ring torque?
 
-    animator.translateTransformationGroup("orb"..i, {self.orbOffset[i][1] + jx, self.orbOffset[i][2] + jy})
+    local offset = self.orbSpring[i]:step(dt)
+    animator.translateTransformationGroup("orb"..i, {offset[1] + jx, offset[2] + jy})
+
     animator.rotateTransformationGroup("orb"..i, (self.orbAngle * facing) + 2 * math.pi * ((i - 2) / self.orbTotal))
-    animator.setAnimationState("orb"..i, home and "orb" or "hidden")
-    animator.setParticleEmitterActive("idleparticles"..i, home)
+
+    local shown = home and not self.debugHideRing
+    animator.setAnimationState("orb"..i, shown and "orb" or "hidden")
+    animator.setParticleEmitterActive("idleparticles"..i, shown)
+
     if not home then
       world.sendEntityMessage(storage.projectileIds[i], "setHomeOffset", activeItem.handPosition(animator.partPoint("orb"..i, "orbPosition")))
     end
   end
+
+  magPortal.presentSpaceOrb(handBase, dt)
 end
 
 
--- TODO: add throw/catch coefficients for ring spin application
-function applyImpulse(orbIndex, vel, kickSpring)
+-- <flags> = {spring?: bool, orbSpin?: bool, ring?: bool, arm?: bool} or nil
+function applyImpulse(orbIndex, vel, flags, scale)
+  flags = flags or {}
+  vel = vec2.mul(vel, scale or 1)
   local facing = mcontroller.facingDirection()
   local handBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0}))
 
-  local toOrb = world.distance(firePosition(orbIndex), handBase)
-  if vec2.mag(toOrb) > 0.5 then
-    local radDir = vec2.norm(toOrb)
-    local tanDir = vec2.rotate(radDir, math.pi / 2)
+  local radDir, tanDir = azDynamics.frame(world.distance(firePosition(orbIndex), handBase))
+  if radDir then
     local tanVel = vec2.dot(vel, tanDir)
+    
+    if flags.ring ~= false then
+      self.ringSpin:kick(tanVel * self.tune.ringSpinKick, true)
+      storage.spinSign = ((self.ringSpin.home < 0) == (self.orbitRate < 0)) and 1 or -1
+    end
 
-    spinnerKick(self.ringSpin, tanVel * self.tune.ringSpinKick, true)
-    storage.spinSign = ((self.ringSpin.home < 0) == (self.orbitRate < 0)) and 1 or -1
+    if flags.orbSpin ~= false then
+      self.orbSpin[orbIndex]:kick(tanVel * self.tune.orbSpinKick, true)
+    end
 
-    spinnerKick(self.orbSpin[orbIndex], tanVel * self.tune.orbSpinKick, true) -- TODO: make sure orb spins reset when they depart
-
-    if kickSpring then
-      self.orbOffsetVel[orbIndex][1] = self.orbOffsetVel[orbIndex][1] + vec2.dot(vel, radDir) * self.tune.springRad
-      self.orbOffsetVel[orbIndex][2] = self.orbOffsetVel[orbIndex][2] + tanVel * facing * self.tune.springTan
+    if flags.spring ~= false then
+      self.orbSpring[orbIndex]:kick(
+        vec2.dot(vel, radDir) * self.tune.springRad,
+        tanVel * facing * self.tune.springTan
+      )
     end
   end
 
-  local armTip = vec2.add(mcontroller.position(), activeItem.handPosition({1, 0}))
-  local armDir = vec2.norm(world.distance(armTip, handBase))
-  local armPerp = vec2.rotate(armDir, math.pi / 2)
-  self.armRecoilVel = self.armRecoilVel + vec2.dot(vel, armPerp) * facing * self.tune.armAngular
-  self.armPushVel = self.armPushVel + vec2.dot(vel, armDir) * self.tune.armAxial
+  -- I really wish activeItems supported actual arm-moving recoil
+  if flags.arm ~= false then
+    local armTip = vec2.add(mcontroller.position(), activeItem.handPosition({1, 0}))
+    local armDir, armPerp = azDynamics.frame(world.distance(armTip, handBase), 0.1)
+    if armDir then
+      self.armAngularSpring:kick(vec2.dot(vel, armPerp) * facing * self.tune.armAngular)
+      self.armAxialSpring:kick(vec2.dot(vel, armDir) * self.tune.armAxial)
+    end
+  end
+
+  -- TODO: impart momentum on player if the caught momentum is high enough? orbs would need "mass". what is the player's mass?
+  -- would also then want to impart momentum on fire, presumably? would an orb ever be returning faster than its fire rate? 
+  -- maybe if charged through the portal? oh that could be cool
 end
 
 
@@ -277,14 +328,10 @@ end
 
 
 function resyncHandTracking()
-  self.lastHandBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0}))
-  self.lastHandVel = {0, 0}
-  self.handWarmup = self.tune.deltaTracking.handWarmingInterval
+  self.handTracker:resync(vec2.add(mcontroller.position(), activeItem.handPosition({0, 0})))
 end
 
 
--- TODO: migrate spinner to a util script
--- TODO: add proper inertia + friction model? might be good for making different sets handle differently
 
 -- TODO: alternate orbital behaviours? maybe worth testing at least
 --  layered fake halo method like I used for the novablitz ioun stone thing?
@@ -296,73 +343,93 @@ end
 --    and it would mean even more lua physics
 
 
-function newSpinner(rate, relax)
-  return {vel = rate, home = rate, relax = relax}
-end
-
-
-function spinnerUpdate(s, dt)
-  -- TODO: more tuning control (friction, damping, clamps)
-
-  s.vel = s.vel + (s.home - s.vel) * math.min(1, s.relax * dt)
-  return s.vel * dt
-end
-
-
-function spinnerKick(s, kick, mayFlip)
-  s.vel = s.vel + kick
-
-  -- TODO: hysteresis for flip (must exceed X countervel before flipping)
-  if mayFlip and (s.vel < 0) ~= (s.home < 0) and math.abs(s.vel) > math.abs(s.home) then
-    s.home = -s.home
-  end
-end
-
-
-
 -- PRIMARY/SECONDARY (ORB/PORTAL) MANAGEMENT
 
 
-function fire(orbIndex, fromPortal, portalId)
+function fire(orbIndex)
+  if self.portalActive then
+    magPortal.beginConduitFire(orbIndex) -- TODO: rename to transit fire maybe?
+    self.cooldownTimer = self.cooldownTime
+    animator.playSound("fire")
+    return
+  end
+  
   local params = copy(self.projectileParameters)
   params.powerMultiplier = activeItem.ownerPowerMultiplier()
   params.ownerAimPosition = activeItem.ownerAimPosition()
-  params.fromPortal = fromPortal
-  params.fromPortalId = portalId
 
   local firePos = firePosition(orbIndex)
   if world.lineCollision(mcontroller.position(), firePos) then return end
-  
-  local pos = fromPortal and world.entityPosition(portalId) or firePosition(orbIndex)
-  local dir = fromPortal and aimVector(world.entityPosition(portalId)) or aimVector(firePosition(orbIndex))
 
   local projectileId = world.spawnProjectile(
-    self.projectileType .. orbIndex, pos, activeItem.ownerEntityId(), dir, false, params
+    self.projectileType .. orbIndex, firePos, activeItem.ownerEntityId(), 
+    aimVector(firePos), false, params
   )
+
   if projectileId then
     storage.projectileIds[orbIndex] = projectileId
-    -- mark orb's last origin as "from portal" (2) or "from orbit" (1)
-    storage.projectileOutLast[orbIndex] = fromPortal and 2 or 1
+    storage.projectileFlags[orbIndex] = 1 -- 1 means "from orbit", 2 means "from portal"
+    storage.lastFired = orbIndex
     self.cooldownTimer = self.cooldownTime
     animator.playSound("fire")
-    applyImpulse(orbIndex, vec2.mul(dir, -self.projectileSpeed), false)
+    applyImpulse(
+      orbIndex, vec2.mul(aimVector(firePos), -self.projectileSpeed), 
+      {spring = false, orbSpin = false}, self.tune.throwKick
+    )
+    -- Since the orb is departing, reset its spin (regardless of whether firing added any)
+    self.orbSpin[orbIndex]:reset()
   end
 end
 
 
 function doOrbReturnAction(orbIndex, fromPortal, returnVelocity)
   animator.playSound("impact")
-  local params = copy(root.projectileConfig("legrain_action"))
-  local col = fromPortal and {0,0,0} or config.getParameter("rainColors")[orbIndex]
-  params.parametersOrbReturn.actionOnReap[1].list[1].body[1].specification.color = col
-  doParticleAction(firePosition(orbIndex), {actionOnReap = params.parametersOrbReturn.actionOnReap}, 1)
+  local orbPos = firePosition(orbIndex)
+  local burstCount = 16
 
-  -- TODO: fix the particles...
-  -- params.parametersOrbReturn.actionOnReap[1].list[1].body[1].specification = {kind = "rain_spark"..orbIndex}
-  -- doParticleAction(firePosition(orbIndex), {actionOnReap = params.parametersOrbReturn.actionOnReap}, 1)
+  -- TODO: need better ergo on these particle FX functions. especially for adding momentum to particles easily 
+
+  if fromPortal then
+    local sparks = azActions.loopGroup({
+      azActions.makeParticleAction("astraltearsparkle1"),
+      azActions.makeParticleAction("astraltearsparkle2"),
+      azActions.makeParticleAction("astraltearsparkle2")
+    }, 3)
+
+    azActions.processAt(sparks, orbPos)
+    burstCount = 12
+  end
+
+  local vel = {0, 0}
+  if returnVelocity then
+    vel = vec2.norm(returnVelocity)
+    if vec2.mag(vel) < 0.5 then
+      vel = {0, 0}
+    end
+  end
+
+
+  local sparkle = root.assetJson("/particles/special/rain_spark"..orbIndex..".particle").definition
+  local sparkleParams = {
+    layer = "middle",
+    timeToLive = 0.3,
+    destructionTime = 0.2,
+    initialVelocity = vec2.mul(vel, 3.5),
+    size = 0.45,
+    
+    variance = {
+      position = {0.5, 0.5},
+      initialVelocity = {2, 2},
+      size = 0.1,
+      timeToLive = 0.15
+    }
+  }
+
+  local actions = azActions.makeParticleAction(sparkle, burstCount, sparkleParams)
+  azActions.processAt(actions, firePosition(orbIndex))
 
   if returnVelocity then
-    applyImpulse(orbIndex, vec2.sub(returnVelocity, mcontroller.velocity()), true)
+    applyImpulse(orbIndex, vec2.sub(returnVelocity, mcontroller.velocity()), nil, self.tune.catchKick)
   else
     -- No return velocity packet, orb returned through other means (reaped, was stowed, edge case)
     -- Synthesize a generic arrival packet.
@@ -377,10 +444,10 @@ function doOrbReturnAction(orbIndex, fromPortal, returnVelocity)
         vec2.mul(radDir, -self.tune.fallbackRadSpeed),
         vec2.mul(tanDir, spinSign * self.tune.fallbackTanSpeed)
       )
-      applyImpulse(orbIndex, vel, true)
+      applyImpulse(orbIndex, vel, nil, self.tune.catchKick)
     else
       -- degenerate case, fallback poke
-      self.orbOffsetVel[orbIndex] = {-3, 0}
+      self.orbSpring[orbIndex]:setVelocity(-3, 0)
     end
   end
 end
@@ -390,25 +457,35 @@ function checkProjectiles(silent)
   for i, projectileId in ipairs(storage.projectileIds) do
     if projectileId and not world.entityExists(projectileId) then
       storage.projectileIds[i] = false
-      if storage.projectileOutLast[i] then
+      if storage.projectileFlags[i] then
         if not silent then
-          doOrbReturnAction(i, storage.projectileOutLast[i] == 2, self.pendingReturns[projectileId])
+          doOrbReturnAction(i, storage.projectileFlags[i] == 2, self.pendingReturns[projectileId])
 
         end
 
         self.pendingReturns[projectileId] = nil
-        storage.projectileOutLast[i] = false
+        storage.projectileFlags[i] = false
       end
     end
   end
 end
 
 
+-- TODO: generalize next orb functions (linear, round-robin, random, whatever) so param can select strategy
+-- but the predicates... can I pass those with lua?
+
 function nextOrb()
-  for i = 1, self.orbTotal do
-    if not storage.projectileIds[i] then
-      return i
-    end
+  -- for i = 1, self.orbTotal do
+  --   if not storage.projectileIds[i] then
+  --     return i
+  --   end
+  -- end
+
+  -- Round-robin
+  local last = storage.lastFired or 0
+  for offset = 1, self.orbTotal do
+    local i = (last + offset - 1) % self.orbTotal + 1
+    if not storage.projectileIds[i] and not magPortal.isDiving(i) then return i end
   end
 end
 
@@ -422,6 +499,12 @@ function availableOrbCount()
   end
   return available
 end
+
+
+
+
+
+-- MISC?
 
 
 function firePosition(orbIndex)
@@ -448,111 +531,6 @@ end
 
 
 
-
-function checkPortal()
-  if storage.portalId and not world.entityExists(storage.portalId) then
-    self.portalActive = false
-    storage.portalId = false
-    if self.portalActiveLast then
-      -- portal collapsed non-manually
-      doPortalCollapseAction()
-    end
-
-  elseif storage.portalId and world.entityExists(storage.portalId) then
-    self.portalActive = true
-  end
-
-  self.portalActiveLast = self.portalActive
-end
-
-
-function activatePortal()
-  animator.playSound("shieldOn")
-  --animator.playSound("shieldLoop", -1)
-
-  if targetValid(activeItem.ownerAimPosition()) then
-    animator.playSound("fire")
-    createPortal()
-    checkPortal()
-  else
-    -- maybe make a little blocking indicator poof?
-    local params = copy(root.projectileConfig("legrain_action"))
-    params.parametersOrbReturn.actionOnReap[1].list[1].body[1].specification.color = {0,0,0}
-    doParticleAction(activeItem.ownerAimPosition(), {actionOnReap = params.parametersOrbReturn.actionOnReap}, 1)
-
-    return
-  end
-end
-
-
-function collapsePortal(portalId)
-  if portalId and world.entityExists(portalId) then
-    sendSafely(storage.projectileIds, "triggerReturn")
-    
-    self.portalActiveLast = false
-    doPortalCollapseAction()
-
-    world.sendEntityMessage(portalId, "collapse")
-  end
-end
-
-
-function doPortalCollapseAction()
-  for i, v in ipairs(storage.projectileOutLast) do
-    -- any orbs that are marked as having emerged from a portal will divert back to player
-    -- because their portal collapsed, so they should be marked as not from a portal
-    -- so that the return fx is correct
-    if v == 2 then storage.projectileOutLast[i] = 1 end
-  end
-
-  sendSafely(storage.projectileIds, "setTargetPosition", false)
-end
-
-
-function targetValid(aimPos)
-  local focusPos = focusPosition()
-  return --world.magnitude(focusPos, aimPos) <= self.maxCastRange
-    --and
-  not world.lineTileCollision(mcontroller.position(), focusPos)
-      and not world.lineTileCollision(focusPos, aimPos)
-end
-
-
-function focusPosition()
-  return vec2.add(mcontroller.position(), activeItem.handPosition(animator.partPoint("glove", "focalPoint")))
-end
-
-
-function createPortal()
-  local aimPosition = activeItem.ownerAimPosition()
-  local fireDirection = world.distance(aimPosition, focusPosition())[1] > 0 and 1 or -1
-  local pOffset = {fireDirection * (self.projectileDistance or 0), 0}
-  local basePos = activeItem.ownerAimPosition()
-
-  local pCount = 1
-
-  for i = 1, 1 do
-    local projectileId = world.spawnProjectile(
-      "rainbowportal",
-      vec2.add(basePos, pOffset),
-      activeItem.ownerEntityId(),
-      pOffset,
-      false,
-      pParams
-    )
-
-    if projectileId then storage.portalId = projectileId end
-    pOffset = vec2.rotate(pOffset, (2 * math.pi) / pCount)
-  end
-end
-
-
-
--- MISC?
-
-
-
-
 -- UTILITIES
 
 function drawDebug()
@@ -575,8 +553,3 @@ function uponExtantEntities(array, handler, ...)
   end
 end
 
-
-function doParticleAction(position, pParams, count)
-  local c = count or 1
-  for i = 1, c do world.spawnProjectile("legrain_action", position, activeItem.ownerEntityId(), {0,0}, false, pParams) end
-end

@@ -33,7 +33,8 @@
 
   "scripts" : ["rainbow.lua"],
   "builder" : "/scripts/buildnorb.lua",
-
+  "animationScripts" : "rainbow_localanim.lua",
+  
   "orbTotal" : 5,
   "shieldLock" : true,
   "orbitRate" : 0.1, //1.3,

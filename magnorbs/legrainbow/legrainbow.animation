@@ -1,6 +1,7 @@
 {
   "globalTagDefaults" : {
-    "hand" : "front"
+    "hand" : "front",
+    "spaceDirectives" : ""
   },
   "animatedParts" : {
     "stateTypes" : {
@@ -93,7 +94,15 @@
             "transition" : "orb"
           }
         }
-	  }
+	  },
+      "spaceOrb" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+          "front" : {},
+          "back" : {}
+        }
+      }
     },
 
     "parts" : {
@@ -257,6 +266,36 @@
             }
           }
         }
+      },
+      "spaceOrb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "orbPosition" : [0, 0],
+          "transformationGroups" : [ "weapon", "spaceOrb" ]
+        },
+
+        "partStates" : {
+          "spaceOrb" : {
+            "off" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+            "front" : {
+              "properties" : {
+                "zLevel" : 3,
+                "image" : "orb1.png:orb?multiply=5a3c6eff<spaceDirectives>"
+              }
+            },
+            "back" : {
+              "properties" : {
+                "zLevel" : -1,
+                "image" : "orb1.png:orb?multiply=5a3c6eff<spaceDirectives>"
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -279,7 +318,10 @@
       "interpolated" : true
 	  },
 	  "orb5" : {
-      "interpolated" : true  
+      "interpolated" : true
+	  },
+	  "spaceOrb" : {
+      "interpolated" : true
 	  }
   },
 

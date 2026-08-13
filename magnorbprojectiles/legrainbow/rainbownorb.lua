@@ -36,6 +36,10 @@ function init()
   message.setHandler("setHomeOffset", function(_, _, offset)
     self.homeOffset = offset
   end)
+
+  message.setHandler("triggerResurrection", function(_, _) 
+    self.ghost = false
+  end)
    
   if boomerangExtra then
     boomerangExtra:init()
@@ -44,6 +48,11 @@ function init()
   if self.fromPortal and self.fromPortalId then
     self.targetPosition = world.entityPosition(self.fromPortalId)
   end
+
+
+  self.ghost = config.getParameter("ghost", false)
+
+
 
   self.lastPos = mcontroller.position()
   self.lastVel = mcontroller.velocity()
@@ -65,6 +74,9 @@ function update(dt)
       self.targetPosition = false
     end
 
+    -- hmm... moving the portal checking logic to the controller would make this more generic...
+    -- but it wouldn't solve the post-uninit problem... needs modules?
+
     if not self.returning then
       mcontroller.approachVelocity({0, 0}, self.controlForce)
       if self.graceTimer <= 0 and ((not self.ignoreTerrain and mcontroller.isColliding()) or vec2.mag(mcontroller.velocity()) < self.minVelocity) then
@@ -78,9 +90,15 @@ function update(dt)
       local returnTarget = self.targetPosition or vec2.add(world.entityPosition(self.ownerId), self.homeOffset)
       local toTarget = world.distance(returnTarget, mcontroller.position())
 
+      if self.ghost and (vec2.mag(toTarget) > 40) then 
+        projectile.die()
+      end
+      
       if vec2.mag(toTarget) < self.pickupDistance then
         -- Return by pickup.
-        world.sendEntityMessage(self.ownerId, "orbReturn", entity.id(), mcontroller.velocity())
+        if not self.ghost then
+          world.sendEntityMessage(self.ownerId, "orbReturn", entity.id(), mcontroller.velocity())
+        end
         projectile.die()
       elseif projectile.timeToLive() < self.timeToLive * 0.5 then
         -- Less than half of TTL remains, initiate no-clip fast return.
