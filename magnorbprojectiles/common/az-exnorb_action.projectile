@@ -1,0 +1,14 @@
+{
+  "projectileName" : "az-exnorb_action",
+  "image" : "blank.png",
+  "animationLoops" : false,
+  "flippable" : true,
+
+  "damageTeam" : { "type" : "passive" },
+  "damageKind" : "default",
+  "piercing" : true,
+
+  "speed" : 0,
+  "power" : 0,
+  "timeToLive" : 0
+}

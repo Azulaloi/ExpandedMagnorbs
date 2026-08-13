@@ -15,7 +15,7 @@
   "piercing" : true,
   "timeToLive" : 3,
 
-  "actionOnCollide" : [
+  "impactActions" : [
     {
       "action" : "sound",
       "options" : [
@@ -26,30 +26,32 @@
     },
     {
       "action" : "loop",
-      "count" : 4,
+      "count" : 12,
       "body" : [
         {
           "action" : "particle",
-          "specification" : "rainproj2",
-          "time" : 0.1,
-          "repeat" : true
-        },
-        {
-          "action" : "particle",
-          "specification" : "rainproj2",
-          "time" : 0.1,
-          "repeat" : true
-        },
-        {
-          "action" : "particle",
-          "specification" : "rainproj2",
-          "time" : 0.1,
-          "repeat" : true
-        },
-        {
-          "action" : "particle",
-          "specification" : "rainproj2",
-          "time" : 0.1,
+          "specification" : {
+            "type" : "animated",
+            "animation" : "/animations/norbs/special/rainbow/sparkle2.animation",
+            "position" : [0, 0],
+            "layer" : "back",
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [0, 0],
+            "fade" : 0.3,
+            "destructionAction" : "shrink",
+            "destructionTime" : 1,
+            "size" : 0.45,
+            "timeToLive" : 1,
+            "fullbright" : true,
+            "variance" : {
+              "position" : [0.5, 0.5],
+              "initialVelocity" : [2, 2],
+              "size" : 0.1,
+              "timeToLive" : 0.15
+            }
+          },
+          "time" : 0.0,
           "repeat" : true
         }
       ]

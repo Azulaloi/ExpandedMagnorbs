@@ -1,4 +1,5 @@
 require "/scripts/vec2.lua"
+require "/scripts/az_actions.lua"
 
 function init()
   self.returning = config.getParameter("returning", false)
@@ -43,6 +44,10 @@ function init()
   if self.fromPortal and self.fromPortalId then
     self.targetPosition = world.entityPosition(self.fromPortalId)
   end
+
+  self.lastPos = mcontroller.position()
+  self.lastVel = mcontroller.velocity()
+  self.impactActions = config.getParameter("impactActions", {})
 end
 
 function update(dt)
@@ -92,6 +97,18 @@ function update(dt)
   else
     projectile.die()
   end
+
+  self.dt = dt
+  self.lastPos = mcontroller.position()
+  self.lastVel = mcontroller.velocity()
+end
+
+function bounce()
+  if not self.lastPos then return end
+  local reach = vec2.mag(self.lastVel) * (self.dt or 1/60) * 2 + 2
+  local rayEnd = vec2.add(self.lastPos, vec2.mul(vec2.norm(self.lastVel), reach))
+  local hitPoint = world.lineCollision(self.lastPos, rayEnd)
+  azActions.processAt(self.impactActions, hitPoint or mcontroller.position())
 end
 
 function hit(entityId)
