@@ -1,5 +1,6 @@
 require "/scripts/vec2.lua"
 require "/scripts/az_actions.lua"
+require "/scripts/az_dynamics.lua"
 
 function init()
   self.returning = config.getParameter("returning", false)
@@ -63,7 +64,7 @@ function update(dt)
   self.graceTimer = self.graceTimer - dt
 
   if self.ownerId and world.entityExists(self.ownerId) then
-    if boomerangExtra then
+    if boomerangExtra then -- global?
       boomerangExtra:update(dt)
     end
 
@@ -76,8 +77,12 @@ function update(dt)
 
     -- hmm... moving the portal checking logic to the controller would make this more generic...
     -- but it wouldn't solve the post-uninit problem... needs modules?
-
+    -- if self.reave and not self.returning then
+    --   updateReave(dt)
+    -- elseif not self.returning then
     if not self.returning then
+      -- Decelerating branch.
+
       mcontroller.approachVelocity({0, 0}, self.controlForce)
       if self.graceTimer <= 0 and ((not self.ignoreTerrain and mcontroller.isColliding()) or vec2.mag(mcontroller.velocity()) < self.minVelocity) then
         self.returning = true
@@ -144,3 +149,5 @@ end
 function setTargetPosition(targetPosition)
   self.targetPosition = targetPosition
 end
+
+

@@ -1,7 +1,7 @@
 {
   "projectileName" : "rainbowportal",
   "physics" : "hover",
-  "timeToLive" : 6,
+  "timeToLive" : 24,
   "image" : "rainbowportal.png",
   "animationCycle" : 0.35,
   "lightColor" : [90, 60, 110],
@@ -20,6 +20,25 @@
       "repeat" : false,
       "action" : "sound",
       "options" : [ "/sfx/projectiles/astraltear_stop3.ogg" ]
+    },
+
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle1",
+      "time" : 0.1,
+      "repeat" : true
+    },
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle2",
+      "time" : 0.1,
+      "repeat" : true
+    },
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle3",
+      "time" : 0.1,
+      "repeat" : true
     }
   ],
   "actionOnReap" : [
@@ -42,10 +61,6 @@
   "onlyHitTerrain" : true,
 
   "scripts" : [ "rainbowportal.lua" ],
-
-  "projectileType" : "portalnorb",
-  "projectileParameters" : {},
-  "spawnRate" : 0.3,
 
   "persistentAudio" : "/sfx/melee/barrier_create_electric.ogg"
 }

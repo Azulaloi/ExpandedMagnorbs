@@ -108,7 +108,7 @@
     "parts" : {
       "glove" : {
         "properties" : {
-          "transformationGroups" : ["weapon"],
+          "transformationGroups" : ["weapon", "glove"],
           "rotationCenter" : [-1, 0],
           "offset" : [0, -0.25],
           "centered" : true,
@@ -119,7 +119,7 @@
       "gloveFullbright" : {
         "properties" : {
           "zLevel" : 2,
-          "transformationGroups" : ["weapon"],
+          "transformationGroups" : ["weapon", "glove"],
           "fullbright" : true,
           "rotationCenter" : [-1, 0],
           "offset" : [0, -0.25],
@@ -303,7 +303,7 @@
   "transformationGroups" : {
     "weapon" : {},
     "orbs" : {
-      "interpolated" : false
+      "interpolated" : true
     },
     "orb1" : {
       "interpolated" : true
@@ -322,7 +322,10 @@
 	  },
 	  "spaceOrb" : {
       "interpolated" : true
-	  }
+	  },
+    "glove" : {
+
+    }
   },
 
   "particleEmitters": {

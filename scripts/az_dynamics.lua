@@ -17,6 +17,9 @@ require "/scripts/util.lua"
 -- TODO: add proper inertia + friction model? might be good for making different sets handle differently
 
 
+-- TODO: I bet I could make an even more generalized constraint system
+-- if it could swap contexts (projectile, activeItem, tech, etc), I could do really dynamic effects, even the whirl reave woul be simple?
+-- need to see what I can generalize from novablitz
 
 
 azDynamics = {}
@@ -178,7 +181,6 @@ function azDynamics.squashedOrbit(radius, squash, phase)
   p[2] = p[2] * squash
   return p, depth
 end
-
 
 
 

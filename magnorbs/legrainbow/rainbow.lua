@@ -2,8 +2,10 @@ require "/scripts/vec2.lua"
 require "/scripts/util.lua"
 require "/scripts/status.lua"
 require "/scripts/activeitem/stances.lua" 
+require "/scripts/az_cues.lua"
 require "/scripts/az_actions.lua"
 require "/scripts/az_dynamics.lua"
+require "/scripts/az_input.lua"
 require "/magnorbs/legrainbow/rainbow_portal.lua"
 
 function init()
@@ -22,9 +24,11 @@ function init()
   -- TODO: move this into self.tune
   self.orbitRate = config.getParameter("orbitRate", 1) * -2 * math.pi
 
+  self.rainColors = config.getParameter("rainColors")
+
   -- TODO: figure out actual baseline values, then read these from config parameter
   self.tune = {
-    throwKick = 1.0, -- Impulse scale for firing orbs
+    throwKick = 0.75, -- Impulse scale for firing orbs
     catchKick = 1.0, -- Impulse scale for catching orbs
 
     ringSpinKick = 0.1, -- Impulse scale for orbital ring spin
@@ -40,11 +44,11 @@ function init()
     springDamp = 9, -- Damping value for orb spring. Governs wobble decay. Critical damping is: 2*sqrt(K), higher is goopy, lower is jiggly.
     
     armAngular = 0.08, -- Mult for angular recoil felt by arm
-    armAxial = 0.03, -- Mult for axial recoil felt by arm
-    armK = 120, -- Spring konstant for arm spring.
-    armDamp = 14, -- Damping value for arm spring.
+    armAxial = 0.06, -- Mult for axial recoil felt by arm
+    armK = 60, -- Spring konstant for arm spring.
+    armDamp = 10, -- Damping value for arm spring.
     armAngularClamp = {-0.25, 0.25}, -- min, max
-    armAxialClamp = {-0.4, 0.15}, -- min, max
+    armAxialClamp = {-0.75, 0.25}, -- min, max
 
     -- Idle self-jiggle of orbs-in-orbit. Self-jiggle is not part of the spring mechanism.
     jiggle = {
@@ -78,7 +82,7 @@ function init()
     portal = {
       radius = 2.5,
       squash = -0.15,
-      precessRate = 3.0,
+      -- precessRate = 3.0,
       spinBase = 2.5,
       spinRelax = 1.5,
       depthScale = 0.2, -- Shrink effect at "far" arc
@@ -86,7 +90,21 @@ function init()
       frontLayer = "Player+1", -- Layer for near arc
       backLayer = "Player-1", -- Layer for far arc
       flickTime = 0.065, -- Time for an orb fired with portal up to "flick" into the space orb, after which it emerges from portal
-      transitKick = 2.0
+      transitKick = 2.0,
+      timeToLive = 24
+    },
+
+    input = {
+      holdThreshold = 0.15, 
+      doubleTapWindow = 0.3
+    },
+
+    reave = {
+      maxCharge = 1.25,
+      spinMult = 24.0,
+      fizzleKick = 2.0,
+      castEnergy = 50,
+      fireBeat = 0.12
     }
   }
 
@@ -126,6 +144,7 @@ function init()
   checkProjectiles(true)
   sendSafely(storage.projectileIds, "triggerResurrection")
 
+  self.input = azInput.Grammar.new(self.tune.input)
   magPortal.init()
 
   animator.resetTransformationGroup("orbs")
@@ -143,29 +162,48 @@ end
 
 
 function update(dt, fireMode, shiftHeld)
-  self.cooldownTimer = math.max(0, self.cooldownTimer)
+  self.cooldownTimer = math.max(0, self.cooldownTimer - dt)
 
   updateStance(dt)
   checkProjectiles(false)
   magPortal.checkPortal()
 
-  -- TODO: add shift, hold, double-tap, and dual press detection/variation
-
-  if fireMode == "alt" and self.lastFireMode ~= "alt" and not status.resourceLocked("energy") then
-    magPortal.altTap()
+  for _, inputEvent in ipairs(self.input:step(fireMode, shiftHeld, dt)) do
+    consumeInputEvent(inputEvent)
   end
-
-  if fireMode == "primary" and self.lastFireMode ~= "primary" and (self.cooldownTimer == 0) then
-    local nextOrbIndex = nextOrb()
-    if nextOrbIndex then fire(nextOrbIndex) end
-  end
-  self.lastFireMode = fireMode
 
   updateAim()
   magPortal.update(dt)
   updateAnim(dt)
   updateHand()
   drawDebug()
+end
+
+
+-- Does life ever feel like a forest of ifs?
+function consumeInputEvent(event)
+  if event.button == "primary" then
+    if event.type == "press" and self.cooldownTimer == 0 then
+      local nextOrbIndex = nextOrb()
+      if nextOrbIndex then fire(nextOrbIndex) end
+    end
+  
+  elseif event.button == "alt" and not event.shift then
+    if event.type == "tap" then
+      magPortal.altTap()
+    elseif event.type == "holdStart" then
+      magPortal.beginWindup()
+    elseif event.type == "holdRelease" then
+      if magPortal.holdConsumed then
+        magPortal.holdConsumed = false
+        magPortal.releaseWindup() 
+      else
+        magPortal.altTap()
+      end
+    end
+  elseif event.button == "alt" and event.shift then
+    -- shift-alt hold -> implode windup (if portal active, otherwise reave windup)
+  end
 end
 
 
@@ -218,8 +256,17 @@ function updateAnim(dt)
   self.animTime = self.animTime + dt
   
   activeItem.setArmAngle(self.armAngle + self.armAngularSpring:step(dt))
-  animator.resetTransformationGroup("weapon")
-  animator.translateTransformationGroup("weapon", {self.armAxialSpring:step(dt), 0})
+
+
+  -- Drives the arcane arm mechanism via quantized spring
+  -- TODO: do some side-by-side tests to compare smoothness and check the math
+  local axial = self.armAxialSpring:step(dt)
+  local S = 2
+  local d = 2 * math.floor(axial * 8 * S + 0.5)
+  animator.resetTransformationGroup("glove")
+  animator.translateTransformationGroup("glove", {d / (16 * S), 0})
+  updateArmFrame(d, S)
+
 
   self.orbAngle = self.orbAngle + self.ringSpin:step(dt)
 
@@ -273,6 +320,45 @@ function updateAnim(dt)
   end
 
   magPortal.presentSpaceOrb(handBase, dt)
+  -- magPortal.presentBolts(handBase, dt)
+end
+
+
+-- Directive-cropped sprites recenter themselves.
+-- By cropping the arm frame on one side or the other,
+-- the arm can be made to shift axially, which otherwise is not possible.
+-- Note cost in drawables; at S==2 it's negligible.
+function updateArmFrame(d, S) -- delta, Scalar
+  local frame = "rotation"
+
+  -- TODO: can't tell if the scaling actually increases smoothness
+   if d ~= 0 then
+    local size = 43 * S
+    local N = math.max(0, -d)
+    local M = math.max(0, d)
+    local k = ((S - (N + M) % S) % S) / 2  -- symmetric pad for division in theory
+    N = N + k
+    M = M + k
+    frame = string.format(
+      "rotation?scalenearest=%d?crop=%d;0;%d;%d?scale=%s", -- arcane incantation
+      S, N, size - M, size, 1 / S)
+  end
+
+  if frame ~= self.lastArmFrame or self.isFrontHand ~= self.lastArmHand then
+    if self.isFrontHand then
+      activeItem.setFrontArmFrame(frame)
+    else
+      activeItem.setBackArmFrame(frame)
+    end
+
+    if self.lastArmHand ~= nil and self.lastArmHand ~= self.isFrontHand then
+      -- Bracer hand switched front/back, so reset the frame of whatever it used to be
+      if self.lastArmHand then activeItem.setFrontArmFrame("rotation")
+      else activeItem.setBackArmFrame("rotation") end
+    end
+
+    self.lastArmFrame, self.lastArmHand = frame, self.isFrontHand
+  end
 end
 
 
@@ -324,6 +410,7 @@ function updateHand()
   local isFrontHand = (activeItem.hand() == "primary") == (mcontroller.facingDirection() < 0)
   animator.setGlobalTag("hand", isFrontHand and "front" or "back")
   activeItem.setOutsideOfHand(isFrontHand)
+  self.isFrontHand = isFrontHand -- Used by the arm cropper
 end
 
 
@@ -533,9 +620,16 @@ end
 
 -- UTILITIES
 
+-- TODO: debug text drawer that just eats variables so I don't need to position them
+
 function drawDebug()
   local pos = mcontroller.position()
   world.debugText("portal:  " .. (self.portalActive and "true" or "false"), vec2.add(pos, {4, 2}), "green")
+  world.debugText(string.format(
+    "axial: %.2fpx | peak: %.1fpx", 
+    self.armAxialSpring.pos * 8, 
+    math.max(self.debugPeakPx or 0, math.abs(self.armAxialSpring.pos * 8))
+  ), vec2.add(pos, {4, 3}), "green")
 end
 
 
