@@ -21,7 +21,6 @@ function init()
   self.cooldownTimer = self.cooldownTime
   self.orbTotal = config.getParameter("orbTotal")
   self.level = config.getParameter("level")
-  self.shieldEnergyCost = config.getParameter("shieldEnergyCost", 50)
 
   -- TODO: move this into self.tune
   self.orbitRate = config.getParameter("orbitRate", 1) * -2 * math.pi

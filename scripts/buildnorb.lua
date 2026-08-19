@@ -37,7 +37,20 @@ function build(directory, config, parameters, level, seed)
         config.tooltipFields.damageKindImage = "/interface/elements/" .. elementalType .. ".png"
     end
 
-    if configParameter("shieldLock") ~= true then
+    local azSecondary = configParameter("azSecondary") -- Arbitrary override for alt tooltip fields
+    if azSecondary then
+        config.tooltipFields.azSecondaryTitleLabel = azSecondary.title or "Alt:"
+        config.tooltipFields.azSecondaryLabel = azSecondary.name or "<?>"
+        if azSecondary.cost ~= nil then
+            config.tooltipFields.azSecondaryCostTitleLabel = azSecondary.costTitle or "Alt Energy Cost:"
+            config.tooltipFields.azSecondaryCostLabel = azSecondary.cost or "<?>"
+        end
+
+        if azSecondary.magnitude ~= nil then
+            config.tooltipFields.azSecondaryMagnitudeTitleLabel = azSecondary.magnitudeTitle or "Alt Strength:"
+            config.tooltipFields.azSecondaryMagnitudeLabel = azSecondary.magnitude or "<?>"
+        end
+    elseif configParameter("shieldLock") ~= true then
         config.tooltipFields.azSecondaryTitleLabel = "Alt:"
         config.tooltipFields.azSecondaryLabel = configParameter("secondaryName") or "Magshield"
         config.tooltipFields.azSecondaryCostTitleLabel = "Alt Energy Cost:"

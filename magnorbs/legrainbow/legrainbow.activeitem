@@ -36,17 +36,21 @@
   "animationScripts" : ["rainbow_localanim.lua"],
 
   "orbTotal" : 5,
-  "shieldLock" : true,
   "orbitRate" : 0.85, //1.3,
-  "secondaryName" : "Astral Reave",
 
+  "azSecondary": {
+    "title" : "Alt:",
+    "name" : "Astral Reave",
+    "costTitle" : "Alt Energy Cost:",
+    "cost" : "50",
+    "magnitudeTitle" : "Alt Duration:",
+    "magnitude" : "24s"
+  },
+  
 
   "projectileType" : "legrainbow",
-
-  "shieldEnergyCost" : 60,
-
   "projectileParameters" : {
-    "power" : 2.97, //4.85
+    "power" : 2.97, //4.85 (why did I set this to 2.97? so specific)
     "knockback" : 20,
     "processing" : "?multiply=E3E3E3FF",
 
