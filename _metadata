@@ -1,11 +1,11 @@
 {
   "author" : "Azulaloi",
-  "description" : "An expanded series of magnorbs. \n\nAll magnetic bracers are crafted at the Lodestone Stand (and its upgraded forms), crafted at the Inventor's Table. See the magnorb list on the repo for details. \n\nFeedback regarding balance, damage, and abilities, or ideas and suggestions for new magnorbs, is greatly appreciated. Please report any bugs you find.",
+  "description" : "Expanded Magnorbs features 19 new sets of magnorbs, across the vanilla game progression. \n\nYou can craft your first set before even reaching the outpost. To begin, craft the Lodestone Stand at your Inventor's Table. This crafting station has two tier upgrades, like the anvil. Most recipes are known immediately. For details about crafting, including how the unknown recipes are learned (and also item IDs if you wish to spawn them), see the list on the repo.\n\nMost sets have shields as their alternate ability, with higher orb counts providing more protection. The Phasic and Unstable sets have special abilities - Phase Shift and Unstable Ward, respectively, which grant buffs while active. The Astral set's ability, Astral Reave, creates a temporary portal which fired orbs emerge from.\n\nFeedback of any kind, regarding any aspect of this mod, is greatly welcome and dearly appreciated. If you have an idea for a new set or ability you'd like added, let me know. Please report any bugs you may find.\n\n[url=https://github.com/Azulaloi/ExpandedMagnorbs]GitHub Repo[/url]",
   "friendlyName" : "Expanded Magnorbs",
   "includes" : ["Legendary Tooltips"],
   "link" : "steam://url/CommunityFilePage/746884345",
   "name" : "az-expandedmagnorbs",
   "steamContentId" : "746884345",
   "tags" : "Weapons",
-  "version" : "2.1.0"
+  "version" : "2.1.1"
 }
