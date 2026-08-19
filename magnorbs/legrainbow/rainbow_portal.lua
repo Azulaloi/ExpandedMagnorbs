@@ -20,6 +20,9 @@ function magPortal.init()
   magPortal.holdConsumed = false
   magPortal.lastCursor = nil
 
+  magPortal.ringLoopOn = false
+  magPortal.whirrTimer = 0
+  
   magPortal.checkPortal()
   self.portalActiveLast = self.portalActive
 
@@ -72,7 +75,7 @@ function magPortal.update(dt)
     end
   end
 
-  magPortal.applyState()
+  magPortal.applyState(dt)
 end
 
 
@@ -114,7 +117,9 @@ end
 
 
 
-
+function magPortal.uninit()
+  animator.stopAllSounds("ringWhirr")
+end
 
 
 
@@ -137,10 +142,11 @@ end
 -------------------------------------------------------------
 
 
-function magPortal.applyState() -- inconsistent phase/state naming
+function magPortal.applyState(dt) -- inconsistent phase/state naming
   local state = magPortal.phase()
   local charge = magPortal.getCharge()
   magPortal.updateCursor(state, charge)
+  magPortal.applyRingLoop(dt)
 
   -- local stance
 
@@ -155,7 +161,7 @@ end
 function magPortal.beginWindup()
   if not magPortal.mayBeginWindup() then
     magPortal.holdConsumed = true
-    animator.playSound("impact") -- TODO: make a thing of sounds
+    -- animator.playSound("impact") -- TODO: make a thing of sounds
     return
   end
 
@@ -166,12 +172,16 @@ function magPortal.beginWindup()
     firing = false
   }
 
-  animator.playSound("shieldOn") -- TODO: real sound
+  -- animator.playSound("shieldOn") -- TODO: real sound
   -- sendSafely(storage.projectileIds, "triggerReturn")
 
   magPortal.windup.cues = azCues.Sequence.new({
-    {t = (self.tune.reave.maxCharge - self.tune.input.holdThreshold) * 0.5, fn = function() animator.playSound("impact") end},
-    {t = self.tune.reave.maxCharge - self.tune.input.holdThreshold, fn = function() animator.playSound("impact") end}
+    {t = (self.tune.reave.maxCharge - self.tune.input.holdThreshold) * 0.5, fn = function() 
+      -- animator.playSound("whirlReady") 
+    end},
+    {t = self.tune.reave.maxCharge - self.tune.input.holdThreshold, fn = function()
+        animator.playSound("whirlReady")
+      end}
   })
 end
 
@@ -249,7 +259,7 @@ function magPortal.fizzle()
   magPortal.windup = nil
   -- magPortal.setState("idle")
   -- magPortal.restoreRing()
-  animator.playSound("impact") -- TODO: actual sound
+  -- animator.playSound("impact") -- TODO: actual sound
   for i = 1, self.orbTotal do
     if storage.projectileIds[i] == false then
       self.orbSpring[i]:kick(
@@ -387,12 +397,12 @@ function magPortal.doReaveFormationBurstAction(w)
     azActions.makeParticleAction("astraltearsparkle2") -- don't ship using vanilla particles
   }, 4), w.target)
 
-  local prePortalBurst = world.spawnProjectile( -- PLACEHOLDER...
-    "roar", --"roar" "ngravityexplosion"
-    w.target, 
-    activeItem.ownerEntityId(), 
-    {0,0}, 
-    false, {})
+  -- local prePortalBurst = world.spawnProjectile( -- PLACEHOLDER...
+  --   "roar", --"roar" "ngravityexplosion"
+  --   w.target, 
+  --   activeItem.ownerEntityId(), 
+  --   {0,0}, 
+  --   false, {})
 end
 
 
@@ -404,6 +414,42 @@ end
 
 
 
+
+
+
+
+
+
+
+
+function magPortal.ringExcess()
+  local base = math.abs(self.orbitRate)
+  local span = base * (self.tune.reave.spinMult - 1)
+  return util.clamp((math.abs(self.ringSpin.vel) - base) / math.max(span, 0.001), 0, 1)
+end
+
+function magPortal.applyRingLoop(dt)
+  local excess = magPortal.ringExcess()
+
+  if not magPortal.ringLoopOn and excess > 0.05 then
+    animator.playSound("ringWhirr", -1)
+    magPortal.ringLoopOn = true
+    magPortal.whirrTimer = 0
+  elseif magPortal.ringLoopOn and excess < 0.02 then
+    animator.stopAllSounds("ringWhirr")
+    magPortal.ringLoopOn = false
+  end
+
+  if not magPortal.ringLoopOn then return end
+
+  local step = self.tune.reave.whirrAdjust
+  magPortal.whirrTimer = magPortal.whirrTimer - dt
+  if magPortal.whirrTimer <= 0 then
+    animator.setSoundPitch("ringWhirr", 0.7 + 0.9 * excess, step)
+    animator.setSoundVolume("ringWhirr", 0.2 + 0.8 * excess, step)
+    magPortal.whirrTimer = step
+  end
+end
 
 
 

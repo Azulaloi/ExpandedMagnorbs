@@ -8,8 +8,10 @@ require "/scripts/az_dynamics.lua"
 require "/scripts/az_input.lua"
 require "/magnorbs/legrainbow/rainbow_portal.lua"
 
+-- TODO: organize this script? probably not worth doing when I'm gonna refactor it into one modular script later
+
 function init()
-  -- TODO: portal indicator on cursor?
+  -- TODO: custom cursors? at least for the magPortal?
   activeItem.setCursor("/cursors/reticle0.cursor")
 
   self.projectileType = config.getParameter("projectileType")
@@ -104,7 +106,8 @@ function init()
       spinMult = 24.0,
       fizzleKick = 2.0,
       castEnergy = 50,
-      fireBeat = 0.12
+      fireBeat = 0.12,
+      whirrAdjust = 0.1
     }
   }
 
@@ -208,6 +211,7 @@ end
 
 
 function uninit()
+  magPortal.uninit()
   activeItem.setItemShieldPolys()
   activeItem.setItemDamageSources()
   -- Reset home offset of away projectiles, so they return to player center while item is stowed.
@@ -227,7 +231,8 @@ function createGhosts()
   params.power = 0
   params.damageTeam = {type = "passive"}
   params.timeToLive = 2
-  params.processing = "?multiply=FFFFFF88"
+  -- params.processing = "?multiply=FFFFFF88"
+  params.processing = "?multiply=E3E3E388"
 
   for i = 1, self.orbTotal do
     if storage.projectileIds[i] == false then
@@ -246,6 +251,44 @@ function createGhosts()
     end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -430,6 +473,43 @@ end
 --    and it would mean even more lua physics
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- PRIMARY/SECONDARY (ORB/PORTAL) MANAGEMENT
 
 
@@ -448,9 +528,12 @@ function fire(orbIndex)
   local firePos = firePosition(orbIndex)
   if world.lineCollision(mcontroller.position(), firePos) then return end
 
+  local aimVec = aimVector(firePos)
+
   local projectileId = world.spawnProjectile(
-    self.projectileType .. orbIndex, firePos, activeItem.ownerEntityId(), 
-    aimVector(firePos), false, params
+    self.projectileType .. orbIndex, firePos, 
+    activeItem.ownerEntityId(), aimVec, 
+    false, params
   )
 
   if projectileId then
@@ -465,6 +548,25 @@ function fire(orbIndex)
     )
     -- Since the orb is departing, reset its spin (regardless of whether firing added any)
     self.orbSpin[orbIndex]:reset()
+
+
+    local spec = azActions.modify(
+      azActions.getDef("/particles/special/rain_spark"..orbIndex..".particle"), 
+      {
+        layer = "middle",
+        timeToLive = 0.3,
+        destructionTime = 0.2,
+        size = 0.45,
+    
+        variance = {
+          position = {0.25, 0.25},
+          size = 0.1,
+          timeToLive = 0.15
+        }
+      }
+    )
+
+    azActions.processAt(azActions.makeParticleAction(azActions.alongAngle(spec, aimVec, 5.5, {1.5, 1.5}), 12), firePos)
   end
 end
 
@@ -586,6 +688,23 @@ function availableOrbCount()
   end
   return available
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

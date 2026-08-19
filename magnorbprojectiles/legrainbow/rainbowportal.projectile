@@ -45,6 +45,10 @@
     {
       "action" : "config",
       "file" : "/projectiles/explosions/elementimpact/electricimpactmute.config"
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/astraltear_stop2.ogg" ]
     }
   ],
   "speed" : 0,
@@ -62,5 +66,5 @@
 
   "scripts" : [ "rainbowportal.lua" ],
 
-  "persistentAudio" : "/sfx/melee/barrier_create_electric.ogg"
+  "persistentAudio" : "/sfx/az/special/obu/conduit_loop.ogg"
 }

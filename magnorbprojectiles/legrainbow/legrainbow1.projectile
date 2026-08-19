@@ -1,6 +1,7 @@
 {
   "projectileName" : "legrainbow1",
   "image" : "legrainbow1.png",
+  "fullbright" : true,
   "pointLight" : false,
   "flippable" : true,
   "orientationLocked" : true,

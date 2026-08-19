@@ -155,6 +155,29 @@
           }
         }
       },
+      "orb1fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb1", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb1" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb1.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
       "orb2" : {
         "properties" : {
           "centered" : true,
@@ -183,6 +206,29 @@
           }
         }
       },
+      "orb2fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb2", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb2" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb2.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
       "orb3" : {
         "properties" : {
           "centered" : true,
@@ -211,7 +257,33 @@
           }
         }
       },
-	  "orb4" : {
+      "orb3fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb3", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb3" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb3.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
+
+
+
+      "orb4" : {
         "properties" : {
           "centered" : true,
           "offset" : [1.5, 0],
@@ -239,7 +311,31 @@
           }
         }
       },
-	  "orb5" : {
+      "orb41fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb4", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb4" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb4.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
+
+      "orb5" : {
         "properties" : {
           "centered" : true,
           "offset" : [1.5, 0],
@@ -267,6 +363,30 @@
           }
         }
       },
+      "orb5fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb5", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb5" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb5.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
+
       "spaceOrb" : {
         "properties" : {
           "centered" : true,
@@ -398,6 +518,8 @@
     "shieldOff" : ["/sfx/az/generic_shield_end.ogg"],
     "shieldBlock" : ["/sfx/az/generic_shield_hit.ogg"],
     "shieldBreak" : ["/sfx/az/generic_shield_break.ogg"],
-    "impact": ["/sfx/az/special/obu_impact1.ogg"]
+    "impact": ["/sfx/az/special/obu_impact1.ogg"],
+    "ringWhirr": ["/sfx/az/special/obu/whirl_loop.ogg"],
+    "whirlReady": ["/sfx/az/special/obu/whirl_ready.ogg"] 
   }
 }

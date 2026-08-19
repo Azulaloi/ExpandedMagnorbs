@@ -37,7 +37,9 @@
 
   "orbTotal" : 5,
   "shieldLock" : true,
-  "orbitRate" : 0.25, //1.3,
+  "orbitRate" : 0.85, //1.3,
+  "secondaryName" : "Astral Reave",
+
 
   "projectileType" : "legrainbow",
 
@@ -46,6 +48,7 @@
   "projectileParameters" : {
     "power" : 2.97, //4.85
     "knockback" : 20,
+    "processing" : "?multiply=E3E3E3FF",
 
     "returnOnHit" : true,
     "ignoreTerrain" : false,

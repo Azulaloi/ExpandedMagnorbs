@@ -131,7 +131,12 @@ function bounce()
   local reach = vec2.mag(self.lastVel) * (self.dt or 1/60) * 2 + 2
   local rayEnd = vec2.add(self.lastPos, vec2.mul(vec2.norm(self.lastVel), reach))
   local hitPoint = world.lineCollision(self.lastPos, rayEnd)
-  azActions.processAt(self.impactActions, hitPoint or mcontroller.position())
+
+  local actions = azActions.mapParticles(self.impactActions, function(spec) 
+    return azActions.withMomentum(spec, self.lastVel, 0.014)
+  end)
+  azActions.processAt(actions, hitPoint or mcontroller.position())
+  -- azActions.processAt(azActions.makeParticleAction("largehitspark", 1), hitPoint or mcontroller.position())
 end
 
 function hit(entityId)
