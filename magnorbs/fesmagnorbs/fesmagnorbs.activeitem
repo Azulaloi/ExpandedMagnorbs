@@ -4,7 +4,7 @@
   "price" : 1300,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A solarium-reinforced ferozium bracer that can control a huge number of magnetic orbs at once.",
+  "description" : "This ferozium bracer, enhanced with solarium, can manipulate six ferocious magnetic orbs in parallel.",
   "shortdescription" : "High-Count Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",
@@ -20,9 +20,9 @@
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png",
-	"orb4" : "orb.png",
-	"orb5" : "orb.png",
-	"orb6" : "orb.png"
+    "orb4" : "orb.png",
+    "orb5" : "orb.png",
+    "orb6" : "orb.png"
   },
   "animationCustom" : { },
 

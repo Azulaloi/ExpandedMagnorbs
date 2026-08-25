@@ -4,7 +4,7 @@
   "price" : 1400,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "This bracer controls a set of colorful orbs that seem to bend space itself.",
+  "description" : "This bracer controls a set of five chromatic orbs that seem to bend space itself.",
   "shortdescription" : "Asuteru Obu",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

@@ -4,7 +4,7 @@
   "rarity" : "Common",
   "category" : "craftingMaterial",
   "inventoryIcon" : "lodestone.png",
-  "description" : "This Lodstone exerts a powerful magnetic field. It could be used to aid in the crafting of other magnetic objects.",
+  "description" : "This ferrous stone bears an unusually powerful magnetic field. It could be used as a component or catalyst in the production of objects with magnetic properties.",
   "shortdescription" : "Lodestone",
   "itemTags" : [ "reagent" ],
   "tooltipKind" : "lodestone"

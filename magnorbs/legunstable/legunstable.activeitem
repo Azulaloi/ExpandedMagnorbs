@@ -4,7 +4,7 @@
   "price" : 1380,
   "maxStack" : 1,
   "rarity" : "Rare",
-  "description" : "A set of orbs made from core fragments and a bracer for controlling them. Be careful.",
+  "description" : "A set of three orbs made from core fragments, and a bracer for controlling them. Be careful.",
   "shortdescription" : "Unstable Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

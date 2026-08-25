@@ -3,5 +3,5 @@
     { "item" : "ironore", "count" : 8 }
   ],
   "output" : { "item" : "lodestone", "count" : 1 },
-  "groups" : [  "craftingmagnorbs", "mainnorbs", "all" ]
+  "groups" : [ "craftingmagnorbs", "mainnorbs", "all" ]
 }

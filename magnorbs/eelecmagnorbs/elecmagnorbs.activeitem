@@ -4,7 +4,7 @@
   "price" : 1240,
   "maxStack" : 1,
   "rarity" : "Uncommon",
-  "description" : "An electrified set of Magnorbs that will shock a target on impact.",
+  "description" : "These orbs, enabled by their bracer, crackle with electricity that will shock a target on impact.",
   "shortdescription" : "Electrified Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

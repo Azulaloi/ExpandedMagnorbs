@@ -4,7 +4,7 @@
   "price" : 1240,
   "maxStack" : 1,
   "rarity" : "Uncommon",
-  "description" : "A heated set of Magnorbs that will burn a target on impact.",
+  "description" : "This bracer keeps its orbs glowing with an inner heat intense enough to burn a target on impact.",
   "shortdescription" : "Heated Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

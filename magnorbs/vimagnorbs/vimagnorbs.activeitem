@@ -4,7 +4,7 @@
   "price" : 1200,
   "maxStack" : 1,
   "rarity" : "Rare",
-  "description" : "A violium bracer that can tightly control magnetic orbs at high speeds.",
+  "description" : "A violium bracer designed to tightly control its three energetic orbs at delightfully violent speeds.",
   "shortdescription" : "Shredding Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

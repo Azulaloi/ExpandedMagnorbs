@@ -29,7 +29,7 @@
   "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could.",
 
   "learnBlueprintsOnPickup" : [ ],
-  "breakDropOptions" : [],
+  "breakDropOptions" : [ ],
 
   "startingUpgradeStage" : 1,
   "maxUpgradeStage" : 3,
@@ -44,44 +44,44 @@
       "placementImage" : "craftingmagnorbs1.png:default.default",
       "placementImagePosition" : [-6, 0],
 
-      "description" : "This magnetic station can be used to craft magnetic based weaponry.",
+      "description" : "This basic polarization device can be used to craft simple magnetic implements.",
       "shortdescription" : "^orange;Lodestone Stand^white;",
 
-      "apexDescription" : "This stand can be used to induct magnetism in ferrous  materials.",
+      "apexDescription" : "This stand can be used to induce magnetism in ferrous materials.",
       "avianDescription" : "The lodestone on this stand is magnetically suspended. It could be used to create more magnets.",
       "floranDescription" : "Ssstrange stone, floating on pillar.",
       "glitchDescription" : "Intrigued. The lodestone on this stand has a strange effect on my chassis.",
       "humanDescription" : "This stand uses a ferrous lodestone as a source for a magnetic induction field.",
-      "hylotlDescription" : "This is a rather simplistic method of magnetic induction, using a natural lodestone to produce a magnetic field.",
+      "hylotlDescription" : "This is a rather simplistic method of magnetic induction, using a lodestone to produce a magnetic field.",
       "novakidDescription" : "This here lodestone produces a weak magnetic field.",
-      "feneroxDescription" : "Magnet inductor. Rather simple. Feeling curious!",
+      "feneroxDescription" : "Magnet maker. Rather simple. Feeling curious!",
       "iodralDescription" : "This wooden stand is rather shoddy. Not to mention the floating stone."
-      },
+    },
 
-      "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs.config",
-          "paneLayoutOverride" : {
-            "windowtitle" : {
-              "title" : "Lodestone Stand",
-              "subtitle" : "Polarization Station",
-              "icon" : {
-                "file" : "/interface/crafting/cmicon.png"
-              }
-            }
-          },
-          "filter" : [ "craftingmagnorbs" ],
-          "initialRecipeUnlocks" : [ "ampmagnorbs" ],
-          "craftingSound" : "/sfx/crafting_magnorbs.ogg",
-          "upgradeMaterials" : [
-            { "item" : "titaniumbar", "count" : 12 },
-            { "item" : "lodestone", "count" : 3 },
-            { "item" : "glass", "count" : 12 },
-            { "item" : "smallbattery", "count" : 4 },
-            { "item" : "copperbar", "count" : 8 }
-          ]
+    "interactData" : {
+      "config" : "/interface/windowconfig/craftingmagnorbs.config",
+      "paneLayoutOverride" : {
+        "windowtitle" : {
+          "title" : "Lodestone Stand",
+          "subtitle" : "Polarisation Station",
+          "icon" : {
+            "file" : "/interface/crafting/cmicon.png"
+          }
+        }
       },
-      "upgradeSoundEffect" : "fanfare",
-      "upgradeParticleEffect" : "dust"
+      "filter" : [ "craftingmagnorbs" ],
+      "initialRecipeUnlocks" : [ "ampmagnorbs" ],
+      "craftingSound" : "/sfx/crafting_magnorbs.ogg",
+      "upgradeMaterials" : [
+        { "item" : "titaniumbar", "count" : 12 },
+        { "item" : "lodestone", "count" : 3 },
+        { "item" : "glass", "count" : 12 },
+        { "item" : "smallbattery", "count" : 4 },
+        { "item" : "copperbar", "count" : 8 }
+      ]
+    },
+    "upgradeSoundEffect" : "fanfare",
+    "upgradeParticleEffect" : "dust"
   },
 
   {
@@ -94,7 +94,7 @@
       "placementImage" : "craftingmagnorbs2.png:default.default",
       "placementImagePosition" : [-6, 0],
 
-      "description" : "This magnetic station can be used to craft magnetic based weaponry.",
+      "description" : "This refined magnetic device can be used to craft magnetic implements.",
       "shortdescription" : "^orange;Magnetic Induction Station^white;",
 
       "apexDescription" : "The kinds of weapons made here are forbidden in Apex colonies.",
@@ -105,34 +105,35 @@
       "hylotlDescription" : "Anything metallic run through those two prongs will become strongly magnetized.",
       "novakidDescription" : "Well I'll be... an artificial magnetic field.",
       "feneroxDescription" : "Metal table. Magnetic field? Maybe useful.",
-      "iodralDecription" : "I must say, I've never seen anything like this before."
-      },
+      "iodralDescription" : "I must say, I've never seen anything like this before."
+    },
 
-      "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs.config",
-          "paneLayoutOverride" : {
-            "windowtitle" : {
-              "title" : "Magnetic Induction Station",
-              "subtitle" : "Polarization Station",
-              "icon" : {
-                "file" : "/interface/crafting/cmicon.png"
-              }
-            }
-          },
-          "filter" : [ "craftingmagnorbs", "craftingmagnorbs2" ],
-          "initialRecipeUnlocks" : [ ],
-          "craftingSound" : "/sfx/crafting_magnorbs.ogg",
-          "upgradeMaterials" : [
-            { "item" : "durasteelbar", "count" : 10 },
-            { "item" : "lodestone", "count" : 3 },
-            { "item" : "glass", "count" : 8 },
-            { "item" : "battery", "count" : 1 },
-            { "item" : "wire", "count" : 6 }
-          ]
+    "interactData" : {
+      "config" : "/interface/windowconfig/craftingmagnorbs.config",
+      "paneLayoutOverride" : {
+        "windowtitle" : {
+          "title" : "Magnetic Induction Station",
+          "subtitle" : "Polarisation Station",
+          "icon" : {
+            "file" : "/interface/crafting/cmicon.png"
+          }
+        }
       },
-      "upgradeSoundEffect" : "fanfare",
-      "upgradeParticleEffect" : "dust"
+      "filter" : [ "craftingmagnorbs", "craftingmagnorbs2" ],
+      "initialRecipeUnlocks" : [ ],
+      "craftingSound" : "/sfx/crafting_magnorbs.ogg",
+      "upgradeMaterials" : [
+        { "item" : "durasteelbar", "count" : 10 },
+        { "item" : "lodestone", "count" : 3 },
+        { "item" : "glass", "count" : 8 },
+        { "item" : "battery", "count" : 1 },
+        { "item" : "wire", "count" : 6 }
+      ]
+    },
+    "upgradeSoundEffect" : "fanfare",
+    "upgradeParticleEffect" : "dust"
   },
+
   {
     //T3
     "animationState" : "craftingmagnorbs3",
@@ -143,7 +144,7 @@
       "placementImage" : "craftingmagnorbs3.png:default.default",
       "placementImagePosition" : [-6, 0],
 
-      "description" : "This magnetic station can be used to craft magnet based weaponry.",
+      "description" : "This refined magnetization station can be used to craft powerfully magnetic implements.",
       "shortdescription" : "^orange;Gauss Manipulator^white;",
 
       "apexDescription" : "This could produce extremely strong magnetic fields.",
@@ -155,27 +156,28 @@
       "novakidDescription" : "I reckon this could make even more powerful magnetic fields than I could.",
       "feneroxDescription" : "Very shiny. In awe. Makes magnets?",
       "iodralDescription" : "What in the blazes even is this thing?"
-      },
+    },
 
-      "interactData" : {
-          "config" : "/interface/windowconfig/craftingmagnorbs.config",
-          "paneLayoutOverride" : {
-            "windowtitle" : {
-              "title" : "Gauss Manipulator",
-              "subtitle" : "Polarization Station",
-              "icon" : {
-                "file" : "/interface/crafting/cmicon.png"
-              }
-            }
-          },
-          "filter" : [ "craftingmagnorbs", "craftingmagnorbs2", "craftingmagnorbs3" ],
-          "initialRecipeUnlocks" : [ ],
-          "craftingSound" : "/sfx/crafting_magnorbs.ogg"
-       },
-      "upgradeSoundEffect" : "fanfare",
-      "upgradeParticleEffect" : "dust"
+    "interactData" : {
+      "config" : "/interface/windowconfig/craftingmagnorbs.config",
+      "paneLayoutOverride" : {
+        "windowtitle" : {
+          "title" : "Gauss Manipulator",
+          "subtitle" : "Polarisation Station",
+          "icon" : {
+            "file" : "/interface/crafting/cmicon.png"
+          }
+        }
+      },
+      "filter" : [ "craftingmagnorbs", "craftingmagnorbs2", "craftingmagnorbs3" ],
+      "initialRecipeUnlocks" : [ ],
+      "craftingSound" : "/sfx/crafting_magnorbs.ogg"
+    },
+    "upgradeSoundEffect" : "fanfare",
+    "upgradeParticleEffect" : "dust"
   }
   ],
+
   "materialSpaces" : [
       [[-1, 2], "metamaterial:anviladdonbase"],
       [[0, 2], "metamaterial:anviladdonbase"]

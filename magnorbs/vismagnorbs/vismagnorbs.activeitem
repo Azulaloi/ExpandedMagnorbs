@@ -4,8 +4,8 @@
   "price" : 1300,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A solarium-reinforced violium bracer that can control magnorbs at vicious speeds.",
-  "shortdescription" : "High-Speed Magnorbs",
+  "description" : "This violium bracer, energized by solarium, precisely controls four wicked orbs at vicious speeds.",
+  "shortdescription" : "High-Speed Magnorbs", // High-Torque (seperates speed/velocity?)
   "tooltipKind" : "magnorb",
   "category" : "magnorb",
   "twoHanded" : true,
@@ -19,7 +19,7 @@
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png",
-	"orb4" : "orb.png"
+    "orb4" : "orb.png"
   },
   "animationCustom" : { },
 

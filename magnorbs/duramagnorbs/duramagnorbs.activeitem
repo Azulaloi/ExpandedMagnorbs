@@ -4,7 +4,7 @@
   "price" : 980,
   "maxStack" : 1,
   "rarity" : "Uncommon",
-  "description" : "A tough magnetic gauntlet constructed from solid durasteel.",
+  "description" : "A robust magnetic gauntlet constructed from solid durasteel, and three orbs to match.",
   "shortdescription" : "Durable Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

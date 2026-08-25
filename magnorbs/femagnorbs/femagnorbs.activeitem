@@ -4,8 +4,8 @@
   "price" : 1200,
   "maxStack" : 1,
   "rarity" : "Rare",
-  "description" : "A ferozium bracer that can control a large number of magnetic orbs.",
-  "shortdescription" : "Multiple Magnorbs",
+  "description" : "This ferozium bracer can manipulate all five of its matching orbs at once with no sacrifice in strength.",
+  "shortdescription" : "Multiple Magnorbs", // Multiplicitous, Manifold, Swarming, Numerous
   "tooltipKind" : "magnorb",
   "category" : "magnorb",
   "twoHanded" : true,
@@ -20,8 +20,8 @@
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png",
-	"orb4" : "orb.png",
-	"orb5" : "orb.png"
+    "orb4" : "orb.png",
+    "orb5" : "orb.png"
   },
   "animationCustom" : { },
 

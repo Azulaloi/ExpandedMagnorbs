@@ -4,8 +4,8 @@
   "price" : 1200,
   "maxStack" : 1,
   "rarity" : "Rare",
-  "description" : "An aegisalt bracer for propelling magnetic orbs extreme distances.",
-  "shortdescription" : "Long Range Magnorbs",
+  "description" : "An aegisalt bracer capable of magnesis at extreme range, and an accompanying pair of orbs.",
+  "shortdescription" : "Long Range Magnorbs", // Distal, Dashing, Reaching, Grasping, Accelerating...
   "tooltipKind" : "magnorb",
   "category" : "magnorb",
   "twoHanded" : true,
@@ -30,7 +30,7 @@
   "shieldSpacingQ" : false,
   "orbTotal" : 2,
   "orbitRate" : 1.3,
-  "secondaryName" : "Magbracer",
+  "secondaryName" : "Magbuckler",
 
   "projectileType" : "aemagnorb",
   "projectileParameters" : {

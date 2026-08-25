@@ -4,7 +4,7 @@
   "price" : 180,
   "maxStack" : 1,
   "rarity" : "Common",
-  "description" : "A makeshift set of magnetic bracers constructed from iron.",
+  "description" : "A makeshift magnetic bracer and set of three crude orbs, fashioned from iron.",
   "shortdescription" : "Makeshift Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",

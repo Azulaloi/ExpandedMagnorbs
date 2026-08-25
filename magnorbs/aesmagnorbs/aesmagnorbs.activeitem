@@ -4,7 +4,7 @@
   "price" : 1300,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A solarium-reinforced aegisalt bracer that can accelerate magnetic orbs to extreme velocities.",
+  "description" : "An aegisalt bracer and orb trio reinforced with solarium, specialized for extreme velocities and distance.",
   "shortdescription" : "High-Velocity Magnorbs",
   "tooltipKind" : "magnorb",
   "category" : "magnorb",
@@ -30,7 +30,7 @@
   "shieldRotateValue" : 1,
   "orbTotal" : 3,
   "orbitRate" : 1.2,
-  "secondaryName" : "Magbracer",
+  "secondaryName" : "Magbuckler",
 
   "projectileType" : "aesmagnorb",
   "projectileParameters" : {
