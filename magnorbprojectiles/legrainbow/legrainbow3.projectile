@@ -1,0 +1,63 @@
+{
+  "projectileName" : "legrainbow3",
+  "image" : "legrainbow3.png",
+  "fullbright" : true,
+  "pointLight" : false,
+  "flippable" : true,
+  "orientationLocked" : true,
+  "actionOnReap" : [ ],
+  "statusEffects" : [ ],
+  "damagePoly" : [[-3, 0], [0, 3], [3, 0], [0, -3]],
+  "power" : 5.0,
+  "speed" : 110,
+  "damageKind" : "hammer",
+  "physics" : "laser",
+  "bounces" : -1,
+  "piercing" : true,
+  "timeToLive" : 3,
+
+  "impactActions" : [
+    {
+      "action" : "sound",
+      "options" : [
+        "/sfx/az/special/obu_impact1.ogg",
+        "/sfx/az/special/obu_impact2.ogg",
+        "/sfx/az/special/obu_impact3.ogg"
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 12,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : {
+            "type" : "animated",
+            "animation" : "/animations/norbs/special/rainbow/sparkle3.animation",
+            "position" : [0, 0],
+            "layer" : "back",
+            "initialVelocity" : [0, 0],
+            "finalVelocity" : [0, 0],
+            "approach" : [0, 0],
+            "fade" : 0.3,
+            "destructionAction" : "shrink",
+            "destructionTime" : 1,
+            "size" : 0.45,
+            "timeToLive" : 1,
+            "fullbright" : true,
+            "variance" : {
+              "position" : [0.5, 0.5],
+              "initialVelocity" : [2, 2],
+              "size" : 0.1,
+              "timeToLive" : 0.15
+            }
+          },
+          "time" : 0.0,
+          "repeat" : true
+        }
+      ]
+    }
+  ],
+
+  "scripts" : [ "rainbownorb.lua" ]
+}

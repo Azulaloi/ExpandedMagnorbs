@@ -1,18 +1,18 @@
 {
   "itemName" : "ampmagnorbs",
-  "level" : 2,
-  "price" : 6000,
+  "level" : 6,
+  "price" : 1600,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "An amplified set of magnetic bracers for throwing and catching magnetic orbs.",
+  "description" : "An amplified magnetic bracer for throwing and catching a trio of magnetic orbs.",
   "shortdescription" : "Amplified Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
-  "learnBlueprintsOnPickup" : [ "chillmagnorbs", "heatmagnorbs", "toxmagnorbs", "elecmagnorbs", "blankmagnorbs" ],
-
-
+  "learnBlueprintsOnPickup" : [ ],
+  
+  
   "inventoryIcon" : "icon.png",
   "animation" : "ampmagnorbs.animation",
   "animationParts" : {
@@ -24,13 +24,16 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
-
+  "builder" : "/scripts/buildnorb.lua",
+  
   "orbTotal" : 3,
   "orbitRate" : 1.5,
+  "shieldLock" : false,
+
 
   "projectileType" : "ampmagnorb",
   "projectileParameters" : {
-    "power" : 1.0,
+    "power" : 2.85,
     "knockback" : 5,
 
     "returnOnHit" : true,
@@ -40,9 +43,9 @@
     "snapDistance" : 4.0
   },
 
-  "shieldHealth" : 40,
+  "shieldHealth" : 110,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 25,
+  "shieldEnergyCost" : 17,
 
   "stances" : {
     "idle" : {

@@ -1,0 +1,21 @@
+{
+  "kind" : "fesproj",
+  "definition" : {
+    "type" : "ember",
+    "size" : 0.9,
+    "color" : [255, 75, 75],
+    "light" : [100, 20, 20],
+    "position" : [0, 0],
+    "destructionAction" : "shrink",
+    "destructionTime" : 0.5,
+    "fade" : 1,
+    "layer" : "middle",
+    "fullbright" : true,
+    "timeToLive" : 0.5,
+    "variance" : {
+      "initialVelocity" : [0.6, 0.6],
+      "size" : 0.3,
+      "position" : [0.2, 0.2]
+    }
+  }
+}

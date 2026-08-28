@@ -1,0 +1,11 @@
+{
+  "itemName" : "lodestone",
+  "price" : 30,
+  "rarity" : "Common",
+  "category" : "craftingMaterial",
+  "inventoryIcon" : "lodestone.png",
+  "description" : "This ferrous stone bears an unusually powerful magnetic field. It could be used as a component or catalyst in the production of objects with magnetic properties.",
+  "shortdescription" : "Lodestone",
+  "itemTags" : [ "reagent" ],
+  "tooltipKind" : "lodestone"
+}

@@ -1,0 +1,62 @@
+{
+  "itemName" : "sturdymagnorbs",
+  "level" : 2,
+  "price" : 980,
+  "maxStack" : 1,
+  "rarity" : "Common",
+  "description" : "A sturdy magnetic bracer and trio of orbs, constructed from tungsten.",
+  "shortdescription" : "Sturdy Magnorbs",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+  "learnBlueprintsOnPickup" : [ ],
+  
+  "inventoryIcon" : "icon.png",
+  "animation" : "sturdymagnorbs.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "orb1" : "orb.png",
+    "orb2" : "orb.png",
+    "orb3" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
+  
+  "orbTotal" : 3,
+  "orbitRate" : 1.5,
+  "shieldLock" : false,
+
+  "projectileType" : "sturdymagnorb",
+  "projectileParameters" : {
+    "power" : 1.95,
+    "knockback" : 5,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : false,
+    "controlForce" : 110,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 4.0
+  },
+
+  "shieldHealth" : 60,
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 10,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}

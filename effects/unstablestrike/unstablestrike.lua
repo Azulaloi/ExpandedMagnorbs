@@ -26,7 +26,8 @@ function explode()
   if not self.exploded then
     local sourceEntityId = effect.sourceEntity() or entity.id()
     local sourceDamageTeam = world.entityDamageTeam(sourceEntityId)
-    local bombPower = status.resourceMax("health") * config.getParameter("healthDamageFactor", 1.0)
+    --local bombPower = status.resourceMax("health") * config.getParameter("healthDamageFactor", 1.0)
+    local bombPower = config.getParameter("power", 1.0)
     local projectileConfig = {
       power = bombPower,
       damageTeam = sourceDamageTeam,

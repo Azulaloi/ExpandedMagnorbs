@@ -107,8 +107,20 @@
           "shieldPoly" : [ [0.1, -1.60], [-2.9, 2.3], [-1.3, 2.8], [0.0, 2.0], [1.0, 0.45] ]
         }
       },
+      "gloveFullbright" : {
+        "properties" : {
+          "zLevel" : 2,
+          "transformationGroups" : ["weapon"],
+          "fullbright" : true,
+          "rotationCenter" : [-1, 0],
+          "offset" : [0, -0.25],
+          "centered" : true,
+          "image" : "<partImage>:<hand>"
+        }
+      },
       "orb1" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -137,6 +149,7 @@
       },
       "orb2" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -165,6 +178,7 @@
       },
       "orb3" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -193,6 +207,7 @@
       },
 	  "orb4" : {
         "properties" : {
+          "fullbright" : true,
           "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
@@ -221,7 +236,8 @@
       },
 	  "orb5" : {
         "properties" : {
-          "centered" : true,
+        "fullbright" : true,
+        "centered" : true,
           "offset" : [1.5, 0],
           "orbPosition" : [0, 0],
           "transformationGroups" : [ "weapon", "orb5", "orbs" ]
@@ -272,12 +288,108 @@
 	}
   },
 
+  "particleEmitters" : {
+    "shieldEmitter1": { //CYAN
+      "active": false,
+      "transformationGroups": [
+        "orb1"
+      ],
+      "offsetRegion": [
+        0.35,
+        0,
+        0.35,
+        -1.4
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "feshield"
+        }
+      ]
+    },
+
+    "shieldEmitter2": { //MAGENTA
+      "active": false,
+      "transformationGroups": [
+        "orb2"
+      ],
+      "offsetRegion": [
+        0.1,
+        0.70,
+        0.1,
+        -0.40
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "feshield"
+        }
+      ]
+    },
+
+    "shieldEmitter3": { //YELLOW
+      "active": false,
+      "transformationGroups": [
+        "orb3"
+      ],
+      "offsetRegion": [
+        0.40,
+        0.4,
+        0.40,
+        1.8
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "feshield"
+        }
+      ]
+    },
+
+    "shieldEmitter4": { //RED
+      "active": false,
+      "transformationGroups": [
+        "orb4"
+      ],
+      "offsetRegion": [
+        1.2,
+        0.8,
+        1.2,
+        2.0
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "feshield"
+        }
+      ]
+    },
+    "shieldEmitter5": { //RED
+      "active": false,
+      "transformationGroups": [
+        "orb5"
+      ],
+      "offsetRegion": [
+        2.0,
+        0.8,
+        2.0,
+        2.0
+      ],
+      "emissionRate": 30,
+      "particles": [
+        {
+          "particle": "feshield"
+        }
+      ]
+    }
+  },
+
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
-    "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
-    "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
+    "fire" : [ "/sfx/az/upgrade/fe_fire1.ogg", "/sfx/az/upgrade/fe_fire2.ogg", "/sfx/az/upgrade/fe_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/upgrade/fe_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/upgrade/fe_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/upgrade/fe_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/upgrade/fe_shield_hit.ogg"],
+    "shieldBreak" : ["/sfx/az/upgrade/fe_shield_break.ogg"]
   }
 }

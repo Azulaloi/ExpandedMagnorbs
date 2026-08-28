@@ -1,22 +1,22 @@
 {
   "itemName" : "phantommagnorbs",
-  "level" : 6,
-  "price" : 7000,
+  "level" : 5,
+  "price" : 1380,
   "maxStack" : 1,
-  "rarity" : "Legendary",
-  "description" : "A strange bracer. What kind of orbs could this control?",
+  "rarity" : "Rare",
+  "description" : "A strange bracer. The ghostly orbs it controls seem to only partially exist in this material dimension.",
   "shortdescription" : "Phasic Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ ],
-  
   
   "inventoryIcon" : "icon.png",
   "animation" : "legphantom.animation",
   "animationParts" : {
     "glove" : "glove.png",
+    "gloveFullbright" : "glovefullbright.png",
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png"
@@ -24,13 +24,22 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
   
   "orbTotal" : 3,
   "orbitRate" : 0.5,
 
+  "shieldRotateValue" : 1,
+  "noPoly" : true,
+  "ward" : true,
+  "wardEffectQuantity" : 1,
+  "wardEffect1" : "phaseshift",
+  "secondaryName" : "Phase Shift",
+  "noMagnitude" : true,
+
   "projectileType" : "phantommagnorb",
   "projectileParameters" : {
-    "power" : 3.65,
+    "power" : 3.65, //3.65 * 3.5 (L6) = 12.775
     "knockback" : 0,
 
     "returnOnHit" : true,

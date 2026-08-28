@@ -2,7 +2,7 @@
   "projectileName" : "somagnorb",
   "image" : "somagnorb.png",
   "pointLight" : true,
-  "lightColor" : [160, 120, 0],
+  "lightColor" : [255, 255, 180],
   "flippable" : true,
   "orientationLocked" : true,
   "actionOnReap" : [ ],
@@ -20,19 +20,43 @@
     {
       "action" : "sound",
       "options" : [
-        "/sfx/az/solarimpact1.ogg",
-        "/sfx/az/solarimpact2.ogg",
-        "/sfx/az/solarimpact3.ogg"
+        "/sfx/az/upgrade/so_impact1.ogg",
+        "/sfx/az/upgrade/so_impact2.ogg",
+        "/sfx/az/upgrade/so_impact3.ogg"
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "soimpact1",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "soimpact0",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "soimpact1",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "soimpact0",
+          "time" : 0.01,
+          "repeat" : true
+        }
       ]
     }
   ],
-   "periodicActions" : [
-    {
-      "action" : "particle",
-      "specification" : "glowstim",
-      "time" : 0.1,
-      "repeat" : true
-    }
-	],
-  "scripts" : [ "/projectiles/activeitems/boomerang/boomerangprojectile.lua" ]
+
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ],
+  "emitters" : [ "soproj" ]
 }

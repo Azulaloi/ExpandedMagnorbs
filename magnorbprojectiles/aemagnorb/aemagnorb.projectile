@@ -11,20 +11,61 @@
   "speed" : 210,
   "damageKind" : "hammer",
   "physics" : "laser",
-  "bounces" : 1,
+  "bounces" : -1,
   "piercing" : true,
-  "timeToLive" : 5,
+  "timeToLive" : 20,
 
   "actionOnCollide" : [
     {
       "action" : "sound",
       "options" : [
-        "/sfx/projectiles/magnorb_impact1.ogg",
-        "/sfx/projectiles/magnorb_impact2.ogg",
-        "/sfx/projectiles/magnorb_impact3.ogg"
+        "/sfx/az/upgrade/ae_impact1.ogg",
+        "/sfx/az/upgrade/ae_impact2.ogg",
+        "/sfx/az/upgrade/ae_impact3.ogg"
+      ]
+    },
+    {
+      "action" : "loop",
+      "count" : 4,
+      "body" : [
+        {
+          "action" : "particle",
+          "specification" : "aeimpact1",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "aeimpact0",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "aeimpact1",
+          "time" : 0.01,
+          "repeat" : true
+        },
+        {
+          "action" : "particle",
+          "specification" : "aeimpact0",
+          "time" : 0.01,
+          "repeat" : true
+        }
       ]
     }
   ],
 
-  "scripts" : [ "/projectiles/activeitems/boomerang/boomerangprojectile.lua" ]
+  "periodicActions" : [
+    {
+      "action" : "particle",
+      "specification" : "aeorbtrail",
+      "rotate" : true,
+      "time" : 0.032,
+      "repeat" : true
+    }
+  ],
+
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ],
+  "emitters" : [ "aeproj" ]
 }

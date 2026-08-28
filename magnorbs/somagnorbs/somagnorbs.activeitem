@@ -1,17 +1,16 @@
 {
   "itemName" : "somagnorbs",
   "level" : 7,
-  "price" : 12000,
+  "price" : 2250,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A bracer powerful enough to manipulate a Solarium orb.",
-  "shortdescription" : "Solarium Bracer",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "description" : "This sublime bracer is capable of controlling a singular solarium orb. Harness the power of the sun!",
+  "shortdescription" : "Solarium Magnorb",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [],
-  
   
   "inventoryIcon" : "icon.png",
   "animation" : "somagnorbs.animation",
@@ -22,15 +21,17 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
   
   "shieldRotateValue" : 1.0,
   "emitterQuantity" : 2,
   "orbTotal" : 1,
   "orbitRate" : 1.0,
+  "secondaryName" : "Solar Aegis",
 
   "projectileType" : "somagnorb",
   "projectileParameters" : {
-    "power" : 20.00,
+    "power" : 17.50,
     "knockback" : 5,
 
     "returnOnHit" : true,
@@ -40,9 +41,9 @@
     "snapDistance" : 4.0
   },
 
-  "shieldHealth" : 150,
+  "shieldHealth" : 225,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 50,
+  "shieldEnergyCost" : 24,
 
   "stances" : {
     "idle" : {

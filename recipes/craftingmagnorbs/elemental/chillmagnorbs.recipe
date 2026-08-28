@@ -1,0 +1,9 @@
+{
+  "input" : [
+    { "item" : "shinymagnorbs", "count" : 1 },
+    { "item" : "battery", "count" : 1 },
+	{ "item" : "cryonicextract", "count" : 16 }
+  ],
+  "output" : { "item" : "chillmagnorbs", "count" : 1 },
+  "groups" : [ "craftingmagnorbs2", "elementalnorbs", "weapons", "all" ]
+}

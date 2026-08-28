@@ -1,6 +1,7 @@
 {
   "globalTagDefaults" : {
-    "hand" : "front"
+    "hand" : "front",
+    "spaceDirectives" : ""
   },
   "animatedParts" : {
     "stateTypes" : {
@@ -93,18 +94,37 @@
             "transition" : "orb"
           }
         }
-	  }
+	  },
+      "spaceOrb" : {
+        "default" : "off",
+        "states" : {
+          "off" : {},
+          "front" : {},
+          "back" : {}
+        }
+      }
     },
 
     "parts" : {
       "glove" : {
         "properties" : {
-          "transformationGroups" : ["weapon"],
+          "transformationGroups" : ["weapon", "glove"],
           "rotationCenter" : [-1, 0],
           "offset" : [0, -0.25],
           "centered" : true,
           "image" : "<partImage>:<hand>",
           "shieldPoly" : [ [0.0, -1.75], [0.0, 2.25], [0.875, 1.0], [0.875, -0.5] ]
+        }
+      },
+      "gloveFullbright" : {
+        "properties" : {
+          "zLevel" : 2,
+          "transformationGroups" : ["weapon", "glove"],
+          "fullbright" : true,
+          "rotationCenter" : [-1, 0],
+          "offset" : [0, -0.25],
+          "centered" : true,
+          "image" : "<partImage>:<hand>"
         }
       },
       "orb1" : {
@@ -135,6 +155,29 @@
           }
         }
       },
+      "orb1fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb1", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb1" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb1.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
       "orb2" : {
         "properties" : {
           "centered" : true,
@@ -163,6 +206,29 @@
           }
         }
       },
+      "orb2fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb2", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb2" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb2.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
       "orb3" : {
         "properties" : {
           "centered" : true,
@@ -191,7 +257,33 @@
           }
         }
       },
-	  "orb4" : {
+      "orb3fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb3", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb3" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb3.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
+
+
+
+      "orb4" : {
         "properties" : {
           "centered" : true,
           "offset" : [1.5, 0],
@@ -219,7 +311,31 @@
           }
         }
       },
-	  "orb5" : {
+      "orb41fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb4", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb4" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb4.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
+
+      "orb5" : {
         "properties" : {
           "centered" : true,
           "offset" : [1.5, 0],
@@ -246,6 +362,60 @@
             }
           }
         }
+      },
+      "orb5fb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "zLevel" : 1,
+          "offset" : [1.5, 0],
+          "transformationGroups" : [ "weapon", "orb5", "orbs" ]
+        },
+
+        "partStates" : {
+          "orb5" : {
+            "orb" : {
+              "properties" : {
+                "image" : "orb5.png:orb?multiply=ffffff8f"
+              }
+            }
+          }
+        }
+      },
+
+
+
+
+
+      "spaceOrb" : {
+        "properties" : {
+          "centered" : true,
+          "fullbright" : true,
+          "orbPosition" : [0, 0],
+          "transformationGroups" : [ "weapon", "spaceOrb" ]
+        },
+
+        "partStates" : {
+          "spaceOrb" : {
+            "off" : {
+              "properties" : {
+                "image" : ""
+              }
+            },
+            "front" : {
+              "properties" : {
+                "zLevel" : 3,
+                "image" : "orb1.png:orb?multiply=5a3c6eff<spaceDirectives>"
+              }
+            },
+            "back" : {
+              "properties" : {
+                "zLevel" : -1,
+                "image" : "orb1.png:orb?multiply=5a3c6eff<spaceDirectives>"
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -266,18 +436,90 @@
     },
     "orb4" : {
       "interpolated" : true
-	},
-	"orb5" : {
-      "interpolated" : true  
-	}
+	  },
+	  "orb5" : {
+      "interpolated" : true
+	  },
+	  "spaceOrb" : {
+      "interpolated" : true
+	  },
+    "glove" : {
+
+    }
+  },
+
+  "particleEmitters": {
+    "idleparticles1" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb1", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark1"
+        }
+      ]
+    },
+    "idleparticles2" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb2", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark2"
+        }
+      ]
+    },
+    "idleparticles3" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb3", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark3"
+        }
+      ]
+    },
+    "idleparticles4" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb4", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark4"
+        }
+      ]
+    },
+    "idleparticles5" : {
+      "active" : true,
+      "transformationGroups" : [ "weapon", "orb5", "orbs" ],
+      "emissionRate" : 2.5,
+      "emissionRateVariance" : 5,
+      "offsetRegion" : [1.5, 0, 1.5, 0],
+      "particles": [
+        {
+          "particle": "rain_spark5"
+        }
+      ]
+    }
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
-    "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
-    "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
+    "fire" : [ "/sfx/az/special/obu_fire1.ogg", "/sfx/az/special/obu_fire2.ogg", "/sfx/az/special/obu_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/generic_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/generic_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/generic_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/generic_shield_hit.ogg"],
+    "shieldBreak" : ["/sfx/az/generic_shield_break.ogg"],
+    "impact": ["/sfx/az/special/obu_impact1.ogg"],
+    "ringWhirr": ["/sfx/az/special/obu/whirl_loop.ogg"],
+    "whirlReady": ["/sfx/az/special/obu/whirl_ready.ogg"] 
   }
 }

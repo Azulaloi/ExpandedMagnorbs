@@ -1,0 +1,63 @@
+{
+  "itemName" : "shinymagnorbs",
+  "level" : 3,
+  "price" : 980,
+  "maxStack" : 1,
+  "rarity" : "Uncommon",
+  "description" : "A sleek magnetic bracer and set of orbs, made of polished titanium.",
+  "shortdescription" : "Shiny Magnorbs",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
+  "twoHanded" : true,
+  "itemTags" : ["weapon"],
+  "learnBlueprintsOnPickup" : [ "heatmagnorbs", "chillmagnorbs", "elecmagnorbs", "poismagnorbs" ],
+
+  "inventoryIcon" : "icon.png",
+  "animation" : "shinymagnorbs.animation",
+  "animationParts" : {
+    "glove" : "glove.png",
+    "gloveFullbright" : "glovefullbright.png",
+    "orb1" : "orb.png",
+    "orb2" : "orb.png",
+    "orb3" : "orb.png"
+  },
+  "animationCustom" : { },
+
+  "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
+  
+  "orbTotal" : 3,
+  "orbitRate" : 1.5,
+  "shieldLock" : false,
+
+  "projectileType" : "shinymagnorb",
+  "projectileParameters" : {
+    "power" : 1.95,
+    "knockback" : 5,
+
+    "returnOnHit" : true,
+    "ignoreTerrain" : false,
+    "controlForce" : 120,
+    "pickupDistance" : 1.5,
+    "snapDistance" : 4.0
+  },
+
+  "shieldHealth" : 75,
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 13,
+
+  "stances" : {
+    "idle" : {
+      "armRotation" : 10,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    },
+    "shield" : {
+      "armRotation" : 0,
+      "twoHanded" : false,
+      "allowRotate" : true,
+      "allowFlip" : true
+    }
+  }
+}

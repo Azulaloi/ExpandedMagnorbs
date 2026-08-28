@@ -1,0 +1,26 @@
+{
+  "name" : "unstableward",
+  "blockingStat" : "specialStatusImmunity",
+  "effectConfig" : {
+    "activateDelay" : 0.1,
+    "deactivateDelay" : 0.1,
+    "triggerDamageThreshold" : 5,
+    "explosionDamageAmount" : 130,
+
+    "power" : 1.7,
+    "bombConfig" : "/magnorbprojectiles/legunstable/reaction/reactionward.config",
+    "flashDirectives" : "fade=FF0000;0.5",
+
+    "resistance": 20.0
+  },
+  "defaultDuration" : 1,
+
+  "scripts" : [
+    "unstableward.lua"
+  ],
+
+  "animationConfig" : "unstableward.animation",
+
+  "label" : "Unstable Ward",
+  "icon" : "/interface/statuses/unstableward.png"
+}

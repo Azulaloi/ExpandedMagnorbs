@@ -27,9 +27,16 @@
     },
 	{
       "action" : "config",
-      "file" : "/projectiles/explosions/regularexplosion2/regularexplosion2.config"
+      "file" : "/magnorbprojectiles/legunstable/reaction/reactionorb.config"
     }
   ],
-
+  "periodicActions" : [
+    {
+      "action" : "particle",
+      "specification" : "unstableproj",
+      "time" : 0.04,
+      "repeat" : true
+    }
+  ],
   "scripts" : [ "/scripts/dynamicprojectile.lua" ]
 }

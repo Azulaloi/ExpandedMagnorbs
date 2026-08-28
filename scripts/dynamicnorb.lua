@@ -2,6 +2,7 @@ require "/scripts/vec2.lua"
 require "/scripts/util.lua"
 require "/scripts/status.lua"
 require "/scripts/activeitem/stances.lua"
+require "/scripts/magnabilities.lua"
 
 function init()
   activeItem.setCursor("/cursors/reticle0.cursor")
@@ -12,23 +13,44 @@ function init()
   self.cooldownTime = config.getParameter("cooldownTime", 0)
   self.cooldownTimer = self.cooldownTime
   self.orbTotal = config.getParameter("orbTotal")
+  self.level = config.getParameter("level")
   if config.getParameter("shieldLock") then
-	self.lockValue = (self.orbTotal) + 1
-	else
-	self.lockValue = (self.orbTotal)
+    self.lockValue = (self.orbTotal) + 1
+  else
+    self.lockValue = (self.orbTotal)
   end
   
   if config.getParameter("shieldRotateValue") then
-	ShieldRotate = tonumber(config.getParameter("shieldRotateValue"))
-	else
-	ShieldRotate = 0.7
+  ShieldRotate = tonumber(config.getParameter("shieldRotateValue"))
+  else
+  ShieldRotate = 0.7
   end
   
   if config.getParameter("shieldSpacingQ") then
-	SpacingQ = tonumber(config.getParameter("shieldSpacingQ"))
-	else SpacingQ = 1
+  SpacingQ = tonumber(config.getParameter("shieldSpacingQ"))
+  else SpacingQ = 1
   end
-  
+
+  if checkParam("noPoly") then
+    self.noPoly = true
+  end
+
+  if checkParam("ward") then
+    self.ward = true
+    wardEffects = {}
+    for i = 1, tonumber(config.getParameter("wardEffectQuantity")) do
+      table.insert(wardEffects, (config.getParameter("wardEffect" .. i)))
+    end
+    self.wardActive = false
+  else
+    self.ward = nil
+  end
+  --self.wardEffectQuantity = config.getParameter("wardEffectQuantity")
+
+  if config.getParameter("sequenced") then
+    self.sequenced = true
+  end
+
   initStances()
 
   storage.projectileIds = storage.projectileIds or {false, false, false, false, false, false}
@@ -38,12 +60,12 @@ function init()
   emitterQuantity = tonumber(self.emitterQuantity)
   emitters = {}
   if config.getParameter("emitterQuantity") then 
-	if (emitterQuantity >= 1) then
-	  for i = 1,(emitterQuantity) do
-		table.insert(emitters, ("shieldEmitter" .. i))
-		for i, v in ipairs(emitters) do sb.logInfo(i, v) end
-	  end
-	end
+    if (emitterQuantity >= 1) then
+      for i = 1,(emitterQuantity) do
+      table.insert(emitters, ("shieldEmitter" .. i))
+      --for i, v in ipairs(emitters) do sb.logInfo(i, v) end
+      end
+    end
   end
 
   self.orbitRate = config.getParameter("orbitRate", 1) * -2 * math.pi
@@ -57,24 +79,29 @@ function init()
   self.shieldActive = false
   self.shieldTransformTimer = 0
   self.shieldTransformTime = config.getParameter("shieldTransformTime", 0.1)
+  if self.wardTrue ~= true then
   self.shieldPoly = animator.partPoly("glove", "shieldPoly")
+  end
   self.shieldEnergyCost = config.getParameter("shieldEnergyCost", 50)
   if config.getParameter("shieldHealth") then
-	self.shieldHealth = tonumber(config.getParameter("shieldHealth"))
-	else
-	self.shieldHealth = 1000
+    self.shieldHealth = tonumber(config.getParameter("shieldHealth"))
+  else
+    self.shieldHealth = 1000
   end
   self.shieldKnockback = config.getParameter("shieldKnockback", 0)
+
   if config.getParameter("doesDamage") then
-	self.knockbackDamageParam = "damage"
-	else 
-	self.knockbackDamageParam = "Knockback"
+    self.knockbackDamageParam = "Damage"
+  else 
+    self.knockbackDamageParam = "Knockback"
   end
+
   if config.getParameter("contactDamage") then
-	self.knockbackDamageQuantity = config.getParameter("contactDamage")
-	else
-	self.knockbackDamageQuantity = 0
+    self.knockbackDamageQuantity = config.getParameter("contactDamage")
+  else
+    self.knockbackDamageQuantity = 0
   end
+
   if self.shieldKnockback > 0 then
     self.knockbackDamageSource = {
       poly = self.shieldPoly,
@@ -101,7 +128,7 @@ function update(dt, fireMode, shiftHeld)
 
   if fireMode == "alt" and availableOrbCount() == self.lockValue and not status.resourceLocked("energy") and status.resourcePositive("shieldStamina") then
     if not self.shieldActive then
-      activateShield()
+      shieldTypeActivate()
     end
     setOrbAnimationState("shield")
     self.shieldTransformTimer = math.min(self.shieldTransformTime, self.shieldTransformTimer + dt)
@@ -122,9 +149,12 @@ function update(dt, fireMode, shiftHeld)
 
   if self.shieldActive then
     if not status.resourcePositive("shieldStamina") or not status.overConsumeResource("energy", self.shieldEnergyCost * dt) then
-      deactivateShield()
+      shieldTypeDeactivate()
     else
+      if self.noPoly ~= true then
       self.damageListener:update()
+      else
+      end
     end
   end
 
@@ -135,7 +165,7 @@ function update(dt, fireMode, shiftHeld)
     animator.translateTransformationGroup("orbs", {transformRatio * -1.5, 0})
   else
     if self.shieldActive then
-      deactivateShield()
+      shieldTypeDeactivate()
     end
 
     animator.resetTransformationGroup("orbs")
@@ -148,6 +178,38 @@ function update(dt, fireMode, shiftHeld)
 
   updateAim()
   updateHand()
+
+  if self.wardActive then
+    --activeItem.setFacingDirection(90)
+    activeItem.setArmAngle(20)
+    for i, v in ipairs(wardEffects) do
+      status.addEphemeralEffect(v)
+    end
+  end
+end
+
+function shieldTypeActivate()
+  if not self.ward and not self.noPoly then
+    activateShield()
+  elseif self.ward and not self.noPoly then
+    activateShield()
+    activateWard()
+  elseif self.ward and self.noPoly then
+    activateNoPoly()
+    activateWard()
+  end
+end
+
+function shieldTypeDeactivate()
+  if not self.ward and not self.noPoly then
+    deactivateShield()
+  elseif self.ward and not self.noPoly then
+    deactivateShield()
+    deactivateWard()
+    elseif self.ward and self.noPoly then
+    deactivateNoPoly()
+    deactivateWard()
+    end
 end
 
 function uninit()
@@ -187,19 +249,31 @@ function fire(orbIndex)
   params.ownerAimPosition = activeItem.ownerAimPosition()
   local firePos = firePosition(orbIndex)
   if world.lineCollision(mcontroller.position(), firePos) then return end
-  local projectileId = world.spawnProjectile(
-      self.projectileType,
-      firePosition(orbIndex),
-      activeItem.ownerEntityId(),
-      aimVector(orbIndex),
-      false,
-      params
-    )
+
+  if self.sequenced then
+    projectileId = world.spawnProjectile(
+        self.projectileType .. orbIndex,
+        firePosition(orbIndex),
+        activeItem.ownerEntityId(),
+        aimVector(orbIndex),
+        false,
+        params
+    ) else
+    projectileId = world.spawnProjectile(
+        self.projectileType,
+        firePosition(orbIndex),
+        activeItem.ownerEntityId(),
+        aimVector(orbIndex),
+        false,
+        params
+    ) end
+
   if projectileId then
     storage.projectileIds[orbIndex] = projectileId
     self.cooldownTimer = self.cooldownTime
     animator.playSound("fire")
   end
+
 end
 
 function firePosition(orbIndex)
@@ -224,8 +298,8 @@ function activateShield()
   animator.playSound("shieldOn")
   animator.playSound("shieldLoop", -1)
   for i, v in ipairs(emitters) do		
-	animator.setParticleEmitterActive(v, 1)		
-	end
+    animator.setParticleEmitterActive(v, 1)		
+  end
   setStance("shield")
   activeItem.setItemShieldPolys({self.shieldPoly})
   activeItem.setItemDamageSources({self.knockbackDamageSource})
@@ -236,7 +310,7 @@ function activateShield()
         if status.resourcePositive("shieldStamina") then
           animator.playSound("shieldBlock")
         else
-          animator.playSound("shieldBreak")
+          --animator.playSound("shieldBreak")
         end
         return
       end
@@ -246,15 +320,56 @@ end
 
 function deactivateShield()
   self.shieldActive = false
+  if not status.resourcePositive("shieldStamina") then
+    animator.playSound("shieldBreak")
+  end
   animator.playSound("shieldOff")
   animator.stopAllSounds("shieldLoop")
   for i, v in ipairs(emitters) do		
-	animator.setParticleEmitterActive(v, false)		
-	end
+    animator.setParticleEmitterActive(v, false)		
+  end
   setStance("idle")
   activeItem.setItemShieldPolys()
   activeItem.setItemDamageSources()
   status.clearPersistentEffects("magnorbShield")
+end
+
+function activateWard()
+  self.wardActive = true
+  for i, v in ipairs(wardEffects) do
+    status.addEphemeralEffect(v)
+    end
+end
+
+function deactivateWard()
+  self.wardActive = false
+  for i, v in ipairs(wardEffects) do
+    status.removeEphemeralEffect(v)
+  end
+end
+
+function activateNoPoly()
+  self.shieldActive = true
+  animator.resetTransformationGroup("orbs")
+  animator.playSound("shieldOn")
+  animator.playSound("shieldLoop", -1)
+  for i, v in ipairs(emitters) do
+    animator.setParticleEmitterActive(v, 1)
+  end
+  setStance("shield")
+  --activeItem.setItemDamageSources({self.knockbackDamageSource})
+end
+
+function deactivateNoPoly()
+  self.shieldActive = false
+  animator.playSound("shieldOff")
+  animator.stopAllSounds("shieldLoop")
+  for i, v in ipairs(emitters) do
+    animator.setParticleEmitterActive(v, false)
+  end
+  setStance("idle")
+  --activeItem.setItemDamageSources()
+  status.clearPersistentEffects("wardEffects")
 end
 
 function setOrbPosition(spaceFactor, distance)
@@ -268,5 +383,13 @@ end
 function setOrbAnimationState(newState)
   for i = 1, self.orbTotal do
     animator.setAnimationState("orb"..i, newState)
+  end
+end
+
+function checkParam(param)
+  if config.getParameter(param) then
+    return true
+  else
+    return nil
   end
 end

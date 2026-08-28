@@ -1,13 +1,13 @@
 {
   "itemName" : "aesmagnorbs",
   "level" : 6,
-  "price" : 10000,
+  "price" : 1300,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "A set of solarium-reinforced aegisalt bracers for throwing and catching magnetic orbs.",
+  "description" : "An aegisalt bracer and orb trio reinforced with solarium, specialized for extreme velocities and distance.",
   "shortdescription" : "High-Velocity Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "somagnorbs" ],
@@ -16,6 +16,7 @@
   "animation" : "aesmagnorbs.animation",
   "animationParts" : {
     "glove" : "glove.png",
+    "gloveFullbright" : "glovefullbright.png",
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png"
@@ -23,14 +24,17 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
-  
+  "builder" : "/scripts/buildnorb.lua",
+
+  "emitterQuantity" : 1,
   "shieldRotateValue" : 1,
   "orbTotal" : 3,
   "orbitRate" : 1.2,
+  "secondaryName" : "Magbuckler",
 
   "projectileType" : "aesmagnorb",
   "projectileParameters" : {
-    "power" : 5.9,
+    "power" : 4.2, //5.9
     "knockback" : 5,
 
     "returnOnHit" : true,
@@ -40,9 +44,9 @@
     "snapDistance" : 100
   },
 
-   "shieldHealth" : 80,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 35,
+  "shieldHealth" : 65,
+  "shieldKnockback" : 5,
+  "shieldEnergyCost" : 16,
 
   "stances" : {
     "idle" : {

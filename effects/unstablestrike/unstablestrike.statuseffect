@@ -2,8 +2,9 @@
   "name" : "unstablestrike",
   "blockingStat" : "specialStatusImmunity",
   "effectConfig" : {
-    "minMaxHealth" : 5,
-    "healthDamageFactor" : 0.5,
+    //"minMaxHealth" : 5,
+    //"healthDamageFactor" : 0.5,
+    "power" : 5.0,
     "bombConfig" : "/projectiles/explosions/regularexplosion2/regularexplosionknockback.config",
     "flashDirectives" : "fade=FF0000;0.5"
   },

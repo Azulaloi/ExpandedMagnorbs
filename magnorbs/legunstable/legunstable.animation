@@ -67,8 +67,18 @@
           "rotationCenter" : [-1, 0],
           "offset" : [0, -0.25],
           "centered" : true,
-          "image" : "<partImage>:<hand>",
-          "shieldPoly" : [ [0.0, -1.75], [0.0, 2.25], [0.875, 1.0], [0.875, -0.5] ]
+          "image" : "<partImage>:<hand>"
+        }
+      },
+      "gloveFullbright" : {
+        "properties" : {
+          "zLevel" : 2,
+          "transformationGroups" : ["weapon"],
+          "fullbright" : true,
+          "rotationCenter" : [-1, 0],
+          "offset" : [0, -0.25],
+          "centered" : true,
+          "image" : "<partImage>:<hand>"
         }
       },
       "orb1" : {
@@ -174,12 +184,32 @@
     }
   },
 
+  "particleEmitters" : {
+    "shieldEmitter1": {
+      "active": false,
+      "transformationGroups": [
+        "weapon"
+      ],
+      "offsetRegion": [
+        1.0,
+        -0.1,
+        1.0,
+        -0.1
+      ],
+      "emissionRate": 30,
+      "particles": [
+        { "particle": "unstableproj" }
+      ]
+    }
+  },
+
+
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
-    "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
-    "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
+    "fire" : [ "/sfx/az/special/uns_fire1.ogg", "/sfx/az/special/uns_fire2.ogg", "/sfx/az/special/uns_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/special/uns_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/special/uns_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/special/uns_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/generic_shield_hit.ogg"],
+    "shieldBreak" : ["/sfx/az/generic_shield_break.ogg"]
   }
 }

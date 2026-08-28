@@ -1,0 +1,12 @@
+{
+  "input" : [
+    { "item" : "duramagnorbs", "count" : 1 },
+    { "item" : "battery", "count" : 1 },
+	{ "item" : "wire", "count" : 6 },
+	{ "item" : "upgrademodule", "count" : 1 },
+	{ "item" : "corefragmentore", "count" : 25 },
+    { "item" : "volatilepowder", "count" : 15 }
+  ],
+  "output" : { "item" : "unstablemagnorbs", "count" : 1 },
+  "groups" : [ "craftingmagnorbs2", "specialnorbs", "weapons", "all" ]
+}

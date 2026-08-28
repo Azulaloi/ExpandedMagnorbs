@@ -1,13 +1,13 @@
 {
   "itemName" : "fesmagnorbs",
   "level" : 6,
-  "price" : 9000,
+  "price" : 1300,
   "maxStack" : 1,
   "rarity" : "Legendary",
-  "description" : "An improved set of solarium-reinforced ferozium bracers for throwing and catching many magnetic orbs.",
+  "description" : "This ferozium bracer, enhanced with solarium, can manipulate six ferocious magnetic orbs in parallel.",
   "shortdescription" : "High-Count Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ "somagnorbs" ],
@@ -16,24 +16,28 @@
   "animation" : "fesmagnorbs.animation",
   "animationParts" : {
     "glove" : "glove.png",
+    "gloveFullbright" : "glovefullbright.png",
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png",
-	"orb4" : "orb.png",
-	"orb5" : "orb.png",
-	"orb6" : "orb.png"
+    "orb4" : "orb.png",
+    "orb5" : "orb.png",
+    "orb6" : "orb.png"
   },
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
-  
+  "builder" : "/scripts/buildnorb.lua",
+
+  "emitterQuantity" : 6,
   "shieldSpacingQ" : 1.27,
   "orbTotal" : 6,
   "orbitRate" : 1.5,
+  "secondaryName" : "Magshell",
 
   "projectileType" : "fesmagnorb",
   "projectileParameters" : {
-    "power" : 3.85,
+    "power" : 2.4, //3.85
     "knockback" : 20,
 
     "returnOnHit" : true,
@@ -43,9 +47,9 @@
     "snapDistance" : 4.0
   },
 
-  "shieldHealth" : 100,
+  "shieldHealth" : 130,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 45,
+  "shieldEnergyCost" : 22,
 
   "stances" : {
     "idle" : {

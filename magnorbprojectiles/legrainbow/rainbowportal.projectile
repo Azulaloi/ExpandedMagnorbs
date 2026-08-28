@@ -1,0 +1,70 @@
+{
+  "projectileName" : "rainbowportal",
+  "physics" : "hover",
+  "timeToLive" : 24,
+  "image" : "rainbowportal.png",
+  "animationCycle" : 0.35,
+  "lightColor" : [90, 60, 110],
+  "frameNumber" : 4,
+  "windupFrames" : 3,
+  "winddownFrames" : 3,
+  "periodicActions" : [
+    {
+      "time" : 0,
+      "repeat" : false,
+      "action" : "sound",
+      "options" : [ "/sfx/melee/astraltear2.ogg" ]
+    },
+    {
+      "time" : 5.65,
+      "repeat" : false,
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/astraltear_stop3.ogg" ]
+    },
+
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle1",
+      "time" : 0.1,
+      "repeat" : true
+    },
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle2",
+      "time" : 0.1,
+      "repeat" : true
+    },
+    {
+      "action" : "particle",
+      "specification" : "astraltearsparkle3",
+      "time" : 0.1,
+      "repeat" : true
+    }
+  ],
+  "actionOnReap" : [
+    {
+      "action" : "config",
+      "file" : "/projectiles/explosions/elementimpact/electricimpactmute.config"
+    },
+    {
+      "action" : "sound",
+      "options" : [ "/sfx/projectiles/astraltear_stop2.ogg" ]
+    }
+  ],
+  "speed" : 0,
+  "power" : 0,
+  "damagePoly" : [],
+
+  "fullbright" : true,
+  "emitters" : [],
+
+  "renderLayer" : "Projectile-1",
+  "orientationLocked" : true,
+
+  "bounces" : -1,
+  "onlyHitTerrain" : true,
+
+  "scripts" : [ "rainbowportal.lua" ],
+
+  "persistentAudio" : "/sfx/az/special/obu/conduit_loop.ogg"
+}

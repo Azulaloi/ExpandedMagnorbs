@@ -71,6 +71,17 @@
           "shieldPoly" : [ [0.0, -1.75], [0.0, 2.25], [0.875, 1.0], [0.875, -0.5] ]
         }
       },
+      "gloveFullbright" : {
+        "properties" : {
+          "zLevel" : 2,
+          "transformationGroups" : ["weapon"],
+          "fullbright" : true,
+          "rotationCenter" : [-1, 0],
+          "offset" : [0, -0.25],
+          "centered" : true,
+          "image" : "<partImage>:<hand>"
+        }
+      },
       "orb1" : {
         "properties" : {
           "centered" : true,
@@ -162,84 +173,59 @@
   },
 
   "particleEmitters" : {
-    "shieldEmitter1" : {
-      "active" : false,
-      "transformationGroups" : ["orb1"],
-      "offsetRegion" : [0, 0, 0, 0],
-      "emissionRate" : 10,
-      "particles" : [
+    "shieldEmitter1": {
+      "active": false,
+      "transformationGroups": [
+        "orb1"
+      ],
+      "offsetRegion": [
+        0.45,
+        -0.2,
+        0.45,
+        -1.6
+      ],
+      "emissionRate": 30,
+      "particles": [
         {
-          "particle" : {
-            "type" : "ember",
-            "size" : 1.5,
-            "color" : [0, 0, 255, 255],
-            "position" : [0, 0],
-            "initialVelocity" : [-2.0, 5.0],
-            "light" : [255, 255, 180],
-            "timeToLive" : 0.8,
-            "destructionAction" : "fade",
-            "destructionTime" : 0.1,
-            "layer" : "front",
-            "fullbright" : true,
-            "variance" : {
-              "initialVelocity" : [0, 2.0],
-              "size" : 1.0
-            }
-          }
+          "particle": "norbfireshield"
         }
       ]
     },
-	"shieldEmitter2" : {
-      "active" : false,
-      "transformationGroups" : ["orb2"],
-      "offsetRegion" : [ 0, 0, 0, 0],
-      "emissionRate" : 10,
-      "particles" : [
+
+    "shieldEmitter2": {
+      "active": false,
+      "transformationGroups": [
+        "orb2"
+      ],
+      "offsetRegion": [
+        0.1,
+        0.65,
+        0.1,
+        -0.65
+      ],
+      "emissionRate": 30,
+      "particles": [
         {
-          "particle" : {
-            "type" : "ember",
-            "size" : 1.5,
-            "color" : [255, 0, 0, 255],
-            "position" : [0, 0],
-            "initialVelocity" : [-2.0, -5.0],
-            "light" : [255, 255, 180],
-            "timeToLive" : 0.8,
-            "destructionAction" : "fade",
-            "destructionTime" : 0.1,
-            "layer" : "front",
-            "fullbright" : true,
-            "variance" : {
-              "initialVelocity" : [0, 2.0],
-              "size" : 1.0
-            }
-          }
+          "particle": "norbfireshield"
         }
       ]
     },
-	"shieldEmitter3" : {
-      "active" : false,
-      "transformationGroups" : ["orb3"],
-      "offsetRegion" : [ 0, 0, 0, 0],
-      "emissionRate" : 10,
-      "particles" : [
+
+    "shieldEmitter3": {
+      "active": false,
+      "transformationGroups": [
+        "orb3"
+      ],
+      "offsetRegion": [
+        0.45,
+        0.2,
+        0.45,
+        1.6
+      ],
+      "emissionRate": 30,
+      "particles": [
         {
-          "particle" : {
-            "type" : "ember",
-            "size" : 1.5,
-            "color" : [0, 255, 0, 255],
-            "position" : [0, 0],
-            "initialVelocity" : [-2.0, -5.0],
-            "light" : [255, 255, 180],
-            "timeToLive" : 0.8,
-            "destructionAction" : "fade",
-            "destructionTime" : 0.1,
-            "layer" : "front",
-            "fullbright" : true,
-            "variance" : {
-              "initialVelocity" : [0, 2.0],
-              "size" : 1.0
-            }
-          }
+          "particle": "norbfireshield"
         }
       ]
     }
@@ -262,11 +248,11 @@
   },
 
   "sounds" : {
-    "fire" : [ "/sfx/gun/magnorbs_fire8.ogg", "/sfx/gun/magnorbs_fire9.ogg", "/sfx/gun/magnorbs_fire10.ogg" ],
-    "shieldOn" : ["/sfx/melee/sword_guard.ogg"],
-    "shieldLoop" : ["/sfx/gun/magnorbs_shield_loop2.ogg"],
-    "shieldOff" : [],
-    "shieldBlock" : ["/sfx/melee/shield_block_metal.ogg"],
-    "shieldBreak" : ["/sfx/melee/shield_break_metal.ogg"]
+    "fire" : [ "/sfx/az/elemental/fire_fire1.ogg", "/sfx/az/elemental/fire_fire2.ogg", "/sfx/az/elemental/fire_fire3.ogg" ],
+    "shieldOn" : ["/sfx/az/elemental/fire_shield_raise.ogg"],
+    "shieldLoop" : ["/sfx/az/elemental/fire_shield_loop.ogg"],
+    "shieldOff" : ["/sfx/az/elemental/fire_shield_end.ogg"],
+    "shieldBlock" : ["/sfx/az/elemental/fire_shield_hit1.ogg", "/sfx/az/elemental/fire_shield_hit2.ogg", "/sfx/az/elemental/fire_shield_hit3.ogg"],
+    "shieldBreak" : ["/sfx/az/elemental/fire_shield_break.ogg"]
   }
 }

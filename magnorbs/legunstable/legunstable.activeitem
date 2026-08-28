@@ -1,22 +1,22 @@
 {
   "itemName" : "unstablemagnorbs",
-  "level" : 6,
-  "price" : 7000,
+  "level" : 5,
+  "price" : 1380,
   "maxStack" : 1,
-  "rarity" : "Legendary",
-  "description" : "A set of orbs made from core fragments and a bracer for controlling them. Be careful.",
+  "rarity" : "Rare",
+  "description" : "A set of three orbs made from core fragments, and a bracer for controlling them. Be careful.",
   "shortdescription" : "Unstable Magnorbs",
-  "tooltipKind" : "base",
-  "category" : "uniqueWeapon",
+  "tooltipKind" : "magnorb",
+  "category" : "magnorb",
   "twoHanded" : true,
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [],
-  
-  
+
   "inventoryIcon" : "icon.png",
   "animation" : "legunstable.animation",
   "animationParts" : {
     "glove" : "glove.png",
+    "gloveFullbright" : "glovefullbright.png",
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png"
@@ -24,13 +24,23 @@
   "animationCustom" : { },
 
   "scripts" : ["/scripts/dynamicnorb.lua"],
+  "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 3,
   "orbitRate" : 1.5,
 
+  "shieldRotateValue" : 1,
+  "emitterQuantity" : 1,
+  "noPoly" : true,
+  "ward" : true,
+  "wardEffectQuantity" : 1,
+  "wardEffect1" : "unstableward",
+  "secondaryName" : "Unstable Ward",
+  "noMagnitude" : true,
+
   "projectileType" : "unstablemagnorb",
   "projectileParameters" : {
-    "power" : 2.85,
+    "power" : 1.9, //2.85
     "knockback" : 5,
 
     "returnOnHit" : true,
@@ -40,8 +50,9 @@
     "snapDistance" : 4.0
   },
 
+  "shieldHealth" : 60,
   "shieldKnockback" : 10,
-  "shieldEnergyCost" : 80,
+  "shieldEnergyCost" : 30,
 
   "stances" : {
     "idle" : {
@@ -51,9 +62,9 @@
       "allowFlip" : true
     },
     "shield" : {
-      "armRotation" : 0,
+      "armRotation" : 90,
       "twoHanded" : false,
-      "allowRotate" : true,
+      "allowRotate" : false,
       "allowFlip" : true
     }
   }
