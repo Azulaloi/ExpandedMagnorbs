@@ -143,6 +143,15 @@ function init()
 
   storage.projectileIds = storage.projectileIds or {false, false, false, false, false}  -- need to figure out how to init these weird lua arrays with arbitrary sizes for other sets
   storage.projectileFlags = storage.projectileFlags or {false, false, false, false, false}
+  
+  -- bit of a bandage
+  for i = 1, self.orbTotal do
+    if storage.projectileFlags[i] == "ghost" then
+      storage.projectileIds[i] = false
+      storage.projectileFlags[i] = false
+    end
+  end
+
   checkProjectiles(true)
   sendSafely(storage.projectileIds, "triggerResurrection")
 
@@ -245,7 +254,7 @@ function createGhosts()
         -- })
       if pid then
         storage.projectileIds[i] = pid
-        storage.projectileFlags[i] = 1
+        storage.projectileFlags[i] = "ghost" -- I want my lovely bitflags 
       end
     end
   end
@@ -646,9 +655,8 @@ function checkProjectiles(silent)
     if projectileId and not world.entityExists(projectileId) then
       storage.projectileIds[i] = false
       if storage.projectileFlags[i] then
-        if not silent then
+        if not silent and storage.projectileFlags[i] ~= "ghost" then
           doOrbReturnAction(i, storage.projectileFlags[i] == 2, self.pendingReturns[projectileId])
-
         end
 
         self.pendingReturns[projectileId] = nil

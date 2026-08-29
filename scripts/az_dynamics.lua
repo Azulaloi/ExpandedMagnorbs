@@ -38,7 +38,10 @@ end
 
 -- Ticks the spinner by [dt], returning the new angle.
 function Spinner:step(dt) -- TODO: either change this to step, or the spring steps to update
-  self.vel = self.vel + (self.home - self.vel) * math.min(1, self.relax * dt)
+  self.vel = self.vel + (self.home - self.vel) * math.min(1, self.relax * dt) 
+  -- TODO: separate "deccelerate" and "accelerate" relaxation params
+  -- ie, something might barely deccelerate overspeed, but quickly rev back up when underspeed
+  -- or just go for proper inertia + friction?
   return self.vel * dt
 end
 
@@ -175,7 +178,7 @@ end
 
 
 
-function azDynamics.squashedOrbit(radius, squash, phase)
+function azDynamics.squashedOrbit(radius, squash, phase) -- squarsh it
   local p = vec2.rotate({radius, 0}, phase)
   local depth = p[2] / radius
   p[2] = p[2] * squash

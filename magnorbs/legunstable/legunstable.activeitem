@@ -23,20 +23,43 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
-  "builder" : "/scripts/buildnorb.lua",
+  // "scripts" : ["/scripts/dynamicnorb.lua"],
+  // "builder" : "/scripts/buildnorb.lua",
 
   "orbTotal" : 3,
   "orbitRate" : 1.5,
 
-  "shieldRotateValue" : 1,
-  "emitterQuantity" : 1,
-  "noPoly" : true,
-  "ward" : true,
-  "wardEffectQuantity" : 1,
-  "wardEffect1" : "unstableward",
-  "secondaryName" : "Unstable Ward",
-  "noMagnitude" : true,
+  // "shieldRotateValue" : 1,
+  // "emitterQuantity" : 1,
+  // "noPoly" : true,
+  // "ward" : true,
+  // "wardEffectQuantity" : 1,
+  // "wardEffect1" : "unstableward",
+  // "secondaryName" : "Unstable Ward",
+  // "noMagnitude" : true,
+
+
+
+
+  "scripts" : ["/scripts/az-exnorb_bracer.lua"],
+  "builder" : "/scripts/buildnorb.lua",
+  "primaryAbility" : {
+    "scripts" : [ "/scripts/az-exnorb/magnabilities/orb_throw.lua" ],
+    "class" : "OrbThrow"
+  },
+  "altAbility" : {
+    "scripts" : [ "/scripts/az-exnorb/magnabilities/mag_ward.lua" ],
+    "class" : "MagWard",
+    "emitterQuantity" : 1,
+  "shieldHealth" : 60,
+  "shieldKnockback" : 10,
+  "shieldEnergyCost" : 30,
+    "shieldTransformTime" : 0.15,
+    "shieldRotateValue" : 1.0,
+    "wardEffects" : [ "unstableward" ] // todo: namespace statuses
+  },
+
+
 
   "projectileType" : "unstablemagnorb",
   "projectileParameters" : {
