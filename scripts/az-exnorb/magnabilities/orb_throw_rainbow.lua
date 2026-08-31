@@ -19,7 +19,7 @@ function OrbThrowRainbow:onOrbReturn(orbIndex, originFlag, returnVelocity) -- TO
 
   -- TODO: need better ergo on these particle FX functions. especially for adding momentum to particles easily 
 
-  if fromPortal then
+  if originFlag == ORB_FROM_PORTAL then
     local sparks = azActions.loopGroup({
       azActions.makeParticleAction("astraltearsparkle1"),
       azActions.makeParticleAction("astraltearsparkle2"),
