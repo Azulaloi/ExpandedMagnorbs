@@ -108,7 +108,7 @@ function init()
   self.formationTime = 0.1 -- blend ramp duration
   self.orbVisualOverride = nil
   self.ringHalted = false
-
+  self.orbLocks = {} -- if orbLocks[orbIndex] is true, orbIndex is skipped by nextOrbIndex (but does NOT PREVENT BEING COUNTED by availableOrbCount)
 
   initTune()
   initDynamics()
@@ -215,7 +215,7 @@ function update(dt, fireMode, shiftHeld)
 
   updateStance(dt) -- ?
   checkProjectiles(false)
-  -- ability check here
+  for _, ability in ipairs(self.abilities) do ability:checkUpdate(dt) end
 
 
   for _, inputEvent in ipairs(self.input:step(fireMode, shiftHeld, dt)) do
@@ -502,7 +502,7 @@ function createGhosts()
         -- })
       if pid then
         storage.projectileIds[i] = pid
-        storage.projectileFlags[i] = 1
+        storage.projectileFlags[i] = ORB_FROM_ORBIT
       end
     end
   end
@@ -515,8 +515,7 @@ function checkProjectiles(silent)
       storage.projectileIds[i] = false
       if storage.projectileFlags[i] then
         if not silent then
-          doOrbReturnAction(i, storage.projectileFlags[i] == 2, self.pendingReturns[projectileId])
-
+          doOrbReturnAction(i, storage.projectileFlags[i], self.pendingReturns[projectileId])
         end
 
         self.pendingReturns[projectileId] = nil
@@ -527,17 +526,19 @@ function checkProjectiles(silent)
 end
 
 
-function doOrbReturnAction(orbIndex, fromPortal, returnVelocity)
+function doOrbReturnAction(orbIndex, originFlag, returnVelocity)
   playAnimatorSoundSafely("impact") -- todo: "catch" sound
   local orbPos = firePosition(orbIndex)
 
   if returnVelocity then
     applyImpulse(orbIndex, vec2.sub(returnVelocity, mcontroller.velocity()), nil, self.tune.catchKick)
+    sb.logInfo("BRACER: real velocity")
+
   else
     -- No return velocity packet, orb returned through other means (reaped, was stowed, edge case)
     -- Synthesize a generic arrival packet.
 
-    local handBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0}))
+    local handBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0})) -- intentionally not self.handBase (doOrbReturn runs before tick's self.handBase update)
     local toOrb = world.distance(firePosition(orbIndex), handBase)
     if vec2.mag(toOrb) > 0.5 then
       local spinSign = self.ringSpinner.vel >= 0 and 1 or -1
@@ -552,11 +553,13 @@ function doOrbReturnAction(orbIndex, fromPortal, returnVelocity)
       -- degenerate case, fallback poke
       self.orbSpring[orbIndex]:setVelocity(-3, 0)
     end
+    sb.logInfo("BRACER: synthetic velocity")
+
   end
 
-  -- for _, ability in ipairs(self.abilities) do
-    -- if ability.onOrbReturn then ability:onOrbReturn(orbIndex, fromPortal, returnVelocity)
-  -- end
+  for _, ability in ipairs(self.abilities) do
+    if ability.onOrbReturn then ability:onOrbReturn(orbIndex, originFlag, returnVelocity) end
+  end
 end
 
 
@@ -578,7 +581,7 @@ function fire(orbIndex)
 
   if projectileId then
     storage.projectileIds[orbIndex] = projectileId
-    storage.projectileFlags[orbIndex] = 1 -- 1 means "from orbit", 2 means "from portal" -- hmm...
+    storage.projectileFlags[orbIndex] = ORB_FROM_ORBIT
     storage.lastFired = orbIndex
     self.cooldownTimer = self.cooldownTime
     animator.playSound("fire") -- playsound SAFELY??? why does chucklefish insist on making everything difficult
@@ -589,9 +592,14 @@ function fire(orbIndex)
     -- Since the orb is departing, reset its spin (regardless of whether firing added any)
     self.orbSpinner[orbIndex]:reset()
 
+    for _, ability in ipairs(self.abilities) do
+      ability:onOrbFired(orbIndex, aimVec, firePos)
+    end
 
-    -- and then set-specific particle actions?
+    return projectileId
   end
+
+  return nil
 end
 
 
@@ -612,7 +620,7 @@ function nextOrb()
   local last = storage.lastFired or 0
   for offset = 1, self.orbTotal do
     local i = (last + offset - 1) % self.orbTotal + 1
-    if not storage.projectileIds[i] then return i end -- magportal wants to check isDiving here
+    if not storage.projectileIds[i] and not self.orbLocks[i] then return i end -- magportal wants to check isDiving here
   end
 end
 
@@ -721,12 +729,12 @@ function updateAnim(dt)
   self.lastFacing = facing
 
   -- Track and inject hand frame momentum
-  local handBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0}))
-  local inject = self.handTracker:sample(handBase, dt)
+  self.handBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0}))
+  local inject = self.handTracker:sample(self.handBase, dt)
   if inject then
     for i = 1, self.orbTotal do
       if storage.projectileIds[i] == false then
-        local radDir, tanDir = azDynamics.frame(world.distance(firePosition(i), handBase))
+        local radDir, tanDir = azDynamics.frame(world.distance(firePosition(i), self.handBase))
         if radDir then
           self.orbSpring[i]:kick(vec2.dot(inject, radDir), vec2.dot(inject, tanDir) * facing)
         end
@@ -782,7 +790,7 @@ function updateAnim(dt)
     end
   end
 
-  -- ability anim update
+  for _, ability in ipairs(self.abilities) do ability:animUpdate(dt) end
 end
 
 
@@ -829,7 +837,7 @@ function applyImpulse(orbIndex, vel, flags, scale)
   flags = flags or {}
   vel = vec2.mul(vel, scale or 1)
   local facing = mcontroller.facingDirection()
-  local handBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0}))
+  local handBase = vec2.add(mcontroller.position(), activeItem.handPosition({0, 0})) -- intentionally not self.handBase (applyImpulse runs before tick's self.handBase update)
 
   local radDir, tanDir = azDynamics.frame(world.distance(firePosition(orbIndex), handBase))
   if radDir then

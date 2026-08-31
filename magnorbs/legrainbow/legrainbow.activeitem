@@ -31,9 +31,19 @@
     [221, 84, 114, 255]
   ],
 
-  "scripts" : ["rainbow.lua"],
+  // "scripts" : ["rainbow.lua"],
   "builder" : "/scripts/buildnorb.lua",
   "animationScripts" : ["rainbow_localanim.lua"],
+
+
+  "scripts" : [ "/scripts/az-exnorb_bracer.lua" ],
+  "sequenced" : true,
+  "hasOrbEmitters" : false,
+  "primaryAbility" : {
+    "scripts" : [ "/scripts/az-exnorb/magnabilities/orb_throw_rainbow.lua" ],
+    "class" : "OrbThrowRainbow"
+  },
+
 
   "orbTotal" : 5,
   "orbitRate" : 0.85, //1.3,
