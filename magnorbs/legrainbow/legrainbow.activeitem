@@ -23,16 +23,20 @@
 	  "orb5" : "orb5.png"
   },
   "animationCustom" : { },
-  "rainColors": [
-    [121, 74, 196, 255],
-    [66, 132, 199, 255],
-    [62, 226, 101, 255],
-    [227, 227, 66, 255],
-    [221, 84, 114, 255]
-  ],
+
+  // Currently unused, these are the rainbow palette tones
+  // for the astral rainbow. Leaving them so I don't need
+  // to get them again. I'm pretty sure I can use them somewhere.
+  // "rainColors": [
+  //   [121, 74, 196, 255],
+  //   [66, 132, 199, 255],
+  //   [62, 226, 101, 255],
+  //   [227, 227, 66, 255],
+  //   [221, 84, 114, 255]
+  // ],
 
   // "scripts" : ["rainbow.lua"],
-  "builder" : "/scripts/buildnorb.lua",
+  "builder" : "/scripts/buildnorb.lua", // TODO: NEW BUILDSCRIPT ALREADY, FOOL
   "animationScripts" : ["rainbow_localanim.lua"],
 
 

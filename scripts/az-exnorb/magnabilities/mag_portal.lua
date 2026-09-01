@@ -3,12 +3,14 @@ require "/scripts/az-exnorb/magnability.lua"
 MagPortal = Magnability:new()
 
 function MagPortal:init()
+  -- TODO: ability cursor management
+
   storage.portalId = storage.portalId or false
   self.portalActive = false
 
   self.pendingFires = {}
   self.spacePhase = 0
-  -- self.spacePrecess = 0
+  -- self.spacePrecess = 3
   self.spaceSpin = azDynamics.Spinner.new(self.portal.spinBase, self.portal.spinRelax)
   self.spaceOrbWorldPos = nil
 
@@ -126,7 +128,8 @@ end
 
 
 
-function MagPortal:consumeEvent(event)
+function MagPortal:consumeEvent(event) -- TODO: rename to consumeInputEvent...
+  -- Does life ever feel like a forest of ifs?
   if event.button == "primary" and event.type == "press" and self.portalActive then
     if rig.cooldownTimer == 0 then
       local orbIndex = nextOrb()
@@ -140,7 +143,7 @@ function MagPortal:consumeEvent(event)
   end
 
   if event.button ~= "alt" then return false end
-  if event.shift then return true end -- TODO: whatever it was
+  if event.shift then return true end -- TODO: whatever it was  -- shift-alt hold -> implode windup (if portal active, otherwise reave windup)
 
   if event.type == "tap" then self:altTap()
   elseif event.type == "holdStart" then self:beginWindup()
@@ -158,6 +161,7 @@ end
 
 function MagPortal:animUpdate(dt)
   self:presentSpaceOrb(rig.handBase, dt)
+    -- magPortal.presentBolts(handBase, dt) -- TODO: rainbolts!
 end
 
 
@@ -344,7 +348,7 @@ end
 
 
 -- Trigger orbIndex to dive for conduit fire.
-function MagPortal:beginConduitFire(orbIndex)
+function MagPortal:beginConduitFire(orbIndex)  -- TODO: rename to transit fire maybe?
   rig.orbLocks[orbIndex] = true
   self.pendingFires[orbIndex] = self.portal.flickTime -- todo: make flick/dive name consistent
 end
@@ -596,6 +600,32 @@ function MagPortal:checkUpdate(dt)
 end
 
 
-function MagPortal:isDiving(orbIndex) -- fossil function outmoded by isDiving
+function MagPortal:isDiving(orbIndex) -- fossil function outmoded by isDiving -- was I delirious when I wrote that?
   return self.pendingFires[orbIndex] ~= nil
 end
+
+
+
+-- TODO: init param blocks with defaults like before
+    -- reave = {
+    --   maxCharge = 1.25,
+    --   spinMult = 24.0,
+    --   fizzleKick = 2.0,
+    --   castEnergy = 50,
+    --   fireBeat = 0.12,
+    --   whirrAdjust = 0.1
+    -- }
+    -- portal = {
+    --   radius = 2.5,
+    --   squash = -0.15,
+    --   -- precessRate = 3.0,
+    --   spinBase = 2.5,
+    --   spinRelax = 1.5,
+    --   depthScale = 0.2, -- Shrink effect at "far" arc
+    --   backDirectives = "?brightness=-45", -- Darkening effect of "far" arc
+    --   frontLayer = "Player+1", -- Layer for near arc
+    --   backLayer = "Player-1", -- Layer for far arc
+    --   flickTime = 0.065, -- Time for an orb fired with portal up to "flick" into the space orb, after which it emerges from portal
+    --   transitKick = 2.0,
+    --   timeToLive = 24
+    -- },

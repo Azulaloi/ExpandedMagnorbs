@@ -13,7 +13,7 @@ OrbThrowRainbow = OrbThrow:new()
 
 
 function OrbThrowRainbow:onOrbReturn(orbIndex, originFlag, returnVelocity) -- TODO: use action grammar TODO: localize particles
-  animator.playSound("impact")
+  -- animator.playSound("impact") -- Bracer does this already before calling hook
   local orbPos = firePosition(orbIndex)
   local burstCount = 16
 

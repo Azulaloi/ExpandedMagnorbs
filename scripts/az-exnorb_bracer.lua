@@ -8,6 +8,20 @@ require "/scripts/az_dynamics.lua"
 require "/scripts/az_input.lua"
 
 
+-- TODO: reorganize scripts
+-- TODO: migrate all sets
+-- TODO: hit/trail utils
+-- TODO: norb hit/bounce/return behaviour
+-- TODO: tooltip builder
+-- TODO: norb spin/heat
+-- TODO: magnability registry
+-- TODO: actual fx/sprite pass (do while migrating, cause that'll involve tuning anim parameters etc)
+-- TODO: make the damn rainbow bracer light up, I keep forgetting
+-- TODO: magnability coroutines 
+-- TODO: jiggler component
+
+
+
 -- TODO: internalize stances.lua maybe
 
 -- Norb projectile flags
@@ -80,7 +94,9 @@ end
 
 
 function init()
-  rig = self
+  rig = self -- why didn't I use `Bracer:`... or `Rig:`
+  -- I think at some point `Bracer` might become another module, for the all-norbs-are-modular theory
+  -- so should stick with rig even though this script is called bracer TODO: sort script folder and script names before full migration
 
   activeItem.setCursor("/cursors/reticle0.cursor") -- TODO: custom cursor management
   
@@ -98,7 +114,7 @@ function init()
   self.orbTotal = config.getParameter("orbTotal") -- kinda want to put this in a magnorb block
   self.orbitRate = config.getParameter("orbitRate", 1) * -2 * math.pi   -- magnorb block or tune block?
 
-  self.debugHideRing = false
+  self.debugHideRing = false  -- hide ring orbs for tuning the space orb -- TODO move to mag_portal dumbass
   self.hasOrbEmitters = config.getParameter("hasOrbEmitters", false)
 
 
@@ -173,6 +189,8 @@ function initDynamics()
   self.orbSpinAngle = {} -- differentiate objects from storage?
   
   for i = 1, self.orbTotal do
+    -- TODO: optional per-orb tuning
+
     self.orbSpinner[i] = azDynamics.Spinner.new(self.tune.orbSpinBase, self.tune.orbSpinRelax)
     self.orbSpinAngle[i] = 0
 
@@ -223,7 +241,7 @@ function update(dt, fireMode, shiftHeld)
   end
 
   updateAim()
-  for _, ability in ipairs(self.abilities) do ability:update(dt) end
+  for _, ability in ipairs(self.abilities) do ability:update(dt) end -- important that this runs before updateAnim
   updateAnim(dt)
   updateHand()
 
@@ -532,8 +550,6 @@ function doOrbReturnAction(orbIndex, originFlag, returnVelocity)
 
   if returnVelocity then
     applyImpulse(orbIndex, vec2.sub(returnVelocity, mcontroller.velocity()), nil, self.tune.catchKick)
-    sb.logInfo("BRACER: real velocity")
-
   else
     -- No return velocity packet, orb returned through other means (reaped, was stowed, edge case)
     -- Synthesize a generic arrival packet.
@@ -553,10 +569,11 @@ function doOrbReturnAction(orbIndex, originFlag, returnVelocity)
       -- degenerate case, fallback poke
       self.orbSpring[orbIndex]:setVelocity(-3, 0)
     end
-    sb.logInfo("BRACER: synthetic velocity")
-
   end
 
+  -- Maybe I should have the rig itself use hooks, like, if the above play sound and applyimpulse was
+  -- in rig:whatevernamingconvention, then an extra script could override it per-set if needed.
+  -- can wait until I actually need it for something though
   for _, ability in ipairs(self.abilities) do
     if ability.onOrbReturn then ability:onOrbReturn(orbIndex, originFlag, returnVelocity) end
   end
@@ -872,6 +889,7 @@ function applyImpulse(orbIndex, vel, flags, scale)
 
   -- TODO: impart momentum on player if the caught momentum is high enough? orbs would need "mass". what is the player's mass?
   -- would also then want to impart momentum on fire, presumably? would an orb ever be returning faster than its fire rate? 
+  -- maybe if charged through the portal? oh that could be cool
 end
 
 function updateHand()
@@ -1003,6 +1021,13 @@ end
 
 function drawDebug()
 -- TODO: debug text drawer that just eats variables so I don't need to position them
+  local pos = mcontroller.position()
+  -- world.debugText("portal:  " .. (self.portalActive and "true" or "false"), vec2.add(pos, {4, 2}), "green")
+  -- world.debugText(string.format(
+  --   "axial: %.2fpx | peak: %.1fpx", 
+  --   self.armAxialSpring.pos * 8, 
+  --   math.max(self.debugPeakPx or 0, math.abs(self.armAxialSpring.pos * 8))
+  -- ), vec2.add(pos, {4, 3}), "green")
 end
 
 
@@ -1019,3 +1044,11 @@ function uponExtantEntities(array, handler, ...)
   end
 end
 
+-- TODO: alternate orbital behaviours? maybe worth testing at least
+--  layered fake halo method like I used for the novablitz ioun stone thing?
+--    this one would be hard to drive physically. might benefit from slight scaling to help with depth? 
+--    oh, could I use scaling on the current model to make the orbs appear more 3D?
+--    even if I don't use it for norbs, it could be used for alt abilities or something
+--  relaxed orbit (no dock/anchor) with physically driven separation?
+--    might provide a cool visual and some variation, but also might be tuning hell
+--    and it would mean even more lua physics

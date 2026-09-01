@@ -26,5 +26,5 @@
     }
   ],
 
-  "scripts" : [ "rainbownorb.lua" ]
+  "scripts" : [ "/scripts/dynamicprojectile.lua" ]
 }
