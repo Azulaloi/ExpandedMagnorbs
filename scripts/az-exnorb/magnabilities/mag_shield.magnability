@@ -1,0 +1,17 @@
+{
+  "ability" : {
+    "scripts" : ["/scripts/az-exnorb/magnabilities/mag_shield.lua"],
+    "class" : "MagShield",
+    
+    "shieldHealth" : 45,
+    "shieldEnergyCost" : 8,
+    "shieldKnockback" : 0,
+    "shieldTransformTime" : 0.15,
+
+    "tooltip" : {
+      "name" : "Magshield",
+      "cost" : "<shieldEnergyCost>/s",
+      "magnitude" : "<shieldHealth>"
+    }
+  }
+}

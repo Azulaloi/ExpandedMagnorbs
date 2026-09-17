@@ -23,25 +23,19 @@
   },
   "animationCustom" : { },
 
-  // "scripts" : ["/scripts/dynamicnorb.lua"],
-  // "builder" : "/scripts/buildnorb.lua",
-  
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
 
-  "scripts" : ["/scripts/az-exnorb_bracer.lua"],
-  "builder" : "/scripts/buildnorb.lua",
-  "primaryAbility" : {
-    "scripts" : [ "/scripts/az-exnorb/magnabilities/orb_throw.lua" ],
-    "class" : "OrbThrow"
-  },
+  "orbTotal" : 3,
+  "orbitRate" : 0.5,
+
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magward", 
   "altAbility" : {
-    "scripts" : [ "/scripts/az-exnorb/magnabilities/mag_ward.lua" ],
-    "class" : "MagWard",
-  "shieldHealth" : 55,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 30,
-    "shieldTransformTime" : 0.15,
-    "shieldRotateValue" : 1.0,
-    "wardEffects" : [ "phaseshift" ] // todo: namespace statuses
+    "wardEffects" : [ "phaseshift" ], // todo: namespace statuses
+    "tooltip" : {
+      "name" : "Phase Shift"
+    }
   },
 
   "tune" : {
@@ -50,24 +44,6 @@
       "tangentialAmplitude" : 0.16
     }
   },
-
-  "orbTotal" : 3,
-  "orbitRate" : 0.5,
-
-  "azSecondary": {
-    "title" : "Alt:",
-    "name" : "Phase Shift",
-    "costTitle" : "Alt Energy Cost:",
-    "cost" : "30/s"
-  },
-
-  // "shieldRotateValue" : 1,
-  // "noPoly" : true,
-  // "ward" : true,
-  // "wardEffectQuantity" : 1,
-  // "wardEffect1" : "phaseshift",
-  // "secondaryName" : "Phase Shift",
-  // "noMagnitude" : true,
 
   "projectileType" : "phantommagnorb",
   "projectileParameters" : {
@@ -80,8 +56,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-
 
   "stances" : {
     "idle" : {

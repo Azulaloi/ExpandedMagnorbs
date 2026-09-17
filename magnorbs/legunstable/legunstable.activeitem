@@ -16,50 +16,29 @@
   "animation" : "legunstable.animation",
   "animationParts" : {
     "glove" : "glove.png",
-    "gloveFullbright" : "glovefullbright.png",
+    "gloveFullbright" : "glovefullbright.png", // TODO: cool anim and also pulse on fire
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png"
   },
   "animationCustom" : { },
 
-  // "scripts" : ["/scripts/dynamicnorb.lua"],
-  // "builder" : "/scripts/buildnorb.lua",
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
 
   "orbTotal" : 3,
   "orbitRate" : 1.5,
 
-  // "shieldRotateValue" : 1,
-  // "emitterQuantity" : 1,
-  // "noPoly" : true,
-  // "ward" : true,
-  // "wardEffectQuantity" : 1,
-  // "wardEffect1" : "unstableward",
-  // "secondaryName" : "Unstable Ward",
-  // "noMagnitude" : true,
-
-
-
-
-  "scripts" : ["/scripts/az-exnorb_bracer.lua"],
-  "builder" : "/scripts/buildnorb.lua",
-  "primaryAbility" : {
-    "scripts" : [ "/scripts/az-exnorb/magnabilities/orb_throw.lua" ],
-    "class" : "OrbThrow"
-  },
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magward",
   "altAbility" : {
-    "scripts" : [ "/scripts/az-exnorb/magnabilities/mag_ward.lua" ],
-    "class" : "MagWard",
-    "emitterQuantity" : 1,
-  "shieldHealth" : 60,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 30,
-    "shieldTransformTime" : 0.15,
-    "shieldRotateValue" : 1.0,
-    "wardEffects" : [ "unstableward" ] // todo: namespace statuses
+    "emitterQuantity" : 1, // ...
+    "shieldHealth" : 60, // ?
+    "wardEffects" : [ "unstableward" ], // todo: namespace statuses
+    "tooltip" : {
+      "name" : "Unstable Ward"
+    }
   },
-
-
 
   "projectileType" : "unstablemagnorb",
   "projectileParameters" : {
@@ -72,10 +51,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldHealth" : 60,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 30,
 
   "stances" : {
     "idle" : {

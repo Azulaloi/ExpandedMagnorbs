@@ -1,0 +1,7 @@
+{
+  "ability" : {
+    "scripts" : [ "/scripts/az-exnorb/magnabilities/orb_throw_rainbow.lua" ],
+    "class" : "OrbThrowRainbow"
+  }
+}
+    

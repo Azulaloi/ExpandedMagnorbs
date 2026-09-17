@@ -23,25 +23,20 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/az-exnorb_bracer.lua"],
-  "builder" : "/scripts/buildnorb.lua",
-  "primaryAbility" : {
-    "scripts" : [ "/scripts/az-exnorb/magnabilities/orb_throw.lua" ],
-    "class" : "OrbThrow"
-  },
-  "altAbility" : {
-    "scripts" : [ "/scripts/az-exnorb/magnabilities/mag_shield.lua" ],
-    "class" : "MagShield",
-    "shieldHealth" : 3,
-    "shieldKnockback" : 10,
-    "shieldEnergyCost" : 13,
-    "shieldTransformTime" : 0.15
-  },
-  
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
+
   "orbTotal" : 3,
   "orbitRate" : 0.5,//1.5,
-  "shieldLock" : false,
 
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magshield", 
+  "altAbility" : {
+    "shieldHealth" : 75,
+    "shieldKnockback" : 10,
+    "shieldEnergyCost" : 13
+  },
+  
   "projectileType" : "shinymagnorb",
   "projectileParameters" : {
     "power" : 1.95,
@@ -53,10 +48,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldHealth" : 75,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 13,
 
   "stances" : {
     "idle" : {
