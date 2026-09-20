@@ -604,28 +604,3 @@ function MagPortal:isDiving(orbIndex) -- fossil function outmoded by isDiving --
   return self.pendingFires[orbIndex] ~= nil
 end
 
-
-
--- TODO: init param blocks with defaults like before
-    -- reave = {
-    --   maxCharge = 1.25,
-    --   spinMult = 24.0,
-    --   fizzleKick = 2.0,
-    --   castEnergy = 50,
-    --   fireBeat = 0.12,
-    --   whirrAdjust = 0.1
-    -- }
-    -- portal = {
-    --   radius = 2.5,
-    --   squash = -0.15,
-    --   -- precessRate = 3.0,
-    --   spinBase = 2.5,
-    --   spinRelax = 1.5,
-    --   depthScale = 0.2, -- Shrink effect at "far" arc
-    --   backDirectives = "?brightness=-45", -- Darkening effect of "far" arc
-    --   frontLayer = "Player+1", -- Layer for near arc
-    --   backLayer = "Player-1", -- Layer for far arc
-    --   flickTime = 0.065, -- Time for an orb fired with portal up to "flick" into the space orb, after which it emerges from portal
-    --   transitKick = 2.0,
-    --   timeToLive = 24
-    -- },

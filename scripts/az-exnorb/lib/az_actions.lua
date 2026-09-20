@@ -8,6 +8,11 @@ require "/scripts/util.lua"
 -- ideally this new block would then resolve the param/script action split issue
 
 
+
+-- use <keyword> tags like in animation parameters? with expressions?
+-- like... `"initialVelocity" : "<vel>*0.25"` 
+-- that way it could be almost entirely the same
+
 azActions = {
   actionProjectileName = "az-exnorb_action"
 }

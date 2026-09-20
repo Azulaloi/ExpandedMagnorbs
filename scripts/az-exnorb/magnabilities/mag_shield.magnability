@@ -8,6 +8,9 @@
     "shieldKnockback" : 0,
     "shieldTransformTime" : 0.15,
 
+    "shieldRotateValue" : 0.7,
+    "shieldSpacingQ" : 1,
+
     "tooltip" : {
       "name" : "Magshield",
       "cost" : "<shieldEnergyCost>/s",

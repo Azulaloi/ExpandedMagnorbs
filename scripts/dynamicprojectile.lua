@@ -1,5 +1,5 @@
 require "/scripts/vec2.lua"
-require "/scripts/az_actions.lua"
+require "/scripts/az-exnorb/lib/az_actions.lua"
 
 -- TODO: retroextrapolated oncollide effects
 -- TODO: use a spinner to control angular velocity, simulate roll from collisions

@@ -23,12 +23,20 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
-  "builder" : "/scripts/buildnorb.lua",
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
 
-  "emitterQuantity" : 4,
   "orbTotal" : 4,
   "orbitRate" : 2.2,
+
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magshield", 
+  "altAbility" : {
+    "emitterQuantity" : 4,
+    "shieldHealth" : 120,
+    "shieldKnockback" : 10,
+    "shieldEnergyCost" : 18
+  },
 
   "projectileType" : "vismagnorb",
   "projectileParameters" : {
@@ -42,10 +50,6 @@
     "snapDistance" : 4.0
   },
 
-  "shieldHealth" : 120,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 18,
-  
   "stances" : {
     "idle" : {
       "armRotation" : 10,

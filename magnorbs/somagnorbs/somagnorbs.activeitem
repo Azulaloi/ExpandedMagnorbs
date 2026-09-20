@@ -20,14 +20,26 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
-  "builder" : "/scripts/buildnorb.lua",
-  
-  "shieldRotateValue" : 1.0,
-  "emitterQuantity" : 2,
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
+
   "orbTotal" : 1,
   "orbitRate" : 1.0,
-  "secondaryName" : "Solar Aegis",
+
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magshield", 
+  "altAbility" : {
+    "shieldRotateValue" : 1.0,
+    "emitterQuantity" : 2,
+
+    "shieldHealth" : 225,
+    "shieldKnockback" : 10,
+    "shieldEnergyCost" : 24,
+
+    "tooltip" : {
+      "name" : "Solar Aegis"
+    }
+  },
 
   "projectileType" : "somagnorb",
   "projectileParameters" : {
@@ -40,10 +52,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldHealth" : 225,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 24,
 
   "stances" : {
     "idle" : {

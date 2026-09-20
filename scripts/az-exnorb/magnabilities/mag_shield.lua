@@ -117,7 +117,7 @@ function MagShield:release()
     -- maybe do some more stuff here
   end
 
-  animator.playSound("shieldOff"); sb.logInfo("shieldOff")
+  animator.playSound("shieldOff")
   for i = 1, (self.emitterQuantity or 0) do
     animator.setParticleEmitterActive("shieldEmitter"..i, false)
   end
@@ -164,6 +164,6 @@ function MagShield:formFormation()
     (self.shieldSpacingQ or 1) - (self.shieldRotateValue or 0.7),
     0.75, 
     {-1.5, 0}, 
-    {orientation = 0, assign = "nearest"}
+    {orientation = 0, assign = (self.emitterQuantity or 0) > 0 and "anchored" or "nearest"}
   )
 end

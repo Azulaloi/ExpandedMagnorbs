@@ -35,10 +35,10 @@
   //   [221, 84, 114, 255]
   // ],
 
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
   "builder" : "/scripts/az-exnorb/build.lua",
   "animationScripts" : ["rainbow_localanim.lua"],
 
-  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
   "sequenced" : true,
   "hasOrbEmitters" : true,
   "orbTotal" : 5,

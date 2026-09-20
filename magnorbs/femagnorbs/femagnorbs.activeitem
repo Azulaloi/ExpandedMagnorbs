@@ -25,14 +25,25 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
-  "builder" : "/scripts/buildnorb.lua",
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
 
-  "emitterQuantity" : 5,
-  "shieldSpacingQ" : 1.2,
   "orbTotal" : 5,
   "orbitRate" : 1.5,
-  "secondaryName" : "Magshell",
+
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magshield", 
+  "altAbility" : {
+    "emitterQuantity" : 5,
+    "shieldSpacingQ" : 1.2,
+
+    "shieldHealth" : 100,
+    "shieldKnockback" : 10,
+    "shieldEnergyCost" : 20,
+    "tooltip" : {
+      "name" : "Magshell"
+    }
+  },
 
   "projectileType" : "femagnorb",
   "projectileParameters" : {
@@ -45,10 +56,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldHealth" : 100,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 20,
 
   "stances" : {
     "idle" : {

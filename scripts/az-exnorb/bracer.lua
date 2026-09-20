@@ -2,36 +2,44 @@ require "/scripts/vec2.lua"
 require "/scripts/util.lua"
 require "/scripts/status.lua"
 require "/scripts/activeitem/stances.lua" 
-require "/scripts/az_cues.lua"
-require "/scripts/az_actions.lua"
-require "/scripts/az_dynamics.lua"
-require "/scripts/az_input.lua"
+require "/scripts/az-exnorb/lib/az_cues.lua"
+require "/scripts/az-exnorb/lib/az_actions.lua"
+require "/scripts/az-exnorb/lib/az_dynamics.lua"
+require "/scripts/az-exnorb/lib/az_input.lua"
+
+
+-- TODO: does the animpart shield poly translation from arm axial recoil match the visual position of the shield pieces?
+
+-- TODO: [X] migrate all sets
+-- TODO: [X] magnability registry
+-- TODO: [X] tooltip builder
 
 
 -- TODO: reorganize scripts
--- TODO: migrate all sets
+-- TODO: magnability coroutines 
+
 -- TODO: hit/trail utils
 -- TODO: norb hit/bounce/return behaviour
--- TODO: tooltip builder
--- TODO: norb spin/heat
--- TODO: magnability registry
--- TODO: actual fx/sprite pass (do while migrating, cause that'll involve tuning anim parameters etc)
--- TODO: make the damn rainbow bracer light up, I keep forgetting
--- TODO: magnability coroutines 
--- TODO: jiggler component
--- TODO: shield jiggler formation params
-
 -- TODO: projectile spin + inherit
 -- TODO: projectile return behaviours
+
+-- TODO: norb spin/heat
+-- TODO: actual fx/sprite pass (do while migrating, cause that'll involve tuning anim parameters etc)
+
+-- TODO: jiggler component
+-- TODO: shield jiggler formation params
+-- TODO: shield spring on impact
+
 -- TODO: ring spin flip hysteresis/tune
 -- TODO: interpolated trails
 -- TODO: codified retroextrapolation
 -- TODO: orb start angle decorrelation
--- TODO: shield spring on impact
--- TODO: catch sounds/fx?
+
 -- TODO: curveballs (inherit cursor delta) or brief minor tk influence if fire held
 
+-- TODO: catch sounds/fx?
 -- TODO: phantom norbs fx (fix lights, particles on phase)
+-- TODO: make the damn rainbow bracer light up, I keep forgetting
 
 -- TODO: internalize stances.lua maybe
 
@@ -302,6 +310,8 @@ function setFormation(form, duration)
     self.formationTime = duration or 0.1
     if form.assign == "nearest" then
       form.slotMap = bestCyclicAssignment(form.slots)
+    elseif form.assign == "anchored" then
+      form.slotMap = anchoredCyclicAssignment(2, 2)
     end
     if form.haltRing then setRingHalted(true) end
     if form.haltSpin then setSpinHalted(true) end -- hmmm...
@@ -418,6 +428,13 @@ end
 
 
 
+function anchoredCyclicAssignment(anchoredOrb, targetSlot)
+  local q = self.orbTotal
+  local shift = (targetSlot - anchoredOrb) % q
+  local arrange = {}
+  for i = 1, q do arrange[i] = ((i - 1 + shift) % q) + 1 end
+  return arrange
+end
 
 function bestCyclicAssignment(slots)
   local q = self.orbTotal

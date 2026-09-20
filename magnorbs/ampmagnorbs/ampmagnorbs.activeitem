@@ -12,7 +12,6 @@
   "itemTags" : ["weapon"],
   "learnBlueprintsOnPickup" : [ ],
   
-  
   "inventoryIcon" : "icon.png",
   "animation" : "ampmagnorbs.animation",
   "animationParts" : {
@@ -23,13 +22,19 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
-  "builder" : "/scripts/buildnorb.lua",
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
   
   "orbTotal" : 3,
   "orbitRate" : 1.5,
-  "shieldLock" : false,
 
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magshield", 
+  "altAbility" : {
+    "shieldHealth" : 110,
+    "shieldKnockback" : 10,
+    "shieldEnergyCost" : 17
+  },
 
   "projectileType" : "ampmagnorb",
   "projectileParameters" : {
@@ -42,10 +47,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldHealth" : 110,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 17,
 
   "stances" : {
     "idle" : {

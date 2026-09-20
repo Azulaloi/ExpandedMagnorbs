@@ -1,5 +1,5 @@
 require "/scripts/az-exnorb/magnabilities/orb_throw.lua"
-require "/scripts/az_actions.lua"
+require "/scripts/az-exnorb/lib/az_actions.lua"
 require "/scripts/vec2.lua"
 
 OrbThrowRainbow = OrbThrow:new()
