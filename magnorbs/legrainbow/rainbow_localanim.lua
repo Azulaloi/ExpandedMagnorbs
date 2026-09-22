@@ -1,5 +1,5 @@
 require "/scripts/vec2.lua"
-require "/scripts/az_dynamics.lua"
+require "/scripts/az-exnorb/lib/az_dynamics.lua"
 
 function update(dt)
   localAnimator.clearDrawables()

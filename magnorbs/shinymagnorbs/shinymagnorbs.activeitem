@@ -23,13 +23,20 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
-  "builder" : "/scripts/buildnorb.lua",
-  
-  "orbTotal" : 3,
-  "orbitRate" : 1.5,
-  "shieldLock" : false,
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
 
+  "orbTotal" : 3,
+  "orbitRate" : 0.5, //1.5, 0.5 is dynamics test value
+
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magshield", 
+  "altAbility" : {
+    "shieldHealth" : 75,
+    "shieldKnockback" : 10,
+    "shieldEnergyCost" : 13
+  },
+  
   "projectileType" : "shinymagnorb",
   "projectileParameters" : {
     "power" : 1.95,
@@ -41,10 +48,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldHealth" : 75,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 13,
 
   "stances" : {
     "idle" : {

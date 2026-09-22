@@ -1,0 +1,36 @@
+{
+  "ability" : {
+    "scripts" : ["/scripts/az-exnorb/magnabilities/mag_portal.lua"],
+    "class" : "MagPortal",
+
+    "portal" : {
+      "radius" : 2.5, 
+      "squash" : -0.15,
+      "spinBase" : 2.5, 
+      "spinRelax" : 1.5,
+      "depthScale" : 0.2, 
+      "backDirectives" : "?brightness=-45",
+      "frontLayer" : "Player+1", 
+      "backLayer" : "Player-1",
+      "flickTime" : 0.065, 
+      "transitKick" : 2.0, 
+      "timeToLive" : 24 
+      // when all magnorbs are modular chassis, specific modules should upgrade set-innate abilities (portal duration etc)
+    },
+    "reave" : { // TODO: rename these blocks to make more sense as ability fields
+      "maxCharge" : 1.25,
+      "spinMult" : 24.0,
+      "fizzleKick" : 2.0,
+      "castEnergy" : 50,
+      "fireBeat" : 0.12,
+      "whirrAdjust" : 0.1
+    },
+
+    "tooltip" : {
+      "name" : "Astral Reave",
+      "cost" : "<reave.castEnergy>",
+      "magnitudeTitle" : "Alt Duration:",
+      "magnitude" : "<portal.timeToLive>s"
+    }
+  }
+}

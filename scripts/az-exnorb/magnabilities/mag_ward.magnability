@@ -1,0 +1,18 @@
+{
+  "ability" : {
+    "scripts" : [ "/scripts/az-exnorb/magnabilities/mag_ward.lua" ],
+    "class" : "MagWard",
+    "shieldHealth" : 55,
+    "shieldKnockback" : 10,
+    "shieldEnergyCost" : 30,
+    "shieldTransformTime" : 0.15,
+
+    "shieldRotateValue" : 1.0, // am i still using this
+    "wardEffects" : [ ], 
+
+    "tooltip" : {
+      "name" : "Ward",
+      "cost" : "<shieldEnergyCost>/s"
+    }
+  }
+}

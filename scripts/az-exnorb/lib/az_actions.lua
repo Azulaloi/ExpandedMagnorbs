@@ -1,4 +1,5 @@
-
+require "/scripts/vec2.lua"
+require "/scripts/util.lua"
 
 -- I have an additional idea: azActions parameter for projectiles that works like an extended actions block
 -- can do things like the retro-extrapolated bounce/hit action, the reap-bridge action, particle actions with momentum etc
@@ -6,6 +7,11 @@
 -- and whatever else I can think of (like using indexed variants IE rainbow colors for particles or something, so it can be done through parameters rather than hardcoded)
 -- ideally this new block would then resolve the param/script action split issue
 
+
+
+-- use <keyword> tags like in animation parameters? with expressions?
+-- like... `"initialVelocity" : "<vel>*0.25"` 
+-- that way it could be almost entirely the same
 
 azActions = {
   actionProjectileName = "az-exnorb_action"

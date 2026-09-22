@@ -16,19 +16,26 @@
   "animation" : "duramagnorbs.animation",
   "animationParts" : {
     "glove" : "glove.png",
-    "gloveFullbright" : "glovefullbright.png",
+    "gloveFullbright" : "glovefullbright.png", // TODO: glow pulse on fire
     "orb1" : "orb.png",
     "orb2" : "orb.png",
     "orb3" : "orb.png"
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
-  "builder" : "/scripts/buildnorb.lua",
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
   
   "orbTotal" : 3,
   "orbitRate" : 1.5,
-  "shieldLock" : false,
+
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magshield", 
+  "altAbility" : {
+    "shieldHealth" : 90,
+    "shieldKnockback" : 10,
+    "shieldEnergyCost" : 16
+  },
 
   "projectileType" : "duramagnorb",
   "projectileParameters" : {
@@ -41,10 +48,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldHealth" : 90,
-  "shieldKnockback" : 10,
-  "shieldEnergyCost" : 16,
 
   "stances" : {
     "idle" : {

@@ -23,30 +23,29 @@
 	  "orb5" : "orb5.png"
   },
   "animationCustom" : { },
-  "rainColors": [
-    [121, 74, 196, 255],
-    [66, 132, 199, 255],
-    [62, 226, 101, 255],
-    [227, 227, 66, 255],
-    [221, 84, 114, 255]
-  ],
 
-  "scripts" : ["rainbow.lua"],
-  "builder" : "/scripts/buildnorb.lua",
+  // Currently unused, these are the rainbow palette tones
+  // for the astral rainbow. Leaving them so I don't need
+  // to get them again. I'm pretty sure I can use them somewhere.
+  // "rainColors": [
+  //   [121, 74, 196, 255],
+  //   [66, 132, 199, 255],
+  //   [62, 226, 101, 255],
+  //   [227, 227, 66, 255],
+  //   [221, 84, 114, 255]
+  // ],
+
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
   "animationScripts" : ["rainbow_localanim.lua"],
 
+  "sequenced" : true,
+  "hasOrbEmitters" : true,
   "orbTotal" : 5,
   "orbitRate" : 0.85, //1.3,
 
-  "azSecondary": {
-    "title" : "Alt:",
-    "name" : "Astral Reave",
-    "costTitle" : "Alt Energy Cost:",
-    "cost" : "50",
-    "magnitudeTitle" : "Alt Duration:",
-    "magnitude" : "24s"
-  },
-  
+  "primaryAbilityType" : "orbthrowrainbow",
+  "altAbilityType" : "magportal",
 
   "projectileType" : "legrainbow",
   "projectileParameters" : {

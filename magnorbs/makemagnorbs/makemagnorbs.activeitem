@@ -22,12 +22,29 @@
   },
   "animationCustom" : { },
 
-  "scripts" : ["/scripts/dynamicnorb.lua"],
-  "builder" : "/scripts/buildnorb.lua",
+  "scripts" : ["/scripts/az-exnorb/bracer.lua"],
+  "builder" : "/scripts/az-exnorb/build.lua",
 
   "orbTotal" : 3,
   "orbitRate" : 1.0,
-  "shieldLock" : false,
+
+  "primaryAbilityType" : "orbthrow",
+  "altAbilityType" : "magshield", 
+  "altAbility" : {
+    "shieldHealth" : 45,
+    "shieldKnockback" : 2,
+    "shieldEnergyCost" : 8
+  },
+
+  "tune" : {
+    "ringSpinRelax" : 0.5,
+    "orbSpinKick" : 0.25,
+    "springDamp" : 12,
+    "springK" : 50,
+    "deltaTracking" : {
+      "strength" : 0.45
+    }
+  },
 
   "projectileType" : "makemagnorb",
   "projectileParameters" : {
@@ -40,10 +57,6 @@
     "pickupDistance" : 1.5,
     "snapDistance" : 4.0
   },
-
-  "shieldHealth" : 45,
-  "shieldKnockback" : 2,
-  "shieldEnergyCost" : 8,
 
   "stances" : {
     "idle" : {
